@@ -1,7 +1,5 @@
 package eu.cubix.mc.hub.task;
 
-import eu.cubix.mc.hub.Main;
-import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;

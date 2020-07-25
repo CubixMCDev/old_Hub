@@ -2,8 +2,6 @@ package eu.cubix.mc.hub.cosmetics.particles;
 
 import eu.cubix.mc.hub.Main;
 import eu.cubix.mc.hub.tools.ParticleData;
-import eu.cubix.mc.hub.tools.ParticleEffect;
-import eu.cubix.mc.hub.tools.ParticleUtils;
 import eu.cubix.mc.hub.tools.UtilParticles;
 import net.minecraft.server.v1_8_R3.EnumParticle;
 import org.bukkit.Bukkit;

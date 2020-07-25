@@ -12,8 +12,6 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.Arrays;
 
-import static eu.cubix.mc.hub.Main.api;
-
 public class ShopGrades implements GuiBuilder {
     private Main main;
 
