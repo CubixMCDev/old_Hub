@@ -17,7 +17,7 @@ import eu.cubix.mc.hub.queue.VIPplusQueue;
 import eu.cubix.mc.hub.scoreboard.ScoreboardManager;
 import eu.cubix.mc.hub.task.AntiAFK;
 import eu.cubix.mc.hub.tools.*;
-import fr.cubixmc.api.CubixAPI;
+import eu.cubixmc.com.CubixAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
