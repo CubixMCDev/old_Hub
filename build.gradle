@@ -1,7 +1,11 @@
 plugins {
+    id 'com.github.johnrengelman.shadow' version '6.0.0'
     id 'java'
-    id 'maven-publish'
 }
+
+group = 'cubixmc.com'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = '1.8'
 
 /*
 uft-8
@@ -48,14 +52,10 @@ dependencies {
     compile (name: 'spigot', ext: 'jar')
 }
 
-group = 'cubixmc.com'
-version = '1.0-SNAPSHOT'
-sourceCompatibility = '1.8'
-
-publishing {
-    publications {
-        maven(MavenPublication) {
-            from(components.java)
-        }
+shadowJar {
+    dependencies {
+        exclude(dependency(name: 'spigot', ext:'jar'))
     }
 }
+
+build.dependsOn shadowJar
