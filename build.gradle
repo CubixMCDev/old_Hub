@@ -3,6 +3,35 @@ plugins {
     id 'maven-publish'
 }
 
+/*
+uft-8
+ */
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+tasks.withType(Test) {
+    systemProperty "file.encoding", "UTF-8"
+}
+
+compileJava {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += ["-parameters"]
+    options.fork = true
+    options.forkOptions.executable = 'javac'
+}
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+/*
+end uft-8
+ */
+
 repositories {
     mavenLocal()
     maven { url = uri('https://hub.spigotmc.org/nexus/content/repositories/snapshots/') }
@@ -16,7 +45,6 @@ repositories {
 
 dependencies {
     compileOnly 'org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT'
-    compileOnly group: "com.comphenix.protocol", name: "ProtocolLib", version: "4.5.0"
     compile (name: 'spigot', ext: 'jar')
 }
 
