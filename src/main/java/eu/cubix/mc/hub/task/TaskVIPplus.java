@@ -1,6 +1,6 @@
 package eu.cubix.mc.hub.task;
 
-import fr.cubixmc.api.ranks.Ranks;
+import eu.cubixmc.com.ranks.Ranks;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 

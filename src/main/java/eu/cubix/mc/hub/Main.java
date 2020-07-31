@@ -1,5 +1,7 @@
 package eu.cubix.mc.hub;
 
+import com.comphenix.protocol.ProtocolLibrary;
+import com.comphenix.protocol.ProtocolManager;
 import eu.cubix.mc.hub.commands.Key;
 import eu.cubix.mc.hub.cosmetics.gadgets.SheepExplode;
 import eu.cubix.mc.hub.crates.Vote;
@@ -46,6 +48,8 @@ public class Main extends JavaPlugin implements Listener {
     private final ArrayList<String> games = new ArrayList<>();
 
     public static CubixAPI api = (CubixAPI) Bukkit.getServer().getPluginManager().getPlugin("CubixAPI");
+    public ProtocolManager protocolManager;
+
     private CosmeticsManager cosmeticsManager;
     private static Main instance;
 
@@ -67,6 +71,8 @@ public class Main extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         instance = this;
+
+        protocolManager = ProtocolLibrary.getProtocolManager();
 
         loadChannels();
         setQueues();
@@ -119,6 +125,10 @@ public class Main extends JavaPlugin implements Listener {
 
     public static Main getInstance() {
         return instance;
+    }
+
+    public static ProtocolManager protocolManager() {
+        return protocolManager();
     }
 
     public ScoreboardManager getScoreboardManager() {

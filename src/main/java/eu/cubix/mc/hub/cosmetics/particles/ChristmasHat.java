@@ -3,7 +3,6 @@ package eu.cubix.mc.hub.cosmetics.particles;
 import eu.cubix.mc.hub.Main;
 import eu.cubix.mc.hub.tools.MathUtil;
 import eu.cubix.mc.hub.tools.ParticleData;
-import eu.cubix.mc.hub.tools.UtilParticles;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -20,7 +19,7 @@ public class ChristmasHat {
 
     public void startChristmasHat() {
         taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getInstance(), new Runnable() {
-            ParticleData particle = new ParticleData(player.getUniqueId());
+            final ParticleData particle = new ParticleData(player.getUniqueId());
 
             @Override
             public void run() {
@@ -35,7 +34,9 @@ public class ChristmasHat {
                     double x = MathUtil.randomDouble(-0.05, 0.05);
                     double z = MathUtil.randomDouble(-0.05, 0.05);
                     location.add(x, 0.46f, z);
+                    /*
                     UtilParticles.display(255, 255, 255, location);
+                     */
                     location.subtract(x, 0.46f, z);
                 }
                 for (float f = 0; f <= 0.4f; f += 0.1f) {
@@ -56,7 +57,9 @@ public class ChristmasHat {
             float x = (float) (Math.cos(angle) * radius);
             float z = (float) (Math.sin(angle) * radius);
             location.add(x, height, z);
+            /*
             UtilParticles.display(255, red ? 0 : 255, red ? 0 : 255, location);
+             */
             location.subtract(x, height, z);
         }
     }

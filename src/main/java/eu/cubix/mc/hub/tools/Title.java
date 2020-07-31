@@ -1,10 +1,10 @@
 package eu.cubix.mc.hub.tools;
 
-import net.minecraft.server.v1_8_R3.IChatBaseComponent;
-import net.minecraft.server.v1_8_R3.PacketPlayOutTitle;
-import net.minecraft.server.v1_8_R3.PlayerConnection;
+import net.minecraft.server.IChatBaseComponent;
+import net.minecraft.server.PacketPlayOutTitle;
+import net.minecraft.server.PlayerConnection;
 import org.bukkit.ChatColor;
-import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
+import org.bukkit.craftbukkit.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 
 import java.util.Collection;

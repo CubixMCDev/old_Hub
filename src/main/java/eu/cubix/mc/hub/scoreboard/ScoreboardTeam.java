@@ -1,8 +1,8 @@
 package eu.cubix.mc.hub.scoreboard;
 
-import net.minecraft.server.v1_8_R3.EntityPlayer;
-import net.minecraft.server.v1_8_R3.PacketPlayOutPlayerInfo;
-import net.minecraft.server.v1_8_R3.PacketPlayOutScoreboardTeam;
+import net.minecraft.server.EntityPlayer;
+import net.minecraft.server.PacketPlayOutPlayerInfo;
+import net.minecraft.server.PacketPlayOutScoreboardTeam;
 
 import java.lang.reflect.Field;
 import java.util.List;

@@ -9,7 +9,7 @@ import eu.cubix.mc.hub.task.VIPQueueTask;
 import eu.cubix.mc.hub.task.VIPplusQueueTask;
 import eu.cubix.mc.hub.tools.GuiBuilder;
 import eu.cubix.mc.hub.tools.ItemsBuilder;
-import fr.cubixmc.api.ranks.Ranks;
+import eu.cubixmc.com.ranks.Ranks;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
