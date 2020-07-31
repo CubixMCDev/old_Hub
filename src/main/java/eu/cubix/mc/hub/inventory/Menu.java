@@ -15,7 +15,7 @@ import eu.cubix.mc.hub.tools.CustomSkull;
 import eu.cubix.mc.hub.tools.GuiBuilder;
 import eu.cubix.mc.hub.tools.ItemFactory;
 import eu.cubix.mc.hub.tools.ItemsBuilder;
-import fr.cubixmc.api.ranks.Ranks;
+import eu.cubixmc.com.ranks.Ranks;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;

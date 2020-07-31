@@ -2,9 +2,6 @@ package eu.cubix.mc.hub.cosmetics.particles;
 
 import eu.cubix.mc.hub.Main;
 import eu.cubix.mc.hub.tools.ParticleData;
-import eu.cubix.mc.hub.tools.Particles;
-import eu.cubix.mc.hub.tools.UtilParticles;
-import net.minecraft.server.v1_8_R3.EnumParticle;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -20,7 +17,7 @@ public class SuperHero {
         this.player = player;
     }
 
-    private boolean[][] shape = {
+    private final boolean[][] shape = {
             {x, x, x, x, x,},
             {x, x, x, x, x,},
             {x, x, x, x, x,},
@@ -33,7 +30,7 @@ public class SuperHero {
 
     public void startSuperHero() {
         taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getInstance(), new Runnable() {
-            ParticleData particle = new ParticleData(player.getUniqueId());
+            final ParticleData particle = new ParticleData(player.getUniqueId());
 
             @Override
             public void run() {
@@ -42,7 +39,9 @@ public class SuperHero {
                 }
 
                 drawParticles(player.getPlayer().getLocation());
+                /*
                 UtilParticles.display(Particles.CLOUD, 0.15F, 0.1f, 0.15f, player.getPlayer().getLocation(), 4);
+                 */
             }
         }, 0, 1);
     }
@@ -51,8 +50,7 @@ public class SuperHero {
         double space = 0.2;
         double defX = location.getX() - (space * shape[0].length / 2) + space / 2;
         double x = defX;
-        double defY = location.getY() + 1.5;
-        double y = defY;
+        double y = location.getY() + 1.5;
         double angle = -((location.getYaw() + 180) / 60);
         angle += (location.getYaw() < -180 ? 3.25 : 2.985);
         for (int i = 0; i < shape.length; i++) {
@@ -74,7 +72,9 @@ public class SuperHero {
                     loc.add(v2);
 
                     for (int k = 0; k < 3; k++)
+                        /*
                         UtilParticles.display(255, 0, 0, loc);
+                         */
                     loc.subtract(v2);
                     loc.subtract(v);
                 }
@@ -94,7 +94,7 @@ public class SuperHero {
         return v.setX(x).setZ(z);
     }
 
-    public static final Vector rotateAroundAxisX(Vector v, double angle) {
+    public static Vector rotateAroundAxisX(Vector v, double angle) {
         double y, z, cos, sin;
         cos = Math.cos(angle);
         sin = Math.sin(angle);
@@ -103,7 +103,7 @@ public class SuperHero {
         return v.setY(y).setZ(z);
     }
 
-    public static final Vector rotateAroundAxisZ(Vector v, double angle) {
+    public static Vector rotateAroundAxisZ(Vector v, double angle) {
         double x, y, cos, sin;
         cos = Math.cos(angle);
         sin = Math.sin(angle);

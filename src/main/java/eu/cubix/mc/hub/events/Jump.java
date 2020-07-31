@@ -1,6 +1,6 @@
 package eu.cubix.mc.hub.events;
 
-import fr.cubixmc.api.ranks.Ranks;
+import eu.cubixmc.com.ranks.Ranks;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.block.Block;

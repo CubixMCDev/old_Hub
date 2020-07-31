@@ -2,8 +2,6 @@ package eu.cubix.mc.hub.cosmetics.particles;
 
 import eu.cubix.mc.hub.Main;
 import eu.cubix.mc.hub.tools.ParticleData;
-import eu.cubix.mc.hub.tools.ParticleEffect;
-import net.minecraft.server.v1_8_R3.EnumParticle;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -41,10 +39,12 @@ public class BloodHelix {
                     Vector v = new Vector();
                     v.setX(Math.cos(angle) * radius);
                     v.setZ(Math.sin(angle) * radius);
+                    /*
                     ParticleEffect packet1 = new ParticleEffect(EnumParticle.REDSTONE, location.add(v),
                             0.1f, 0.1f, 0.1f, 0.07f, 1);
                     for(Player p : Bukkit.getOnlinePlayers())
                         packet1.sendToPlayer(p);
+                     */
                     location.subtract(v);
                     location.add(0, 0.12d, 0);
                     radius -= 0.044f;
@@ -55,10 +55,12 @@ public class BloodHelix {
                     Vector v = new Vector();
                     v.setX(Math.cos(angle) * radius2);
                     v.setZ(Math.sin(angle) * radius2);
+                    /*
                     ParticleEffect packet1 = new ParticleEffect(EnumParticle.REDSTONE, location2.add(v),
                             0.1f, 0.1f, 0.1f, 0.07f, 1);
                     for(Player p : Bukkit.getOnlinePlayers())
                         packet1.sendToPlayer(p);
+                     */
                     location2.subtract(v);
                     location2.add(0, 0.12d, 0);
                     radius2 -= 0.044f;

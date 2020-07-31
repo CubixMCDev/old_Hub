@@ -2,8 +2,6 @@ package eu.cubix.mc.hub.cosmetics.particles;
 
 import eu.cubix.mc.hub.Main;
 import eu.cubix.mc.hub.tools.ParticleData;
-import eu.cubix.mc.hub.tools.UtilParticles;
-import net.minecraft.server.v1_8_R3.EnumParticle;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -20,7 +18,7 @@ public class AngelWings {
         this.player = player;
     }
 
-    private boolean[][] shape = {
+    private final boolean[][] shape = {
             {o, o, o, o, o, o, o, o, o, o, o, o, o, o, o, o, o, o},
             {o, x, x, x, x, o, o, o, o, o, o, o, x, x, x, x, o, o},
             {o, o, x, x, x, x, x, o, o, o, x, x, x, x, x, o, o, o},
@@ -34,7 +32,7 @@ public class AngelWings {
 
     public void startAngelWings() {
         taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getInstance(), new Runnable() {
-            ParticleData particle = new ParticleData(player.getUniqueId());
+            final ParticleData particle = new ParticleData(player.getUniqueId());
 
             @Override
             public void run() {
@@ -71,7 +69,9 @@ public class AngelWings {
                     location.add(v);
                     location.add(v2);
                     for (int k = 0; k < 3; k++)
+                        /*
                         UtilParticles.display(255, 255, 255, location);
+                         */
                     location.subtract(v2);
                     location.subtract(v);
                 }

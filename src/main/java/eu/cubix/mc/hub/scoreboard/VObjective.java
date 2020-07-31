@@ -1,10 +1,10 @@
 package eu.cubix.mc.hub.scoreboard;
 
 import eu.cubix.mc.hub.tools.Reflection;
-import net.minecraft.server.v1_8_R3.IScoreboardCriteria;
-import net.minecraft.server.v1_8_R3.PacketPlayOutScoreboardDisplayObjective;
-import net.minecraft.server.v1_8_R3.PacketPlayOutScoreboardObjective;
-import net.minecraft.server.v1_8_R3.PacketPlayOutScoreboardScore;
+import net.minecraft.server.IScoreboardCriteria;
+import net.minecraft.server.PacketPlayOutScoreboardDisplayObjective;
+import net.minecraft.server.PacketPlayOutScoreboardObjective;
+import net.minecraft.server.PacketPlayOutScoreboardScore;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 

@@ -2,8 +2,6 @@ package eu.cubix.mc.hub.cosmetics.particles;
 
 import eu.cubix.mc.hub.Main;
 import eu.cubix.mc.hub.tools.ParticleData;
-import eu.cubix.mc.hub.tools.ParticleEffect;
-import net.minecraft.server.v1_8_R3.EnumParticle;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -48,7 +46,7 @@ public class ColorCircle {
 
     public void startColorCircle() {
         taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getInstance(), new Runnable() {
-            ParticleData particle = new ParticleData(player.getUniqueId());
+            final ParticleData particle = new ParticleData(player.getUniqueId());
 
             @Override
             public void run() {
@@ -99,10 +97,12 @@ public class ColorCircle {
                 v.setY(BASE_HEIGHT + Math.sin(angleStep * 3) * heightDiffFactor); // The height of the columns is a sine wave.
                 loc = player.getPlayer().getLocation().add(v);
 
+                /*
                 ParticleEffect packet1 = new ParticleEffect(EnumParticle.REDSTONE, loc.clone().add(0, ROD_HEIGHT, 0),
                         0.1f, 0.1f, 0.1f, 0.07f, ((int) ROD_HEIGHT) * 5);
                 for(Player p : Bukkit.getOnlinePlayers())
                     packet1.sendToPlayer(p);
+                 */
 
                 angleStep += workingSpace / COLORS.size();
                 height += (i >= 3 && i <= 5) ? heightDiffFactor : -heightDiffFactor;
