@@ -8,9 +8,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
-import static eu.cubix.mc.hub.Main.api;
-
 public class ShopGadgets implements GuiBuilder {
+
     private final Main main;
 
     public ShopGadgets(Main main) {
@@ -76,8 +75,8 @@ public class ShopGadgets implements GuiBuilder {
     public void onClick(Player player, Inventory inv, ItemStack current, int slot) {
 
         if(current != null && current.getType() == Material.WOOL && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nMouton explosif")) {
-            if (api.getEcoManager().getBalanceCoins(player) >= 10) {
-                Main.getInstance().getGuiManager().open(player, GadgetSheepExplodeConfirm.class);
+            if (main.getAPI().get().getCoins(player.getUniqueId()) >= 10) {
+                main.getGuiManager().open(player, GadgetSheepExplodeConfirm.class);
             } else {
                 player.closeInventory();
                 player.sendMessage("§cCubixMC §4» §cErreur: vous n'avez pas assez de coins pour vous payer ce gadget.");
@@ -87,7 +86,7 @@ public class ShopGadgets implements GuiBuilder {
         switch (current.getType()) {
 
             case DARK_OAK_DOOR_ITEM:
-                Main.getInstance().getGuiManager().open(player, Shop.class);
+                main.getGuiManager().open(player, Shop.class);
                 break;
 
             default: break;

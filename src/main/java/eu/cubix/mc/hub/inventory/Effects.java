@@ -9,7 +9,8 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 public class Effects implements GuiBuilder {
-    private Main main;
+
+    private final Main main;
 
     public Effects(Main main) {
         this.main = main;
@@ -68,7 +69,7 @@ public class Effects implements GuiBuilder {
         switch (current.getType()) {
 
             case DARK_OAK_DOOR_ITEM:
-                Main.getInstance().getGuiManager().open(player, Cosmetics.class);
+                main.getGuiManager().open(player, Cosmetics.class);
                 break;
 
             case BARRIER:

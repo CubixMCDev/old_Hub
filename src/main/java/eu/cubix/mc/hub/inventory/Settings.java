@@ -10,9 +10,14 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.Arrays;
 
-import static eu.cubix.mc.hub.Main.api;
-
 public class Settings implements GuiBuilder {
+
+    private final Main main;
+
+    public Settings(Main main) {
+        this.main = main;
+    }
+
     @Override
     public String name() {
         return "§0Profil » Paramètres";
@@ -130,7 +135,7 @@ public class Settings implements GuiBuilder {
     public void onClick(Player player, Inventory inv, ItemStack current, int slot) {
         switch (current.getType()) {
             case DARK_OAK_DOOR_ITEM:
-                Main.getInstance().getGuiManager().open(player, Profile.class);
+                main.getGuiManager().open(player, Profile.class);
                 break;
         }
 

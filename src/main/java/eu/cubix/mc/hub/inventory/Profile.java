@@ -13,9 +13,14 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.Arrays;
 
-import static eu.cubix.mc.hub.Main.api;
-
 public class Profile implements GuiBuilder {
+
+    private final Main main;
+
+    public Profile(Main main) {
+        this.main = main;
+    }
+
     @Override
     public String name() {
         return "§0Profil";
@@ -57,14 +62,18 @@ public class Profile implements GuiBuilder {
 
         ItemsBuilder profil = new ItemsBuilder(Material.SKULL_ITEM, 1, (byte) 3)
                 .setName("§6§n"+player.getName())
-                .setLore(Arrays.asList("§eGrade: "+ api.getRankManager().getRank(player).getTagColor() + api.getRankManager().getRank(player).getNameTag(), "§eCrédits: §6" + api.getEcoManager().getBalanceCredits(player) + " \u24D2", "§eCoins: §6"+ api.getEcoManager().getBalanceCoins(player) + " \u26C3", "§eNiveau: §6" + api.getExpManager().getLevel(player.getUniqueId()), "§eExp: §6"+api.getExpManager().getExp(player.getUniqueId())+" / "+api.getExpManager().getXPfromLevel(api.getExpManager().getLevel(player.getUniqueId()))))
+                .setLore(Arrays.asList("§eGrade: "+ main.getAPI().get().getRankWithColors(player.getUniqueId()),
+                        "§eCrédits: §6" + main.getAPI().get().getCredits(player.getUniqueId()) + " \u24D2",
+                        "§eCoins: §6"+ main.getAPI().get().getCoins(player.getUniqueId()) + " \u26C3",
+                        "§eNiveau: §6" + main.getAPI().get().getLevel(player.getUniqueId()),
+                        "§eExp: §6"+ main.getAPI().get().getExp(player.getUniqueId())+" / "+ main.getAPI().get().getXPfromLevel(main.getAPI().get().getLevel(player.getUniqueId()))))
                 .setSkullOwner(player.getName());
         inv.setItem(4,profil.toItemStack());
 
         ItemsBuilder Pvpbox = new ItemsBuilder(Material.IRON_SWORD)
                 .setName("§6§nPvpbox")
                 .setFlags(ItemFlag.HIDE_ATTRIBUTES)
-                .setLore(Arrays.asList("§eKills: §6"+api.getPvPBoxManager().getKills(player), "§eMorts: §6"+api.getPvPBoxManager().getDeaths(player)));
+                .setLore(Arrays.asList("§eKills: §6"+main.getAPI().get().getPvPBoxManager().getKills(player), "§eMorts: §6"+api.getPvPBoxManager().getDeaths(player)));
         inv.setItem(20,Pvpbox.toItemStack());
 
         ItemsBuilder DeACoudre = new ItemsBuilder(Material.WOOL, 1, (byte) 1)
@@ -125,18 +134,18 @@ public class Profile implements GuiBuilder {
                 break;
 
             case REDSTONE_COMPARATOR:
-                Main.getInstance().getGuiManager().open(player, Settings.class);
+                main.getGuiManager().open(player, Settings.class);
                 break;
 
             default: break;
         }
 
         if (current.getType() == Material.RAW_FISH) {
-            Main.getInstance().getGuiManager().open(player, Friends.class);
+            main.getGuiManager().open(player, Friends.class);
         }
 
         if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nLangues")) {
-            Main.getInstance().getGuiManager().open(player, Languages.class);
+            main.getGuiManager().open(player, Languages.class);
         }
     }
 }

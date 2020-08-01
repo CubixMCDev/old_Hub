@@ -11,28 +11,30 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 public class ScoreboardManager {
+    private final Main main;
     private final Map<UUID, PersonalScoreboard> scoreboards;
     private final ScheduledFuture glowingTask;
     private final ScheduledFuture reloadingTask;
     private int ipCharIndex;
     private int cooldown;
 
-    public ScoreboardManager() {
+    public ScoreboardManager(Main main) {
+        this.main = main;
         scoreboards = new HashMap<>();
         ipCharIndex = 0;
         cooldown = 0;
 
-        glowingTask = Main.getInstance().getScheduledExecutorService().scheduleAtFixedRate(() ->
+        glowingTask = main.getScheduledExecutorService().scheduleAtFixedRate(() ->
         {
             String ip = colorIpAt();
             for (PersonalScoreboard scoreboard : scoreboards.values())
-                Main.getInstance().getExecutorMonoThread().execute(() -> scoreboard.setLines(ip));
+                main.getExecutorMonoThread().execute(() -> scoreboard.setLines(ip));
         }, 80, 80, TimeUnit.MILLISECONDS);
 
         reloadingTask = Main.getInstance().getScheduledExecutorService().scheduleAtFixedRate(() ->
         {
             for (PersonalScoreboard scoreboard : scoreboards.values())
-                Main.getInstance().getExecutorMonoThread().execute(scoreboard::reloadData);
+                main.getExecutorMonoThread().execute(scoreboard::reloadData);
         }, 1, 1, TimeUnit.SECONDS);
     }
 
@@ -44,7 +46,7 @@ public class ScoreboardManager {
         if (scoreboards.containsKey(player.getUniqueId())) {
             return;
         }
-        scoreboards.put(player.getUniqueId(), new PersonalScoreboard(player));
+        scoreboards.put(player.getUniqueId(), new PersonalScoreboard(main, player));
     }
 
     public void onLogout(Player player) {

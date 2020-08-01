@@ -11,6 +11,13 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 public class Languages implements GuiBuilder {
+
+    private final Main main;
+
+    public Languages(Main main) {
+        this.main = main;
+    }
+
     @Override
     public String name() {
         return "§0Profil » Langues";
@@ -79,7 +86,7 @@ public class Languages implements GuiBuilder {
     public void onClick(Player player, Inventory inv, ItemStack current, int slot) {
         switch (current.getType()) {
             case DARK_OAK_DOOR_ITEM:
-                Main.getInstance().getGuiManager().open(player, Profile.class);
+                main.getGuiManager().open(player, Profile.class);
                 break;
 
             default: break;

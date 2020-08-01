@@ -11,6 +11,13 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 
 public class Cosmetics implements GuiBuilder {
+
+    private final Main main;
+
+    public Cosmetics(Main main) {
+        this.main = main;
+    }
+
     @Override
     public String name() {
         return "§0Cosmétiques";
@@ -107,8 +114,8 @@ public class Cosmetics implements GuiBuilder {
                 ParticleData particle = new ParticleData(player.getUniqueId());
 
                 player.getInventory().setItem(6,new ItemStack(Material.AIR));
-                if(Main.Pets.containsKey(player.getName())){
-                    Main.Pets.get(player.getName()).remove();
+                if(main.Pets.containsKey(player.getName())){
+                    main.Pets.get(player.getName()).remove();
                 }
                 if(particle.hasID()) {
                     particle.endTask();

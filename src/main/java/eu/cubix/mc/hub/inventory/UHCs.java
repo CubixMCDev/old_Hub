@@ -9,7 +9,6 @@ import eu.cubix.mc.hub.task.VIPQueueTask;
 import eu.cubix.mc.hub.task.VIPplusQueueTask;
 import eu.cubix.mc.hub.tools.GuiBuilder;
 import eu.cubix.mc.hub.tools.ItemsBuilder;
-import eu.cubixmc.com.ranks.Ranks;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -17,9 +16,14 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.Arrays;
 
-import static eu.cubix.mc.hub.Main.api;
-
 public class UHCs implements GuiBuilder {
+
+    private final Main main;
+
+    public UHCs(Main main) {
+        this.main = main;
+    }
+
     @Override
     public String name() {
         return "§0Menu » UHCs";
@@ -77,12 +81,12 @@ public class UHCs implements GuiBuilder {
     public void onClick(Player player, Inventory inv, ItemStack current, int slot) {
         switch (current.getType()) {
             case DARK_OAK_DOOR_ITEM:
-                Main.getInstance().getGuiManager().open(player, Menu.class);
+                main.getGuiManager().open(player, Menu.class);
                 break;
 
             case GOLDEN_APPLE:
                 player.closeInventory();
-                if(api.getRankManager().getRank(player) == Ranks.VIP) {
+                if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip")) {
                     VIPQueue uhcrunQueue = Main.getInstance().getVIPQueueByName("UHCRun01");
                     if(uhcrunQueue.getPlayers().containsKey(player)) {
                         player.sendMessage("§cCubixMC §4» §cErreur: vous êtes déjà dans la file d'attente.");
@@ -96,7 +100,7 @@ public class UHCs implements GuiBuilder {
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + uhcrunQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder boutique = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
                     player.getInventory().setItem(4,boutique.toItemStack());
-                }else if(api.getRankManager().getRank(player) == Ranks.VIPPLUS) {
+                }else if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip+")) {
                     VIPplusQueue uhcrunQueue = Main.getInstance().getVIPplusQueueByName("UHCRun01");
                     if(uhcrunQueue.getPlayers().containsKey(player)) {
                         player.sendMessage("§cCubixMC §4» §cErreur: vous êtes déjà dans la file d'attente.");
@@ -111,10 +115,10 @@ public class UHCs implements GuiBuilder {
                     ItemsBuilder boutique = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
                     player.getInventory().setItem(4,boutique.toItemStack());
 
-                }else if (api.getRankManager().getRank(player).getPower() >= 60) {
+                }else if (player.hasPermission("queues.bypass")) {
                     player.sendMessage("§eCubixMC §6» §eConnexion au serveur en cours... §6(§eUHCRun§6)");
                     Menu.teleport(player, "UHCRun01");
-                }else if (api.getRankManager().getRank(player).getPower() >= 0) {
+                }else if (main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("player+")) {
                     Queue uhcrunQueue = Main.getInstance().getQueueByName("UHCRun01");
                     if (uhcrunQueue.getPlayers().containsKey(player)) {
                         player.sendMessage("§cCubixMC §4» §cErreur: vous êtes déjà dans la file d'attente.");
@@ -133,7 +137,7 @@ public class UHCs implements GuiBuilder {
 
             case BOOK:
                 player.closeInventory();
-                if(api.getRankManager().getRank(player) == Ranks.VIP) {
+                if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip")) {
                     VIPQueue uhcrunQueue = Main.getInstance().getVIPQueueByName("DeathNoteUHC01");
                     if(uhcrunQueue.getPlayers().containsKey(player)) {
                         player.sendMessage("§cCubixMC §4» §cErreur: vous êtes déjà dans la file d'attente.");
@@ -147,7 +151,7 @@ public class UHCs implements GuiBuilder {
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + uhcrunQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder boutique = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
                     player.getInventory().setItem(4,boutique.toItemStack());
-                }else if(api.getRankManager().getRank(player) == Ranks.VIPPLUS) {
+                }else if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip+")) {
                     VIPplusQueue uhcrunQueue = Main.getInstance().getVIPplusQueueByName("DeathNoteUHC01");
                     if(uhcrunQueue.getPlayers().containsKey(player)) {
                         player.sendMessage("§cCubixMC §4» §cErreur: vous êtes déjà dans la file d'attente.");
@@ -162,10 +166,10 @@ public class UHCs implements GuiBuilder {
                     ItemsBuilder boutique = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
                     player.getInventory().setItem(4,boutique.toItemStack());
 
-                }else if (api.getRankManager().getRank(player).getPower() >= 60) {
+                }else if (player.hasPermission("queues.bypass")) {
                     player.sendMessage("§eCubixMC §6» §eConnexion au serveur en cours... §6(§eDeathNoteUHC§6)");
                     Menu.teleport(player, "DeathNoteUHC01");
-                }else if (api.getRankManager().getRank(player).getPower() >= 0) {
+                }else if (main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("player+")) {
                     Queue uhcrunQueue = Main.getInstance().getQueueByName("DeathNoteUHC01");
                     if (uhcrunQueue.getPlayers().containsKey(player)) {
                         player.sendMessage("§cCubixMC §4» §cErreur: vous êtes déjà dans la file d'attente.");

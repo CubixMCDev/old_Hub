@@ -1,7 +1,5 @@
 package eu.cubix.mc.hub;
 
-import com.comphenix.protocol.ProtocolLibrary;
-import com.comphenix.protocol.ProtocolManager;
 import eu.cubix.mc.hub.commands.Key;
 import eu.cubix.mc.hub.cosmetics.gadgets.SheepExplode;
 import eu.cubix.mc.hub.crates.Vote;
@@ -36,10 +34,10 @@ public class Main extends JavaPlugin implements Listener {
     private final Map<Class<? extends GadgetBuilder>, GadgetBuilder> registerGadgets = new HashMap<>();
     private Map<Class<? extends GuiBuilder>, GuiBuilder> registeredMenus;
 
-    public static HashMap<String, Entity> Pets = new HashMap<String, Entity>();
+    public static HashMap<String, Entity> Pets = new HashMap<>();
 
-    private Map<Player, AntiAFK> antiAFK = new HashMap<Player, AntiAFK>();
-    private Map<Player, Integer> antiAFKTime = new HashMap<Player, Integer>();
+    private final Map<Player, AntiAFK> antiAFK = new HashMap<>();
+    private final Map<Player, Integer> antiAFKTime = new HashMap<>();
 
     private final ArrayList<Queue> queues = new ArrayList<>();
     private final ArrayList<VIPQueue> vipqueues = new ArrayList<>();
@@ -47,11 +45,7 @@ public class Main extends JavaPlugin implements Listener {
     private final ArrayList<AvantageQueue> avantagequeues = new ArrayList<>();
     private final ArrayList<String> games = new ArrayList<>();
 
-    public static CubixAPI api = (CubixAPI) Bukkit.getServer().getPluginManager().getPlugin("CubixAPI");
-    public ProtocolManager protocolManager;
-
     private CosmeticsManager cosmeticsManager;
-    private static Main instance;
 
     private ScoreboardManager scoreboardManager;
 
@@ -62,18 +56,14 @@ public class Main extends JavaPlugin implements Listener {
         return guiManager;
     }
 
-    public Bossbar bar;
+    //public Bossbar bar;
 
-    public Map<Class<? extends eu.cubix.mc.hub.tools.GuiBuilder>, GuiBuilder> getRegisteredMenus() {
+    public Map<Class<? extends GuiBuilder>, GuiBuilder> getRegisteredMenus() {
         return registeredMenus;
     }
 
     @Override
     public void onEnable() {
-        instance = this;
-
-        protocolManager = ProtocolLibrary.getProtocolManager();
-
         loadChannels();
         setQueues();
         loadGui();
@@ -88,14 +78,14 @@ public class Main extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(new Protect(), this);
         getServer().getPluginManager().registerEvents(new InteractEvent(this), this);
         getServer().getPluginManager().registerEvents(new GadgetsListener(this), this);
-        getServer().getPluginManager().registerEvents(new Jump(), this);
+        getServer().getPluginManager().registerEvents(new Jump(this), this);
         getServer().getPluginManager().registerEvents(new Vote(), this);
 
         getServer().getPluginCommand("key").setExecutor(new Key(this));
 
         scheduledExecutorService = Executors.newScheduledThreadPool(16);
         executorMonoThread = Executors.newScheduledThreadPool(1);
-        scoreboardManager = new ScoreboardManager();
+        scoreboardManager = new ScoreboardManager(this);
 
         cosmeticsManager = new CosmeticsManager(this);
 
@@ -123,12 +113,8 @@ public class Main extends JavaPlugin implements Listener {
         getScoreboardManager().onDisable();
     }
 
-    public static Main getInstance() {
-        return instance;
-    }
-
-    public static ProtocolManager protocolManager() {
-        return protocolManager();
+    public CubixAPI getAPI() {
+        return (CubixAPI) Bukkit.getPluginManager().getPlugin("CubixAPI");
     }
 
     public ScoreboardManager getScoreboardManager() {
@@ -147,28 +133,28 @@ public class Main extends JavaPlugin implements Listener {
         guiManager = new GuiManager();
         Bukkit.getPluginManager().registerEvents(guiManager, this);
         registeredMenus = new HashMap<>();
-        guiManager.addMenu(new Profile());
-        guiManager.addMenu(new Settings());
-        guiManager.addMenu(new Friends());
-        guiManager.addMenu(new Languages());
-        guiManager.addMenu(new Menu());
-        guiManager.addMenu(new UHCs());
-        guiManager.addMenu(new Cosmetics());
+        guiManager.addMenu(new Profile(this));
+        guiManager.addMenu(new Settings(this));
+        guiManager.addMenu(new Friends(this));
+        guiManager.addMenu(new Languages(this));
+        guiManager.addMenu(new Menu(this));
+        guiManager.addMenu(new UHCs(this));
+        guiManager.addMenu(new Cosmetics(this));
         guiManager.addMenu(new Pets(this));
         guiManager.addMenu(new Gadgets(this));
         guiManager.addMenu(new Particles(this));
         guiManager.addMenu(new Mounts(this));
         guiManager.addMenu(new Effects(this));
-        guiManager.addMenu(new Shop());
+        guiManager.addMenu(new Shop(this));
         guiManager.addMenu(new ShopGrades(this));
         guiManager.addMenu(new ShopParticles(this));
         guiManager.addMenu(new ShopGadgets(this));
         guiManager.addMenu(new ShopMounts(this));
         guiManager.addMenu(new ShopPets(this));
-        guiManager.addMenu(new HubChanger());
-        guiManager.addMenu(new GadgetSheepExplodeConfirm());
-        guiManager.addMenu(new GradeVIPConfirm());
-        guiManager.addMenu(new GradeVIPplusConfirm());
+        guiManager.addMenu(new HubChanger(this));
+        guiManager.addMenu(new GadgetSheepExplodeConfirm(this));
+        guiManager.addMenu(new GradeVIPConfirm(this));
+        guiManager.addMenu(new GradeVIPplusConfirm(this));
     }
 
     private void loadChannels(){

@@ -13,6 +13,12 @@ import java.util.Arrays;
 
 public class GradeVIPplusConfirm implements GuiBuilder {
 
+    private final Main main;
+
+    public GradeVIPplusConfirm(Main main) {
+        this.main = main;
+    }
+
     @Override
     public String name() {
         return "§0Boutique » Grades » VIP+";
@@ -66,12 +72,12 @@ public class GradeVIPplusConfirm implements GuiBuilder {
         if (current.getItemMeta().getDisplayName().equalsIgnoreCase("§aConfirmer")) {
             player.closeInventory();
             player.sendMessage("§eCubixMC §6» §eAchat en cours...");
-            TaskVIPplus task = new TaskVIPplus(player);
-            task.runTaskTimer(Main.getInstance(), 0, 20);
+            TaskVIPplus task = new TaskVIPplus(main, player);
+            task.runTaskTimer(main, 0, 20);
         }
 
         if (current.getItemMeta().getDisplayName().equalsIgnoreCase("§cAnnuler")) {
-            Main.getInstance().getGuiManager().open(player, ShopGrades.class);
+            main.getGuiManager().open(player, ShopGrades.class);
         }
     }
 }

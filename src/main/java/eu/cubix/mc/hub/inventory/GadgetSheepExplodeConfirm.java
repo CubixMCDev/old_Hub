@@ -13,6 +13,12 @@ import java.util.Arrays;
 
 public class GadgetSheepExplodeConfirm implements GuiBuilder {
 
+    private final Main main;
+
+    public GadgetSheepExplodeConfirm(Main main) {
+        this.main = main;
+    }
+
     @Override
     public String name() {
         return "§0Boutique » Gadgets » Mouton";
@@ -70,12 +76,12 @@ public class GadgetSheepExplodeConfirm implements GuiBuilder {
         if (current.getItemMeta().getDisplayName().equalsIgnoreCase("§aConfirmer")) {
             player.closeInventory();
             player.sendMessage("§eCubixMC §6» §eAchat en cours...");
-            TaskGadgetSheepExplode task = new TaskGadgetSheepExplode(Main.getInstance(),player);
-            task.runTaskTimer(Main.getInstance(), 0, 20);
+            TaskGadgetSheepExplode task = new TaskGadgetSheepExplode(main, player);
+            task.runTaskTimer(main, 0, 20);
         }
 
         if (current.getItemMeta().getDisplayName().equalsIgnoreCase("§cAnnuler")) {
-            Main.getInstance().getGuiManager().open(player, ShopGadgets.class);
+            main.getGuiManager().open(player, ShopGadgets.class);
         }
     }
 }

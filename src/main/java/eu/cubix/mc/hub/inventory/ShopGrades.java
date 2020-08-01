@@ -13,7 +13,8 @@ import org.bukkit.inventory.ItemStack;
 import java.util.Arrays;
 
 public class ShopGrades implements GuiBuilder {
-    private Main main;
+
+    private final Main main;
 
     public ShopGrades(Main main) {
         this.main = main;
@@ -57,7 +58,7 @@ public class ShopGrades implements GuiBuilder {
         inv.setItem(42,Separateur.toItemStack());
         inv.setItem(43,Separateur.toItemStack());
 
-        if(main.api.getRankManager().getRank(player).getPower() >= 10) {
+        if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip")) {
             ItemsBuilder VIP = new ItemsBuilder(Material.IRON_INGOT)
                     .setName("§6§nVIP§n §7(Acheté)")
                     .addEnchant(Enchantment.LUCK,1)
@@ -71,7 +72,7 @@ public class ShopGrades implements GuiBuilder {
             inv.setItem(21,VIP.toItemStack());
         }
 
-        if(main.api.getRankManager().getRank(player).getPower() >= 20) {
+        if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip+")) {
             ItemsBuilder VIPplus = new ItemsBuilder(Material.GOLD_INGOT)
                 .setName("§6§nVIP+§n §7(Acheté)")
                 .addEnchant(Enchantment.LUCK,1)
@@ -93,7 +94,7 @@ public class ShopGrades implements GuiBuilder {
     @Override
     public void onClick(Player player, Inventory inv, ItemStack current, int slot) {
         if (current.getItemMeta().getDisplayName().equalsIgnoreCase("§6VIP")) {
-            if(main.api.getEcoManager().getBalanceCredits(player) >= 2325) {
+            if(main.getAPI().get().getCredits(player.getUniqueId()) >= 2325) {
                 main.getGuiManager().open(player, GradeVIPConfirm.class);
             } else {
                 player.closeInventory();
@@ -102,7 +103,7 @@ public class ShopGrades implements GuiBuilder {
         }
 
         if (current.getItemMeta().getDisplayName().equalsIgnoreCase("§6VIP+")) {
-            if(main.api.getEcoManager().getBalanceCredits(player) >= 4650) {
+            if(main.getAPI().get().getCredits(player.getUniqueId()) >= 4650) {
                 main.getGuiManager().open(player, GradeVIPplusConfirm.class);
             } else {
                 player.closeInventory();

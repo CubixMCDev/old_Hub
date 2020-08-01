@@ -9,7 +9,8 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 public class ShopMounts implements GuiBuilder {
-    private Main main;
+
+    private final Main main;
 
     public ShopMounts(Main main) {
         this.main = main;
@@ -65,7 +66,7 @@ public class ShopMounts implements GuiBuilder {
         switch (current.getType()) {
 
             case DARK_OAK_DOOR_ITEM:
-                Main.getInstance().getGuiManager().open(player, Shop.class);
+                main.getGuiManager().open(player, Shop.class);
                 break;
 
             default: break;

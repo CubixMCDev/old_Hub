@@ -9,10 +9,12 @@ import java.util.UUID;
 
 public class PersonalScoreboard {
     private final Player player;
+    private Main main;
     private final UUID uuid;
     private final ObjectiveSign objectiveSign;
 
-    PersonalScoreboard(Player player){
+    PersonalScoreboard(Main main, Player player){
+        this.main = main;
         this.player = player;
         uuid = player.getUniqueId();
         objectiveSign = new ObjectiveSign("sidebar", "CubixMC");
@@ -24,18 +26,18 @@ public class PersonalScoreboard {
     public void reloadData(){}
 
     public void setLines(String ip){
-        double pourcent = (double) Main.api.getExpManager().getExp(player.getUniqueId()) / (double) Main.api.getExpManager().getXPfromLevel(Main.api.getExpManager().getLevel(player.getUniqueId()));
+        //double pourcent = (double) Main.api.get().getExp(player.getUniqueId()) / (double) Main.api.get().getXPfromLevel(Main.api.get().getExp(player.getUniqueId()));
         objectiveSign.setDisplayName("§eCubix§6MC");
 
         objectiveSign.setLine(0, "§1");
         objectiveSign.setLine(1, "§8» §6§n" + player.getName()+"§r §7("+((CraftPlayer) player).getHandle().ping+" ms)");
         objectiveSign.setLine(2, "§2");
-        objectiveSign.setLine(3, "§8» §6Grade: " +  Main.api.getRankManager().getRank(player).getTagColor() + Main.api.getRankManager().getRank(player).getNameTag().replaceAll(" ",""));
+        objectiveSign.setLine(3, "§8» §6Grade: " +  main.getAPI().get().getRankWithColors(player.getUniqueId()));
         objectiveSign.setLine(4, "§3");
-        objectiveSign.setLine(5, "§8» §6Crédits: §e"+ Main.api.getEcoManager().getBalanceCredits(player) + " \u24D2");
-        objectiveSign.setLine(6, "§8» §6Coins: §e" + Main.api.getEcoManager().getBalanceCoins(player) + " \u26C3");
+        objectiveSign.setLine(5, "§8» §6Crédits: §e"+ main.getAPI().get().getCoins(player.getUniqueId()) + " \u24D2");
+        objectiveSign.setLine(6, "§8» §6Coins: §e" + main.getAPI().get().getCredits(player.getUniqueId()) + " \u26C3");
         objectiveSign.setLine(7, "§4");
-        objectiveSign.setLine(8, "§8» §6Niveau: §e"+Main.api.getExpManager().getLevel(player.getUniqueId()));
+        objectiveSign.setLine(8, "§8» §6Niveau: §e"+ main.getAPI().get().getLevel(player.getUniqueId()));
         objectiveSign.setLine(9, "§8» §6[§e\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758§6] §e"+"Nope"+"%");
         objectiveSign.setLine(10, "§6");
         objectiveSign.setLine(11, "§8» §6Connectés: §e" + Bukkit.getOnlinePlayers().size() + "§6/§e" + Bukkit.getMaxPlayers());

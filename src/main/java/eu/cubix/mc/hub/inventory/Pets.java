@@ -13,7 +13,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 public class Pets implements GuiBuilder {
-    private Main main;
+    private final Main main;
 
     public Pets(Main main) {
         this.main = main;
@@ -252,7 +252,7 @@ public class Pets implements GuiBuilder {
         switch (current.getType()) {
 
             case DARK_OAK_DOOR_ITEM:
-                Main.getInstance().getGuiManager().open(player, Cosmetics.class);
+                main.getGuiManager().open(player, Cosmetics.class);
                 break;
 
             case BARRIER:

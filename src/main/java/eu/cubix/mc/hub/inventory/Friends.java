@@ -14,9 +14,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import static eu.cubix.mc.hub.Main.api;
-
 public class Friends implements GuiBuilder {
+
+    private final Main main;
+
+    public Friends(Main main) {
+        this.main = main;
+    }
 
     @Override
     public String name() {
@@ -57,7 +61,7 @@ public class Friends implements GuiBuilder {
         inv.setItem(43,Separateur.toItemStack());
 
 
-        List<UUID> friends = api.getFriendsManager().getFriends(player.getUniqueId());
+        List<UUID> friends = main.getAPI().get().getFriendsManager().getFriends(player.getUniqueId());
         for(int i = 0; i < friends.size(); i++) {
             OfflinePlayer friend = Bukkit.getOfflinePlayer(friends.get(i));
             if (friend.isOnline()) {
@@ -92,7 +96,7 @@ public class Friends implements GuiBuilder {
 
         switch (current.getType()) {
             case DARK_OAK_DOOR_ITEM:
-                Main.getInstance().getGuiManager().open(player, Profile.class);
+                main.getGuiManager().open(player, Profile.class);
                 break;
 
             default: break;
