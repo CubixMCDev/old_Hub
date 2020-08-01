@@ -15,7 +15,6 @@ import eu.cubix.mc.hub.tools.CustomSkull;
 import eu.cubix.mc.hub.tools.GuiBuilder;
 import eu.cubix.mc.hub.tools.ItemFactory;
 import eu.cubix.mc.hub.tools.ItemsBuilder;
-import eu.cubixmc.com.ranks.Ranks;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -27,9 +26,14 @@ import org.bukkit.inventory.ItemStack;
 import java.util.Arrays;
 import java.util.Objects;
 
-import static eu.cubix.mc.hub.Main.api;
-
 public class Menu implements GuiBuilder {
+
+    private final Main main;
+
+    public Menu(Main main) {
+        this.main = main;
+    }
+
     @Override
     public String name() {
         return "§0Menu";
@@ -227,7 +231,7 @@ public class Menu implements GuiBuilder {
                 
             case IRON_SWORD:
             	player.closeInventory();
-            	if(api.getRankManager().getRank(player) == Ranks.VIP) {
+            	if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip")) {
                 	VIPQueue pvpQueue = Main.getInstance().getVIPQueueByName("Pvp");
                     if(pvpQueue.getPlayers().containsKey(player)) {
                         player.sendMessage("§cCubixMC §4» §cErreur: vous êtes déjà dans la file d'attente.");
@@ -241,7 +245,7 @@ public class Menu implements GuiBuilder {
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + pvpQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
                     player.getInventory().setItem(2,quitQueue.toItemStack());
-                }else if(api.getRankManager().getRank(player) == Ranks.VIPPLUS){
+                }else if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip+")){
                     VIPplusQueue pvpQueue = Main.getInstance().getVIPplusQueueByName("Pvp");
                     if(pvpQueue.getPlayers().containsKey(player)) {
                         player.sendMessage("§cCubixMC §4» §cErreur: vous êtes déjà dans la file d'attente.");
@@ -256,10 +260,10 @@ public class Menu implements GuiBuilder {
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
                     player.getInventory().setItem(2,quitQueue.toItemStack());
                     
-                }else if (api.getRankManager().getRank(player).getPower() >= 60) {
+                }else if (player.hasPermission("queues.bypass")) {
                 	player.sendMessage("§eCubixMC §6» §eConnexion au serveur en cours... §6(§ePvp§6)");
                     teleport(player, "Pvp");
-                }else if (api.getRankManager().getRank(player).getPower() >= 30){
+                }else if (main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("youtube")){
                     AvantageQueue pvpQueue = Main.getInstance().getAvantageQueueByName("Pvp");
                     if(pvpQueue.getPlayers().containsKey(player)) {
                         player.sendMessage("§cCubixMC §4» §cErreur: vous êtes déjà dans la file d'attente.");
@@ -273,7 +277,7 @@ public class Menu implements GuiBuilder {
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + pvpQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
                     player.getInventory().setItem(2,quitQueue.toItemStack());
-                }else if (api.getRankManager().getRank(player).getPower() >= 0){
+                }else if (main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("player")){
                     Queue pvpQueue = Main.getInstance().getQueueByName("Pvp");
                     if(pvpQueue.getPlayers().containsKey(player)) {
                         player.sendMessage("§cCubixMC §4» §cErreur: vous êtes déjà dans la file d'attente.");
@@ -292,7 +296,7 @@ public class Menu implements GuiBuilder {
             
             case WOOL:
                 player.closeInventory();
-                if(api.getRankManager().getRank(player) == Ranks.VIP) {
+                if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip")) {
                 	VIPQueue dacQueue = Main.getInstance().getVIPQueueByName("DeACoudre");
                     if(dacQueue.getPlayers().containsKey(player)) {
                         player.sendMessage("§cCubixMC §4» §cErreur: vous êtes déjà dans la file d'attente.");
@@ -306,7 +310,7 @@ public class Menu implements GuiBuilder {
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + dacQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
                     player.getInventory().setItem(2,quitQueue.toItemStack());
-                }else if(api.getRankManager().getRank(player) == Ranks.VIPPLUS){
+                }else if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip+")){
                     VIPplusQueue dacQueue = Main.getInstance().getVIPplusQueueByName("DeACoudre");
                     if(dacQueue.getPlayers().containsKey(player)) {
                         player.sendMessage("§cCubixMC §4» §cErreur: vous êtes déjà dans la file d'attente.");
@@ -321,10 +325,10 @@ public class Menu implements GuiBuilder {
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
                     player.getInventory().setItem(2,quitQueue.toItemStack());
                     
-                }else if (api.getRankManager().getRank(player).getPower() >= 60) {
+                }else if (player.hasPermission("queues.bypass")) {
                 	player.sendMessage("§eCubixMC §6» §eConnexion au serveur en cours... §6(§eDeACoudre§6)");
                     teleport(player, "DeACoudre");
-                }else if (api.getRankManager().getRank(player).getPower() >= 30){
+                }else if (main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("youtube")){
                     AvantageQueue dacQueue = Main.getInstance().getAvantageQueueByName("DeACoudre");
                     if(dacQueue.getPlayers().containsKey(player)) {
                         player.sendMessage("§cCubixMC §4» §cErreur: vous êtes déjà dans la file d'attente.");
@@ -338,7 +342,7 @@ public class Menu implements GuiBuilder {
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + dacQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
                     player.getInventory().setItem(2,quitQueue.toItemStack());
-                }else if (api.getRankManager().getRank(player).getPower() >= 0){
+                }else if (main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("player")){
                     Queue dacQueue = Main.getInstance().getQueueByName("DeACoudre");
                     if(dacQueue.getPlayers().containsKey(player)) {
                         player.sendMessage("§cCubixMC §4» §cErreur: vous êtes déjà dans la file d'attente.");
@@ -357,7 +361,7 @@ public class Menu implements GuiBuilder {
                 
             case STICK:
             	player.closeInventory();
-            	if(api.getRankManager().getRank(player) == Ranks.VIP) {
+            	if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip")) {
                 	VIPQueue punchQueue = Main.getInstance().getVIPQueueByName("Punch");
                     if(punchQueue.getPlayers().containsKey(player)) {
                         player.sendMessage("§cCubixMC §4» §cErreur: vous êtes déjà dans la file d'attente.");
@@ -371,7 +375,7 @@ public class Menu implements GuiBuilder {
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + punchQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
                     player.getInventory().setItem(2,quitQueue.toItemStack());
-                }else if(api.getRankManager().getRank(player) == Ranks.VIPPLUS) {
+                }else if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip+")) {
                     VIPplusQueue punchQueue = Main.getInstance().getVIPplusQueueByName("Punch");
                     if(punchQueue.getPlayers().containsKey(player)) {
                         player.sendMessage("§cCubixMC §4» §cErreur: vous êtes déjà dans la file d'attente.");
@@ -386,10 +390,10 @@ public class Menu implements GuiBuilder {
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
                     player.getInventory().setItem(2,quitQueue.toItemStack());
                     
-                }else if (api.getRankManager().getRank(player).getPower() >= 60) {
+                }else if (player.hasPermission("queues.bypass")) {
                 	player.sendMessage("§eCubixMC §6» §eConnexion au serveur en cours... §6(§ePunch§6)");
                     teleport(player, "Punch");
-                }else if (api.getRankManager().getRank(player).getPower() >= 30){
+                }else if (main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("youtube")){
                     AvantageQueue punchQueue = Main.getInstance().getAvantageQueueByName("Punch");
                     if(punchQueue.getPlayers().containsKey(player)) {
                         player.sendMessage("§cCubixMC §4» §cErreur: vous êtes déjà dans la file d'attente.");
@@ -403,7 +407,7 @@ public class Menu implements GuiBuilder {
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + punchQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
                     player.getInventory().setItem(2,quitQueue.toItemStack());
-                }else if (api.getRankManager().getRank(player).getPower() >= 0){
+                }else if (main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("player")){
                     Queue punchQueue = Main.getInstance().getQueueByName("Punch");
                     if(punchQueue.getPlayers().containsKey(player)) {
                         player.sendMessage("§cCubixMC §4» §cErreur: vous êtes déjà dans la file d'attente.");
@@ -426,7 +430,7 @@ public class Menu implements GuiBuilder {
 
             case APPLE:
                 player.closeInventory();
-                if(api.getRankManager().getRank(player) == Ranks.VIP) {
+                if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip")) {
                     VIPQueue sgQueue = Main.getInstance().getVIPQueueByName("SG01");
                     if(sgQueue.getPlayers().containsKey(player)) {
                         player.sendMessage("§cCubixMC §4» §cErreur: vous êtes déjà dans la file d'attente.");
@@ -440,7 +444,7 @@ public class Menu implements GuiBuilder {
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + sgQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
                     player.getInventory().setItem(2,quitQueue.toItemStack());
-                }else if(api.getRankManager().getRank(player) == Ranks.VIPPLUS) {
+                }else if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip+")) {
                     VIPplusQueue sgQueue = Main.getInstance().getVIPplusQueueByName("SG01");
                     if(sgQueue.getPlayers().containsKey(player)) {
                         player.sendMessage("§cCubixMC §4» §cErreur: vous êtes déjà dans la file d'attente.");
@@ -455,10 +459,10 @@ public class Menu implements GuiBuilder {
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
                     player.getInventory().setItem(2,quitQueue.toItemStack());
 
-                }else if (api.getRankManager().getRank(player).getPower() >= 60) {
+                }else if (player.hasPermission("queues.bypass")) {
                     player.sendMessage("§eCubixMC §6» §eConnexion au serveur en cours... §6(§eSurvival Games§6)");
                     teleport(player, "SG01");
-                }else if (api.getRankManager().getRank(player).getPower() >= 30){
+                }else if (main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("youtube")){
                     AvantageQueue sgQueue = Main.getInstance().getAvantageQueueByName("SG01");
                     if(sgQueue.getPlayers().containsKey(player)) {
                         player.sendMessage("§cCubixMC §4» §cErreur: vous êtes déjà dans la file d'attente.");
@@ -472,7 +476,7 @@ public class Menu implements GuiBuilder {
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + sgQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
                     player.getInventory().setItem(2,quitQueue.toItemStack());
-                }else if (api.getRankManager().getRank(player).getPower() >= 0){
+                }else if (main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("player")){
                     Queue sgQueue = Main.getInstance().getQueueByName("SG01");
                     if(sgQueue.getPlayers().containsKey(player)) {
                         player.sendMessage("§cCubixMC §4» §cErreur: vous êtes déjà dans la file d'attente.");

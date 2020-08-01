@@ -11,7 +11,7 @@ import org.bukkit.inventory.ItemStack;
 
 public class Gadgets implements GuiBuilder {
 
-    private Main main;
+    private final Main main;
 
     public Gadgets(Main main) {
         this.main = main;
@@ -89,7 +89,7 @@ public class Gadgets implements GuiBuilder {
                 break;
 
             case WOOL:
-                Main.getInstance().give(SheepExplode.class, player);
+                main.give(SheepExplode.class, player);
                 player.closeInventory();
                 break;
 

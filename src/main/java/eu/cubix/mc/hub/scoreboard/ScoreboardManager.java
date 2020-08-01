@@ -11,13 +11,15 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 public class ScoreboardManager {
+    private final Main main;
     private final Map<UUID, PersonalScoreboard> scoreboards;
     private final ScheduledFuture glowingTask;
     private final ScheduledFuture reloadingTask;
     private int ipCharIndex;
     private int cooldown;
 
-    public ScoreboardManager() {
+    public ScoreboardManager(Main main) {
+        this.main = main;
         scoreboards = new HashMap<>();
         ipCharIndex = 0;
         cooldown = 0;
@@ -44,7 +46,7 @@ public class ScoreboardManager {
         if (scoreboards.containsKey(player.getUniqueId())) {
             return;
         }
-        scoreboards.put(player.getUniqueId(), new PersonalScoreboard(player));
+        scoreboards.put(player.getUniqueId(), new PersonalScoreboard(main, player));
     }
 
     public void onLogout(Player player) {

@@ -1,7 +1,6 @@
 package eu.cubix.mc.hub.commands;
 
 import eu.cubix.mc.hub.Main;
-import eu.cubixmc.com.ranks.Ranks;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

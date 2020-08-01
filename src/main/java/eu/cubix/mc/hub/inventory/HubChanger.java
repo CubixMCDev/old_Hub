@@ -11,6 +11,13 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 
 public class HubChanger implements GuiBuilder {
+
+    private final Main main;
+
+    public HubChanger(Main main) {
+        this.main = main;
+    }
+
     @Override
     public String name() {
         return "§0Menu » Hubs";
@@ -60,7 +67,7 @@ public class HubChanger implements GuiBuilder {
     public void onClick(Player player, Inventory inv, ItemStack current, int slot) {
         switch (current.getType()) {
             case DARK_OAK_DOOR_ITEM:
-                Main.getInstance().getGuiManager().open(player, Menu.class);
+                main.getGuiManager().open(player, Menu.class);
                 break;
 
             default: break;

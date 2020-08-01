@@ -12,7 +12,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 
 public class Particles implements GuiBuilder {
-    private Main main;
+    private final Main main;
 
     public Particles(Main main) {
         this.main = main;

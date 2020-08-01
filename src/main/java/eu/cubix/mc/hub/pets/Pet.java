@@ -3,7 +3,7 @@ package eu.cubix.mc.hub.pets;
 import eu.cubix.mc.hub.Main;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Location;
-import org.bukkit.craftbukkit.entity.CraftCreature;
+import org.bukkit.craftbukkit.v1_8_R3.entity.CraftCreature;
 import org.bukkit.entity.Creature;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;

@@ -15,7 +15,6 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.Inventory;
 
-import java.lang.Math;
 import java.util.UUID;
 
 public class PlayerEvent implements Listener {
@@ -36,17 +35,16 @@ public class PlayerEvent implements Listener {
         UUID uuid = player.getUniqueId();
         Location spawn = new Location(Bukkit.getServer().getWorld("Hub"), 110.5, 16, 772.5, 180, 0);
         Location prison = new Location(Bukkit.getServer().getWorld("Hub"), 145, 3, 756, 0, 0);
-        double pourcent = (double) Main.api.getExpManager().getExp(player.getUniqueId()) / (double) Main.api.getExpManager().getXPfromLevel(Main.api.getExpManager().getLevel(player.getUniqueId()));
 
         Main.getInstance().getScoreboardManager().onLogin(player);
-        //if(!Main.getInstance().bar.getBar().getPlayers().contains(e.getPlayer())) {
-            //Main.getInstance().bar.addPlayer(e.getPlayer());
+        //if(!main.bar.getBar().getPlayers().contains(e.getPlayer())) {
+            //main.bar.addPlayer(e.getPlayer());
     //}
 
         e.getPlayer().getInventory().setHeldItemSlot(4);
 
-        if( Main.api.getRankManager().getRank(player).getPower() >= 10) {
-            e.setJoinMessage("§e" + Main.api.getRankManager().getRank(player).getTagColor() + Main.api.getRankManager().getRank(player).getNameTag() + "§8\u2758§r " + Main.api.getRankManager().getRank(player).getTagColor() + player.getName() + " §6a rejoint le hub !");
+        if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip")) {
+            e.setJoinMessage("§e" + main.getAPI().get().getRankWithColors(player.getUniqueId()) + "§8\u2758§r " + player.getName() + " §6a rejoint le hub !");
         } else {
             e.setJoinMessage("");
         }
@@ -92,13 +90,22 @@ public class PlayerEvent implements Listener {
             title.send(player,1,7,1);
             actionBar.send(player);
 
-            Hologram hologram = new Hologram("§6§lVotre profil", "§8§m---------------------------", "§6Pseudo : §e"+player.getName(), "§6Grade : §e"+Main.api.getRankManager().getRank(player).getTagColor() + Main.api.getRankManager().getRank(player).getNameTag().replaceAll(" ",""), "§6Crédits : §e"+Main.api.getEcoManager().getBalanceCredits(player) + " \u24D2", "§6Coins : §e"+Main.api.getEcoManager().getBalanceCoins(player) + " \u26C3", "§6Temps de jeu : §e"+"0 minutes §c(Soon)", "§6Niveau : §e"+Main.api.getExpManager().getLevel(player.getUniqueId())+" §6(§e"+Main.api.getExpManager().getExp(player.getUniqueId())+" Exp.§6)", "§6Progression : §e"+"§6[§e\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758§6] §e"+Math.floor(pourcent)+"%", "§8§m---------------------------");
+            Hologram hologram = new Hologram("§6§lVotre profil",
+                    "§8§m---------------------------",
+                    "§6Pseudo : §e"+player.getName(),
+                    "§6Grade : §e"+ main.getAPI().get().getRankWithColors(player.getUniqueId()),
+                    "§6Crédits : §e" + main.getAPI().get().getCredits(player.getUniqueId()) + " \u24D2",
+                    "§6Coins : §e"+ main.getAPI().get().getCoins(player.getUniqueId()) + " \u26C3",
+                    "§6Temps de jeu : §e"+"0 minutes §c(Soon)",
+                    "§6Niveau : §e"+main.getAPI().get().getLevel(player.getUniqueId())+" §6(§e"+main.getAPI().get().getExp(player.getUniqueId())+" Exp.§6)",
+                    "§6Progression : §e"+"§6[§e\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758§6] §e"+"0%",
+                    "§8§m---------------------------");
             hologram.show(player, new Location(player.getWorld(),110.5,15.5,765.5));
 
             Hologram hologram2 = new Hologram("§6Caisse", "§eClé de vote");
             hologram2.show(player, new Location(player.getWorld(),103.5,16,765.5));
 
-            player.setAllowFlight(Main.api.getRankManager().getRank(player).getPower() >= 60);
+            player.setAllowFlight(player.hasPermission("fly.hub"));
         }
 
         player.setHealth(2.0);
@@ -107,7 +114,7 @@ public class PlayerEvent implements Listener {
         player.setGameMode(GameMode.ADVENTURE);
         player.playSound(player.getLocation(), Sound.ORB_PICKUP, 1f, 1f);
 
-        if( Main.api.getRankManager().getRank(player).getPower() <= 50) {
+        if(player.hasPermission("antiafk.bypass")) {
             AntiAFK antiAFK = new AntiAFK(player, player.getLocation().getBlock());
             main.getAntiAFK().put(player, antiAFK);
             antiAFK.runTaskTimer(main, 0L, 20L);
@@ -119,8 +126,8 @@ public class PlayerEvent implements Listener {
         Player player = e.getPlayer();
         ParticleData particle = new ParticleData(player.getUniqueId());
 
-        if(Main.api.getRankManager().getRank(player).getPower() >= 10) {
-            e.setQuitMessage("§e" + Main.api.getRankManager().getRank(player).getTagColor() + Main.api.getRankManager().getRank(player).getNameTag() + "§8\u2758§r " + Main.api.getRankManager().getRank(player).getTagColor() + player.getName() + " §6a quitté le hub !");
+        if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip")) {
+            e.setQuitMessage("§e" + main.getAPI().get().getRankWithColors(player.getUniqueId()) + "§8\u2758§r " + player.getName() + " §6a quitté le hub !");
         } else {
             e.setQuitMessage("");
         }

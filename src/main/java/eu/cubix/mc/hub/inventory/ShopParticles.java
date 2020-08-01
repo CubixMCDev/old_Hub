@@ -9,7 +9,8 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 public class ShopParticles implements GuiBuilder {
-    private Main main;
+    private final Main main;
+
     public ShopParticles(Main main) {
         this.main = main;
     }
@@ -64,7 +65,7 @@ public class ShopParticles implements GuiBuilder {
         switch (current.getType()) {
 
             case DARK_OAK_DOOR_ITEM:
-                Main.getInstance().getGuiManager().open(player, Shop.class);
+                main.getGuiManager().open(player, Shop.class);
                 break;
 
             default: break;

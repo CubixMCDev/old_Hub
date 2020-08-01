@@ -13,6 +13,12 @@ import java.util.Arrays;
 
 public class GradeVIPConfirm implements GuiBuilder {
 
+    private final Main main;
+
+    public GradeVIPConfirm(Main main) {
+        this.main = main;
+    }
+
     @Override
     public String name() {
         return "§0Boutique » Grades » VIP";
@@ -62,17 +68,17 @@ public class GradeVIPConfirm implements GuiBuilder {
     }
 
     @Override
-    public void onClick(Player player, Inventory inv, ItemStack current, int slot) throws InterruptedException {
+    public void onClick(Player player, Inventory inv, ItemStack current, int slot) {
 
         if (current.getItemMeta().getDisplayName().equalsIgnoreCase("§aConfirmer")) {
             player.closeInventory();
             player.sendMessage("§eCubixMC §6» §eAchat en cours...");
-            TaskVIP task = new TaskVIP(player);
-            task.runTaskTimer(Main.getInstance(), 0, 20);
+            TaskVIP task = new TaskVIP(main, player);
+            task.runTaskTimer(main, 0, 20);
         }
 
         if (current.getItemMeta().getDisplayName().equalsIgnoreCase("§cAnnuler")) {
-            Main.getInstance().getGuiManager().open(player, ShopGrades.class);
+            main.getGuiManager().open(player, ShopGrades.class);
         }
     }
 }

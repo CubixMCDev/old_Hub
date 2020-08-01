@@ -9,6 +9,13 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 public class Shop implements GuiBuilder {
+
+    private final Main main;
+
+    public Shop(Main main) {
+        this.main = main;
+    }
+
     @Override
     public String name() {
         return "§0Boutique";
@@ -83,23 +90,23 @@ public class Shop implements GuiBuilder {
     public void onClick(Player player, Inventory inv, ItemStack current, int slot) {
         switch (current.getType()) {
             case DIAMOND:
-                Main.getInstance().getGuiManager().open(player, ShopGrades.class);
+                main.getGuiManager().open(player, ShopGrades.class);
                 break;
 
             case PISTON_BASE:
-                Main.getInstance().getGuiManager().open(player, ShopGadgets.class);
+                main.getGuiManager().open(player, ShopGadgets.class);
                 break;
 
             case REDSTONE:
-                Main.getInstance().getGuiManager().open(player, ShopParticles.class);
+                main.getGuiManager().open(player, ShopParticles.class);
                 break;
 
             case BONE:
-                Main.getInstance().getGuiManager().open(player, ShopPets.class);
+                main.getGuiManager().open(player, ShopPets.class);
                 break;
 
             case SADDLE:
-                Main.getInstance().getGuiManager().open(player, ShopMounts.class);
+                main.getGuiManager().open(player, ShopMounts.class);
                 break;
 
             case DARK_OAK_DOOR_ITEM:
