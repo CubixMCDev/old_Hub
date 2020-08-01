@@ -24,17 +24,17 @@ public class ScoreboardManager {
         ipCharIndex = 0;
         cooldown = 0;
 
-        glowingTask = Main.getInstance().getScheduledExecutorService().scheduleAtFixedRate(() ->
+        glowingTask = main.getScheduledExecutorService().scheduleAtFixedRate(() ->
         {
             String ip = colorIpAt();
             for (PersonalScoreboard scoreboard : scoreboards.values())
-                Main.getInstance().getExecutorMonoThread().execute(() -> scoreboard.setLines(ip));
+                main.getExecutorMonoThread().execute(() -> scoreboard.setLines(ip));
         }, 80, 80, TimeUnit.MILLISECONDS);
 
         reloadingTask = Main.getInstance().getScheduledExecutorService().scheduleAtFixedRate(() ->
         {
             for (PersonalScoreboard scoreboard : scoreboards.values())
-                Main.getInstance().getExecutorMonoThread().execute(scoreboard::reloadData);
+                main.getExecutorMonoThread().execute(scoreboard::reloadData);
         }, 1, 1, TimeUnit.SECONDS);
     }
 

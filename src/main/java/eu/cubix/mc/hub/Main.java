@@ -46,7 +46,6 @@ public class Main extends JavaPlugin implements Listener {
     private final ArrayList<String> games = new ArrayList<>();
 
     private CosmeticsManager cosmeticsManager;
-    private static Main instance;
 
     private ScoreboardManager scoreboardManager;
 
@@ -59,14 +58,12 @@ public class Main extends JavaPlugin implements Listener {
 
     //public Bossbar bar;
 
-    public Map<Class<? extends eu.cubix.mc.hub.tools.GuiBuilder>, GuiBuilder> getRegisteredMenus() {
+    public Map<Class<? extends GuiBuilder>, GuiBuilder> getRegisteredMenus() {
         return registeredMenus;
     }
 
     @Override
     public void onEnable() {
-        instance = this;
-
         loadChannels();
         setQueues();
         loadGui();
@@ -114,10 +111,6 @@ public class Main extends JavaPlugin implements Listener {
         }
 
         getScoreboardManager().onDisable();
-    }
-
-    public static Main getInstance() {
-        return instance;
     }
 
     public CubixAPI getAPI() {
