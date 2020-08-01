@@ -38,7 +38,6 @@ end uft-8
 
 repositories {
     mavenLocal()
-    maven { url = uri('https://hub.spigotmc.org/nexus/content/repositories/snapshots/') }
 
     maven { url = uri('https://repo.dmulloy2.net/nexus/repository/public/') }
 
@@ -48,7 +47,6 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT'
     compile (name: 'spigot', ext: 'jar')
 }
 
