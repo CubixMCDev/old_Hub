@@ -22,12 +22,14 @@ import java.util.UUID;
 
 public class Vote implements Listener {
 
+    private final Main main;
     Map<UUID, Integer> crateUsesMap;
     Random random;
 
     String[] prizes = {"Material:Diamond:&e&lDiamant", "Material:Dirt:&e&lTerre", "Money:Coins:&e&lCoins"};
 
-    public Vote() {
+    public Vote(Main main) {
+        this.main = main;
         this.random = new Random();
         this.crateUsesMap = new HashMap<UUID, Integer>();
     }
@@ -77,7 +79,7 @@ public class Vote implements Listener {
 
                 cancel();
             }
-        }.runTaskLater(Main.getInstance(), delay);
+        }.runTaskLater(main, delay);
     }
 
     void selectPrize(final  Player player, final Inventory inventory) {
@@ -106,7 +108,7 @@ public class Vote implements Listener {
                     inventory.setItem(13, prizeItem);
                 }
             }
-        }.runTaskLater(Main.getInstance(), 55L);
+        }.runTaskLater(main, 55L);
     }
 
     @EventHandler

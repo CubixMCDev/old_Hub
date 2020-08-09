@@ -14,7 +14,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.Collections;
 
 public class Key implements CommandExecutor {
-    Main main;
+
+    private final Main main;
 
     public Key(Main main) {
         this.main = main;
@@ -28,7 +29,7 @@ public class Key implements CommandExecutor {
         Player player = (Player) cs;
 
         if(cmd.getName().equalsIgnoreCase("key")) {
-            if (Main.api.getRankManager().getRank(player) == Ranks.ADMIN) {
+            if (player.hasPermission("*")) {
                 ItemStack voteKey = new ItemStack(Material.TRIPWIRE_HOOK);
                 ItemMeta meta = voteKey.getItemMeta();
                 meta.setDisplayName("§6Clé de vote");

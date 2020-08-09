@@ -73,7 +73,7 @@ public class Profile implements GuiBuilder {
         ItemsBuilder Pvpbox = new ItemsBuilder(Material.IRON_SWORD)
                 .setName("§6§nPvpbox")
                 .setFlags(ItemFlag.HIDE_ATTRIBUTES)
-                .setLore(Arrays.asList("§eKills: §6"+main.getAPI().get().getPvPBoxManager().getKills(player), "§eMorts: §6"+api.getPvPBoxManager().getDeaths(player)));
+                .setLore(Arrays.asList("§eKills: §6"+"main.getAPI().getUserManager().getUser(player.getUniqueId()).getKills(player)", "§eMorts: §6"+"api.getPvPBoxManager().getDeaths(player)"));
         inv.setItem(20,Pvpbox.toItemStack());
 
         ItemsBuilder DeACoudre = new ItemsBuilder(Material.WOOL, 1, (byte) 1)

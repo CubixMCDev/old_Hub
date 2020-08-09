@@ -61,7 +61,7 @@ public class Friends implements GuiBuilder {
         inv.setItem(43,Separateur.toItemStack());
 
 
-        List<UUID> friends = main.getAPI().get().getFriendsManager().getFriends(player.getUniqueId());
+        List<UUID> friends = main.getAPI().getFriendsManager().getFriends(player.getUniqueId());
         for(int i = 0; i < friends.size(); i++) {
             OfflinePlayer friend = Bukkit.getOfflinePlayer(friends.get(i));
             if (friend.isOnline()) {

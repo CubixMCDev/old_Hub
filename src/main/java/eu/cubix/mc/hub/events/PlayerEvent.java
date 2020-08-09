@@ -32,11 +32,10 @@ public class PlayerEvent implements Listener {
         ActionBar actionBar = new ActionBar("§cLe serveur est en phase de développement.");
         Player player = e.getPlayer();
         Inventory inv = player.getInventory();
-        UUID uuid = player.getUniqueId();
         Location spawn = new Location(Bukkit.getServer().getWorld("Hub"), 110.5, 16, 772.5, 180, 0);
         Location prison = new Location(Bukkit.getServer().getWorld("Hub"), 145, 3, 756, 0, 0);
 
-        Main.getInstance().getScoreboardManager().onLogin(player);
+        main.getScoreboardManager().onLogin(player);
         //if(!main.bar.getBar().getPlayers().contains(e.getPlayer())) {
             //main.bar.addPlayer(e.getPlayer());
     //}
@@ -51,7 +50,7 @@ public class PlayerEvent implements Listener {
 
         player.sendMessage("\n \n ");
 
-        if(Main.api.banned.containsKey(uuid)) {
+        if(main.getAPI().getBanManager().isBanned(player.getUniqueId())) {
             player.teleport(prison);
             player.sendMessage("§cCubixMC §4» §cErreur: vous êtes banni §4"+"un temps"+"§c.");
 
@@ -68,14 +67,14 @@ public class PlayerEvent implements Listener {
             inv.setItem(7,ban.toItemStack());
             inv.setItem(8,ban.toItemStack());
         } else {
-            if(!Main.api.getModManager().isInMod(player.getUniqueId())) {
+            if(!main.getAPI().getModManager().isInMod(player.getUniqueId())) {
                 inv.clear();
 
                 ItemsBuilder profil = new ItemsBuilder(Material.SKULL_ITEM, 1, (byte) 3).setName("§6Profil").setLore("§eClic droit").setSkullOwner(player.getName());
                 inv.setItem(0,profil.toItemStack());
                 ItemsBuilder menu = new ItemsBuilder(Material.COMPASS).setName("§6Menu").setLore("§eClic droit");
                 inv.setItem(3,menu.toItemStack());
-                if(Main.api.getPartyManager().isInParty(String.valueOf(player))) {
+                if(main.getAPI().getPartyManager().isInParty(String.valueOf(player))) {
                     ItemsBuilder joinLeaderParty = new ItemsBuilder(Material.FLINT).setName("§6Rejoindre le chef de groupe").setLore("§eClic droit");
                     inv.setItem(4,joinLeaderParty.toItemStack());
                 }
@@ -145,7 +144,7 @@ public class PlayerEvent implements Listener {
             main.getAntiAFK().remove(player);
         }
 
-        Main.getInstance().getScoreboardManager().onLogout(player);
+        main.getScoreboardManager().onLogout(player);
     }
 
     @EventHandler

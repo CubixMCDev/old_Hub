@@ -79,7 +79,7 @@ public class Main extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(new InteractEvent(this), this);
         getServer().getPluginManager().registerEvents(new GadgetsListener(this), this);
         getServer().getPluginManager().registerEvents(new Jump(this), this);
-        getServer().getPluginManager().registerEvents(new Vote(), this);
+        getServer().getPluginManager().registerEvents(new Vote(this), this);
 
         getServer().getPluginCommand("key").setExecutor(new Key(this));
 
@@ -181,7 +181,7 @@ public class Main extends JavaPlugin implements Listener {
     }
 
     private void loadGadgets() {
-        addGadget(new SheepExplode());
+        addGadget(new SheepExplode(this));
     }
 
     public Queue getQueueByName(String name){

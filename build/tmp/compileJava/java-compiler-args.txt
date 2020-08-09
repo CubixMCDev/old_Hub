@@ -3,99 +3,97 @@
 -target
 1.8
 -d
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\build\\classes\\java\\main
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\build\\classes\\java\\main"
 -encoding
 UTF-8
 -h
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\build\\generated\\sources\\headers\\java\\main
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\build\\generated\\sources\\headers\\java\\main"
 -g
 -sourcepath
 ""
 -proc:none
 -s
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\build\\generated\\sources\\annotationProcessor\\java\\main
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\build\\generated\\sources\\annotationProcessor\\java\\main"
 -XDuseUnsharedTable=true
 -classpath
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\libs\\spigot.jar;C:\\Users\\rayan\\.m2\\repository\\org\\spigotmc\\spigot-api\\1.8.8-R0.1-SNAPSHOT\\spigot-api-1.8.8-R0.1-SNAPSHOT.jar;C:\\Users\\rayan\\.m2\\repository\\commons-lang\\commons-lang\\2.6\\commons-lang-2.6.jar;C:\\Users\\rayan\\.m2\\repository\\com\\googlecode\\json-simple\\json-simple\\1.1.1\\json-simple-1.1.1.jar;C:\\Users\\rayan\\.m2\\repository\\net\\md-5\\bungeecord-chat\\1.8-SNAPSHOT\\bungeecord-chat-1.8-SNAPSHOT.jar;C:\\Users\\rayan\\.m2\\repository\\com\\google\\guava\\guava\\18.0\\guava-18.0.jar;C:\\Users\\rayan\\.m2\\repository\\com\\google\\code\\gson\\gson\\2.3.1\\gson-2.3.1.jar;C:\\Users\\rayan\\.m2\\repository\\org\\avaje\\ebean\\2.8.1\\ebean-2.8.1.jar;C:\\Users\\rayan\\.m2\\repository\\org\\yaml\\snakeyaml\\1.15\\snakeyaml-1.15.jar;C:\\Users\\rayan\\.m2\\repository\\junit\\junit\\4.10\\junit-4.10.jar;C:\\Users\\rayan\\.m2\\repository\\javax\\persistence\\persistence-api\\1.0\\persistence-api-1.0.jar;C:\\Users\\rayan\\.m2\\repository\\org\\hamcrest\\hamcrest-core\\1.1\\hamcrest-core-1.1.jar
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\libs\\spigot.jar;C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\libs\\cubixapi.jar"
 -parameters
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\commands\\Key.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\gadgets\\SheepExplode.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\AngelWings.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\Angry.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\BloodHelix.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\ChristmasHat.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\ColorCircle.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\Crit.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\Emerald.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\Enchanted.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\EnderAura.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\Flame.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\Heart.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\Rain.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\RainLava.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\Speed.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\SuperHero.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\crates\\Vote.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\events\\InteractEvent.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\events\\Jump.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\events\\PlayerEvent.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\events\\Protect.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Cosmetics.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Effects.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Friends.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Gadgets.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\GadgetSheepExplodeConfirm.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\GradeVIPConfirm.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\GradeVIPplusConfirm.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\HubChanger.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Languages.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Menu.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Mounts.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Particles.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Pets.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Profile.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Settings.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Shop.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\ShopGadgets.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\ShopGrades.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\ShopMounts.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\ShopParticles.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\ShopPets.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\UHCs.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\Main.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\manager\\CosmeticsManager.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\pets\\Pet.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\queue\\AvantageQueue.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\queue\\Queue.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\queue\\VIPplusQueue.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\queue\\VIPQueue.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\scoreboard\\ObjectiveSign.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\scoreboard\\PersonalScoreboard.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\scoreboard\\ScoreboardManager.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\scoreboard\\ScoreboardTeam.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\scoreboard\\VObjective.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\task\\AntiAFK.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\task\\AvantageQueueTask.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\task\\QueueTask.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\task\\TaskGadgetSheepExplode.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\task\\TaskVIP.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\task\\TaskVIPplus.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\task\\VIPplusQueueTask.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\task\\VIPQueueTask.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\ActionBar.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\Bossbar.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\CustomSkull.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\FallDamageManager.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\GadgetBuilder.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\GadgetsListener.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\GuiBuilder.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\GuiManager.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\Hologram.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\ItemFactory.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\ItemsBuilder.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\KeyCrate.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\MathUtil.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\ParticleData.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\Reflection.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\ServerVersion.java
-C:\\Users\\rayan\\IdeaProjects\\MyProjects\\MyProjects\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\Title.java
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\commands\\Key.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\gadgets\\SheepExplode.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\AngelWings.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\Angry.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\BloodHelix.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\ChristmasHat.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\ColorCircle.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\Crit.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\Emerald.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\Enchanted.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\EnderAura.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\Flame.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\Heart.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\Rain.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\RainLava.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\Speed.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\cosmetics\\particles\\SuperHero.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\crates\\Vote.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\events\\InteractEvent.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\events\\Jump.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\events\\PlayerEvent.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\events\\Protect.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Cosmetics.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Effects.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Friends.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Gadgets.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\GadgetSheepExplodeConfirm.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\GradeVIPConfirm.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\GradeVIPplusConfirm.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\HubChanger.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Languages.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Menu.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Mounts.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Particles.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Pets.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Profile.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Settings.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Shop.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\ShopGadgets.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\ShopGrades.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\ShopMounts.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\ShopParticles.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\ShopPets.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\UHCs.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\Main.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\manager\\CosmeticsManager.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\pets\\Pet.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\queue\\AvantageQueue.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\queue\\Queue.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\queue\\VIPplusQueue.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\queue\\VIPQueue.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\scoreboard\\ObjectiveSign.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\scoreboard\\PersonalScoreboard.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\scoreboard\\ScoreboardManager.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\scoreboard\\ScoreboardTeam.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\scoreboard\\VObjective.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\task\\AntiAFK.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\task\\AvantageQueueTask.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\task\\QueueTask.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\task\\TaskGadgetSheepExplode.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\task\\TaskVIP.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\task\\TaskVIPplus.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\task\\VIPplusQueueTask.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\task\\VIPQueueTask.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\ActionBar.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\Bossbar.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\CustomSkull.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\FallDamageManager.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\GadgetBuilder.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\GadgetsListener.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\GuiBuilder.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\GuiManager.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\Hologram.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\ItemFactory.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\ItemsBuilder.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\MathUtil.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\ParticleData.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\Reflection.java"
+"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\tools\\Title.java"

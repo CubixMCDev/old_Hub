@@ -78,48 +78,48 @@ public class Settings implements GuiBuilder {
                 .setLore("§eActiver/Désactiver le suivi de groupe");
         inv.setItem(32, PartyFollow.toItemStack());
 
-        if (api.getFriendsManager().isAllowed(player.getUniqueId()) == 1) {
+        if (main.getAPI().getFriendsManager().isAllowed(player.getUniqueId()) == 1) {
             ItemsBuilder Friends_option = new ItemsBuilder(Material.INK_SACK, 1, (byte) 10)
                     .setName("§6§nOption ami")
                     .setLore(Arrays.asList("§eClic gauche pour désactiver", "§eStatus : §6Activer"));
             inv.setItem(21, Friends_option.toItemStack());
-        } else if (api.getFriendsManager().isAllowed(player.getUniqueId()) == 0) {
+        } else if (main.getAPI().getFriendsManager().isAllowed(player.getUniqueId()) == 0) {
             ItemsBuilder Friends_option = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
                     .setName("§6§nOption ami")
                     .setLore(Arrays.asList("§eClic gauche pour activer", "§eStatus : §6Désactiver"));
             inv.setItem(21, Friends_option.toItemStack());
         }
 
-        if (api.getFriendsManager().hasAllowedMessages(player.getUniqueId())) {
+        if (main.getAPI().getFriendsManager().hasAllowedMessages(player.getUniqueId())) {
             ItemsBuilder PrivateMessage_option = new ItemsBuilder(Material.INK_SACK, 1, (byte) 10)
                     .setName("§6§nOption msg")
                     .setLore(Arrays.asList("§eClic gauche pour désactiver", "§eStatus : §6Activer"));
             inv.setItem(24, PrivateMessage_option.toItemStack());
-        } else if (!api.getFriendsManager().hasAllowedMessages(player.getUniqueId())) {
+        } else if (!main.getAPI().getFriendsManager().hasAllowedMessages(player.getUniqueId())) {
             ItemsBuilder PrivateMessage_option = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
                     .setName("§6§nOption msg")
                     .setLore(Arrays.asList("§eClic gauche pour activer", "§eStatus : §6Désactiver"));
             inv.setItem(24, PrivateMessage_option.toItemStack());
         }
 
-        if (api.getPartyManager().getAllow(player.getUniqueId()) == 1) {
+        if (main.getAPI().getPartyManager().getAllow(player.getUniqueId()) == 1) {
             ItemsBuilder Party_option = new ItemsBuilder(Material.INK_SACK, 1, (byte) 10)
                     .setName("§6§nOption groupe")
                     .setLore(Arrays.asList("§eClic gauche pour désactiver", "§eStatus : §6Activer"));
             inv.setItem(30, Party_option.toItemStack());
-        } else if (api.getPartyManager().getAllow(player.getUniqueId()) == 0) {
+        } else if (main.getAPI().getPartyManager().getAllow(player.getUniqueId()) == 0) {
             ItemsBuilder Party_option = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
                     .setName("§6§nOption groupe")
                     .setLore(Arrays.asList("§eClic gauche pour activer", "§eStatus : §6Désactiver"));
             inv.setItem(30, Party_option.toItemStack());
         }
 
-        if (api.getPartyManager().getFollow(player.getUniqueId()) == 1) {
+        if (main.getAPI().getPartyManager().getFollow(player.getUniqueId()) == 1) {
             ItemsBuilder PartyFollow_option = new ItemsBuilder(Material.INK_SACK, 1, (byte) 10)
                     .setName("§6§nOption suivi groupe")
                     .setLore(Arrays.asList("§eClic gauche pour désactiver", "§eStatus : §6Activer"));
             inv.setItem(33, PartyFollow_option.toItemStack());
-        } else if (api.getPartyManager().getFollow(player.getUniqueId()) == 0) {
+        } else if (main.getAPI().getPartyManager().getFollow(player.getUniqueId()) == 0) {
             ItemsBuilder PartyFollow_option = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
                     .setName("§6§nOption suivi groupe")
                     .setLore(Arrays.asList("§eClic gauche pour activer", "§eStatus : §6Désactiver"));
@@ -140,47 +140,47 @@ public class Settings implements GuiBuilder {
         }
 
         if (current != null && current.getType() == Material.INK_SACK && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nOption ami")) {
-            if (api.getFriendsManager().isAllowed(player.getUniqueId()) == 1) {
-                api.getFriendsManager().setAllow(0, player.getUniqueId());
+            if (main.getAPI().getFriendsManager().isAllowed(player.getUniqueId()) == 1) {
+                main.getAPI().getFriendsManager().setAllow(0, player.getUniqueId());
                 player.updateInventory();
-                Main.getInstance().getGuiManager().open(player, Settings.class);
-            } else if (api.getFriendsManager().isAllowed(player.getUniqueId()) == 0) {
-                api.getFriendsManager().setAllow(1, player.getUniqueId());
+                main.getGuiManager().open(player, Settings.class);
+            } else if (main.getAPI().getFriendsManager().isAllowed(player.getUniqueId()) == 0) {
+                main.getAPI().getFriendsManager().setAllow(1, player.getUniqueId());
                 player.updateInventory();
-                Main.getInstance().getGuiManager().open(player, Settings.class);
+                main.getGuiManager().open(player, Settings.class);
             }
         }
         if (current != null && current.getType() == Material.INK_SACK && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nOption msg")) {
-            if (api.getFriendsManager().hasAllowedMessages(player.getUniqueId())) {
-                api.getFriendsManager().setAllowMessages(player.getUniqueId(),0);
+            if (main.getAPI().getFriendsManager().hasAllowedMessages(player.getUniqueId())) {
+                main.getAPI().getFriendsManager().setAllowMessages(player.getUniqueId(),0);
                 player.updateInventory();
-                Main.getInstance().getGuiManager().open(player, Settings.class);
-            } else if (!api.getFriendsManager().hasAllowedMessages(player.getUniqueId())) {
-                api.getFriendsManager().setAllowMessages(player.getUniqueId(),1);
+                main.getGuiManager().open(player, Settings.class);
+            } else if (!main.getAPI().getFriendsManager().hasAllowedMessages(player.getUniqueId())) {
+                main.getAPI().getFriendsManager().setAllowMessages(player.getUniqueId(),1);
                 player.updateInventory();
-                Main.getInstance().getGuiManager().open(player, Settings.class);
+                main.getGuiManager().open(player, Settings.class);
             }
         }
         if (current != null && current.getType() == Material.INK_SACK && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nOption groupe")) {
-            if (api.getPartyManager().getAllow(player.getUniqueId()) == 1) {
-                api.getPartyManager().setAllow(0, player.getUniqueId());
+            if (main.getAPI().getPartyManager().getAllow(player.getUniqueId()) == 1) {
+                main.getAPI().getPartyManager().setAllow(0, player.getUniqueId());
                 player.updateInventory();
-                Main.getInstance().getGuiManager().open(player, Settings.class);
-            } else if (api.getPartyManager().getAllow(player.getUniqueId()) == 0) {
-                api.getPartyManager().setAllow(1, player.getUniqueId());
+                main.getGuiManager().open(player, Settings.class);
+            } else if (main.getAPI().getPartyManager().getAllow(player.getUniqueId()) == 0) {
+                main.getAPI().getPartyManager().setAllow(1, player.getUniqueId());
                 player.updateInventory();
-                Main.getInstance().getGuiManager().open(player, Settings.class);
+                main.getGuiManager().open(player, Settings.class);
             }
         }
         if (current != null && current.getType() == Material.INK_SACK && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nOption suivi groupe")) {
-            if (api.getPartyManager().getFollow(player.getUniqueId()) == 1) {
-                api.getPartyManager().setFollow(0, player.getUniqueId());
+            if (main.getAPI().getPartyManager().getFollow(player.getUniqueId()) == 1) {
+                main.getAPI().getPartyManager().setFollow(0, player.getUniqueId());
                 player.updateInventory();
-                Main.getInstance().getGuiManager().open(player, Settings.class);
-            } else if (api.getPartyManager().getFollow(player.getUniqueId()) == 0) {
-                api.getPartyManager().setFollow(1, player.getUniqueId());
+                main.getGuiManager().open(player, Settings.class);
+            } else if (main.getAPI().getPartyManager().getFollow(player.getUniqueId()) == 0) {
+                main.getAPI().getPartyManager().setFollow(1, player.getUniqueId());
                 player.updateInventory();
-                Main.getInstance().getGuiManager().open(player, Settings.class);
+                main.getGuiManager().open(player, Settings.class);
             }
         }
     }

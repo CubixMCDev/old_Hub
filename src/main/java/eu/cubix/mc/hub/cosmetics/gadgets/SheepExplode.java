@@ -19,6 +19,12 @@ public class SheepExplode extends GadgetBuilder {
 
     private final ArrayList<Sheep> sheepArrayList = new ArrayList<>();
 
+    private final Main main;
+
+    public SheepExplode(Main main) {
+        this.main = main;
+    }
+
     @Override
     public String name() {
         return "§6Gadget: §eMouton explosif";
@@ -59,7 +65,7 @@ public class SheepExplode extends GadgetBuilder {
             this.red = red;
             this.time = time;
             this.s = s;
-            this.runTaskLater(Main.getInstance(), (int) time);
+            this.runTaskLater(main, (int) time);
             this.gadgetExplosiveSheep = gadgetExplosiveSheep;
             this.player = player;
         }
@@ -97,7 +103,7 @@ public class SheepExplode extends GadgetBuilder {
                     sheep.setAgeLock(true);
                     sheep.setNoDamageTicks(120);
                     sheepArrayList.add(sheep);
-                    Bukkit.getScheduler().runTaskLater(Main.getInstance(), () -> {
+                    Bukkit.getScheduler().runTaskLater(main, () -> {
                         /*
                         ParticleEffect pa = new ParticleEffect(EnumParticle.FLAME, sheep.getLocation(),
                                 0.5f, 0.5f, 0.5f, 0.07f, 1);
