@@ -27,7 +27,7 @@ public class SheepExplode extends GadgetBuilder {
 
     @Override
     public String name() {
-        return "§6Gadget: §eMouton explosif";
+        return "Â§6Gadget: Â§eMouton explosif";
     }
 
     @Override
@@ -98,7 +98,7 @@ public class SheepExplode extends GadgetBuilder {
                         exc.printStackTrace();
                     }
                     Random r = new Random();
-                    MathUtil.applyVelocity(sheep, new Vector(r.nextDouble() - 0.5, r.nextDouble() / 2, r.nextDouble() - 0.5).multiply(2).add(new Vector(0, 0.8, 0)));
+                    MathUtil.applyVelocity(main, sheep, new Vector(r.nextDouble() - 0.5, r.nextDouble() / 2, r.nextDouble() - 0.5).multiply(2).add(new Vector(0, 0.8, 0)));
                     sheep.setBaby();
                     sheep.setAgeLock(true);
                     sheep.setNoDamageTicks(120);

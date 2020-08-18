@@ -18,7 +18,7 @@ public class ShopGadgets implements GuiBuilder {
 
     @Override
     public String name() {
-        return "§0Boutique » Gadgets";
+        return "Â§0Boutique Â» Gadgets";
     }
 
     @Override
@@ -58,28 +58,28 @@ public class ShopGadgets implements GuiBuilder {
 
         if(main.getCosmeticsManager().hasCosmetic("gadgetSheepExplode",player.getUniqueId())) {
             ItemsBuilder SheepExplode = new ItemsBuilder(Material.WOOL, 1, (byte) 14)
-                    .setName("§6§nMouton explosif§r §7(Acheté)");
+                    .setName("Â§6Â§nMouton explosifÂ§r Â§7(AchetÃ©)");
             inv.setItem(10,SheepExplode.toItemStack());
         } else {
             ItemsBuilder SheepExplode = new ItemsBuilder(Material.WOOL, 1, (byte) 14)
-                    .setName("§6§nMouton explosif");
+                    .setName("Â§6Â§nMouton explosif");
             inv.setItem(10,SheepExplode.toItemStack());
         }
 
         ItemsBuilder Return = new ItemsBuilder(Material.DARK_OAK_DOOR_ITEM)
-                .setName("§6§nRetour");
+                .setName("Â§6Â§nRetour");
         inv.setItem(53,Return.toItemStack());
     }
 
     @Override
     public void onClick(Player player, Inventory inv, ItemStack current, int slot) {
 
-        if(current != null && current.getType() == Material.WOOL && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nMouton explosif")) {
+        if(current != null && current.getType() == Material.WOOL && current.getItemMeta().getDisplayName().equalsIgnoreCase("Â§6Â§nMouton explosif")) {
             if (main.getAPI().get().getCoins(player.getUniqueId()) >= 10) {
                 main.getGuiManager().open(player, GadgetSheepExplodeConfirm.class);
             } else {
                 player.closeInventory();
-                player.sendMessage("§cCubixMC §4» §cErreur: vous n'avez pas assez de coins pour vous payer ce gadget.");
+                player.sendMessage("Â§cCubixMC Â§4Â» Â§cErreur: vous n'avez pas assez de coins pour vous payer ce gadget.");
             }
         }
 

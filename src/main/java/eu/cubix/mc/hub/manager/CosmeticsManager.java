@@ -16,18 +16,22 @@ public class CosmeticsManager {
     }
 
     public void setCosmeticSQL(String name, boolean trueOrFalse, UUID playerUUID) {
+        /*
         try {
             PreparedStatement q = (PreparedStatement) main.getAPI().get().getDataBase().getConnection().prepareStatement("UPDATE cosmetics SET " + name + " = ? WHERE uuid = ?");
             q.setInt(1, trueOrFalse ? 1 : 0);
             q.setString(2, playerUUID.toString());
             q.executeUpdate();
             q.close();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        */
     }
 
     public boolean hasCosmetic(String name, UUID playerUUID) {
+        /*
         try {
             PreparedStatement q = (PreparedStatement) main.getAPI().getDatabase().getConnection().prepareStatement("SELECT " + name + " FROM cosmetics WHERE uuid = ?");
             q.setString(1, playerUUID.toString());
@@ -49,6 +53,8 @@ public class CosmeticsManager {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        */
         return false;
     }
+
 }

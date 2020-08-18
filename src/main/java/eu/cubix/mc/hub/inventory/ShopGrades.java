@@ -22,7 +22,7 @@ public class ShopGrades implements GuiBuilder {
 
     @Override
     public String name() {
-        return "§0Boutique » Grades";
+        return "Â§0Boutique Â» Grades";
     }
 
     @Override
@@ -60,54 +60,54 @@ public class ShopGrades implements GuiBuilder {
 
         if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip")) {
             ItemsBuilder VIP = new ItemsBuilder(Material.IRON_INGOT)
-                    .setName("§6§nVIP§n §7(Acheté)")
+                    .setName("Â§6Â§nVIPÂ§n Â§7(AchetÃ©)")
                     .addEnchant(Enchantment.LUCK,1)
                     .setFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_UNBREAKABLE)
-                    .setLore(Arrays.asList(" ","§e§l• Prix: 2325 \u24D2","§e§l• Avantages:","§e- ..."));
+                    .setLore(Arrays.asList(" ","Â§eÂ§lÂ» Prix: 2325 \u24D2","Â§eÂ§lÂ» Avantages:","Â§e- ..."));
             inv.setItem(21,VIP.toItemStack());
         } else {
             ItemsBuilder VIP = new ItemsBuilder(Material.IRON_INGOT)
-                    .setName("§6§nVIP")
-                    .setLore(Arrays.asList(" ","§e§l• Prix: 2325 \u24D2","§e§l• Avantages:","§e- ..."));
+                    .setName("Â§6Â§nVIP")
+                    .setLore(Arrays.asList(" ","Â§eÂ§lÂ» Prix: 2325 \u24D2","Â§eÂ§lÂ» Avantages:","Â§e- ..."));
             inv.setItem(21,VIP.toItemStack());
         }
 
         if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip+")) {
             ItemsBuilder VIPplus = new ItemsBuilder(Material.GOLD_INGOT)
-                .setName("§6§nVIP+§n §7(Acheté)")
+                .setName("Â§6Â§nVIP+Â§n Â§7(AchetÃ©)")
                 .addEnchant(Enchantment.LUCK,1)
                 .setFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_UNBREAKABLE)
-                .setLore(Arrays.asList(" ","§e§l• Prix: 4650 \u24D2","§e§l• Avantages:","§e- ..."));
+                .setLore(Arrays.asList(" ","Â§eÂ§lÂ» Prix: 4650 \u24D2","Â§eÂ§lÂ» Avantages:","Â§e- ..."));
             inv.setItem(23,VIPplus.toItemStack());
         } else {
             ItemsBuilder VIPplus = new ItemsBuilder(Material.GOLD_INGOT)
-                    .setName("§6§nVIP+")
-                    .setLore(Arrays.asList(" ","§e§l• Prix: 4650 \u24D2","§e§l• Avantages:","§e- ..."));
+                    .setName("Â§6Â§nVIP+")
+                    .setLore(Arrays.asList(" ","Â§eÂ§lÂ» Prix: 4650 \u24D2","Â§eÂ§lÂ» Avantages:","Â§e- ..."));
             inv.setItem(23,VIPplus.toItemStack());
         }
 
         ItemsBuilder Return = new ItemsBuilder(Material.DARK_OAK_DOOR_ITEM)
-                .setName("§6§nRetour");
+                .setName("Â§6Â§nRetour");
         inv.setItem(44,Return.toItemStack());
     }
 
     @Override
     public void onClick(Player player, Inventory inv, ItemStack current, int slot) {
-        if (current.getItemMeta().getDisplayName().equalsIgnoreCase("§6VIP")) {
+        if (current.getItemMeta().getDisplayName().equalsIgnoreCase("Â§6VIP")) {
             if(main.getAPI().get().getCredits(player.getUniqueId()) >= 2325) {
                 main.getGuiManager().open(player, GradeVIPConfirm.class);
             } else {
                 player.closeInventory();
-                player.sendMessage("§cCubixMC §4» §cErreur: vous n'avez pas assez de crédits pour vous payer ce grade.");
+                player.sendMessage("Â§cCubixMC Â§4Â» Â§cErreur: vous n'avez pas assez de crÃ©dits pour vous payer ce grade.");
             }
         }
 
-        if (current.getItemMeta().getDisplayName().equalsIgnoreCase("§6VIP+")) {
+        if (current.getItemMeta().getDisplayName().equalsIgnoreCase("Â§6VIP+")) {
             if(main.getAPI().get().getCredits(player.getUniqueId()) >= 4650) {
                 main.getGuiManager().open(player, GradeVIPplusConfirm.class);
             } else {
                 player.closeInventory();
-                player.sendMessage("§cCubixMC §4» §cErreur: vous n'avez pas assez de crédits pour vous payer ce grade.");
+                player.sendMessage("Â§cCubixMC Â§4Â» Â§cErreur: vous n'avez pas assez de crÃ©dits pour vous payer ce grade.");
             }
         }
 

@@ -14,6 +14,12 @@ public class FallDamageManager extends BukkitRunnable {
     public static List<Entity> noFallDamage = Collections.synchronizedList(new ArrayList<Entity>());
     public static List<Entity> queue = Collections.synchronizedList(new ArrayList<Entity>());
 
+    private final Main main;
+
+    public FallDamageManager(Main main) {
+        this.main = main;
+    }
+
     public static void addNoFall(Entity entity) {
         if (!queue.contains(entity)
                 && !noFallDamage.contains(entity)) {
@@ -35,7 +41,7 @@ public class FallDamageManager extends BukkitRunnable {
                 }
             }
         }
-        Bukkit.getScheduler().runTaskLaterAsynchronously(Main.getInstance(), () -> {
+        Bukkit.getScheduler().runTaskLaterAsynchronously(main, () -> {
             noFallDamage.removeAll(toRemove);
         }, 5);
         noFallDamage.addAll(queue);

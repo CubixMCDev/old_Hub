@@ -19,7 +19,7 @@ public class Gadgets implements GuiBuilder {
 
     @Override
     public String name() {
-        return "§0Cosmétiques » Gadgets";
+        return "Â§0CosmÃ©tiques Â» Gadgets";
     }
 
     @Override
@@ -58,20 +58,20 @@ public class Gadgets implements GuiBuilder {
 
         if(main.getCosmeticsManager().hasCosmetic("gadgetSheepExplode",player.getUniqueId())) {
             ItemsBuilder SheepExplode = new ItemsBuilder(Material.WOOL, 1, (byte) 14)
-                    .setName("§6§nMouton explosif");
+                    .setName("Â§6Â§nMouton explosif");
             inv.setItem(10,SheepExplode.toItemStack());
         } else {
             ItemsBuilder SheepExplode = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nMouton explosif");
+                    .setName("Â§7Â§nMouton explosif");
             inv.setItem(10,SheepExplode.toItemStack());
         }
 
         ItemsBuilder Retired = new ItemsBuilder(Material.BARRIER)
-                .setName("§6§nRetirer votre gadget");
+                .setName("Â§6Â§nRetirer votre gadget");
         inv.setItem(49,Retired.toItemStack());
 
         ItemsBuilder Return = new ItemsBuilder(Material.DARK_OAK_DOOR_ITEM)
-                .setName("§6§nRetour");
+                .setName("Â§6Â§nRetour");
         inv.setItem(53,Return.toItemStack());
     }
 
@@ -80,7 +80,7 @@ public class Gadgets implements GuiBuilder {
         switch (current.getType()) {
 
             case DARK_OAK_DOOR_ITEM:
-                Main.getInstance().getGuiManager().open(player, Cosmetics.class);
+                main.getGuiManager().open(player, Cosmetics.class);
                 break;
 
             case BARRIER:

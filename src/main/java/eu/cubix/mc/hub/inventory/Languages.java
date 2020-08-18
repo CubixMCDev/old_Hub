@@ -20,7 +20,7 @@ public class Languages implements GuiBuilder {
 
     @Override
     public String name() {
-        return "§0Profil » Langues";
+        return "Â§0Profil Â» Langues";
     }
 
     @Override
@@ -57,28 +57,28 @@ public class Languages implements GuiBuilder {
         inv.setItem(43,Separateur.toItemStack());
 
         inv.setItem(20, new ItemFactory(CustomSkull.getCustomSkull("http://textures.minecraft.net/texture/51269a067ee37e63635ca1e723b676f139dc2dbddff96bbfef99d8b35c996bc"))
-                .withName("§6§nFrançais§r §7(Sélectionné)")
+                .withName("Â§6Â§nFranÃ§aisÂ§r Â§7(SÃ©lectionnÃ©)")
                 .done());
 
         inv.setItem(21, new ItemFactory(CustomSkull.getCustomSkull("http://textures.minecraft.net/texture/4cac9774da1217248532ce147f7831f67a12fdcca1cf0cb4b3848de6bc94b4"))
-                .withName("§6§nEnglish§r §c(Coming Soon)")
+                .withName("Â§6Â§nEnglishÂ§r Â§c(Coming Soon)")
                 .done());
 
         inv.setItem(22, new ItemFactory(CustomSkull.getCustomSkull("http://textures.minecraft.net/texture/32bd4521983309e0ad76c1ee29874287957ec3d96f8d889324da8c887e485ea8"))
-                .withName("§6§nEspañol§r §c(Coming Soon)")
+                .withName("Â§6Â§nEspaÃ±olÂ§r Â§c(Coming Soon)")
                 .done());
 
         inv.setItem(23, new ItemFactory(CustomSkull.getCustomSkull("http://textures.minecraft.net/texture/5e7899b4806858697e283f084d9173fe487886453774626b24bd8cfecc77b3f"))
-                .withName("§6§nDeutsch§r §c(Coming Soon)")
+                .withName("Â§6Â§nDeutschÂ§r Â§c(Coming Soon)")
                 .done());
 
         inv.setItem(24, new ItemFactory(CustomSkull.getCustomSkull("http://textures.minecraft.net/texture/c23cf210edea396f2f5dfbced69848434f93404eefeabf54b23c073b090adf"))
-                .withName("§6§nNederlands§r §c(Coming Soon)")
+                .withName("Â§6Â§nNederlandsÂ§r Â§c(Coming Soon)")
                 .done());
 
 
         ItemsBuilder Return = new ItemsBuilder(Material.DARK_OAK_DOOR_ITEM)
-                .setName("§6§nRetour");
+                .setName("Â§6Â§nRetour");
         inv.setItem(44,Return.toItemStack());
     }
 

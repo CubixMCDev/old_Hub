@@ -20,7 +20,7 @@ public class Particles implements GuiBuilder {
 
     @Override
     public String name() {
-        return "§0Cosmétiques » Particules";
+        return "Â§0CosmÃ©tiques Â» Particules";
     }
 
     @Override
@@ -59,172 +59,172 @@ public class Particles implements GuiBuilder {
 
         if(!main.getCosmeticsManager().hasCosmetic("particleEmerald",player.getUniqueId())) {
             ItemsBuilder Emerald = new ItemsBuilder(Material.EMERALD)
-                    .setName("§6§nEmeraude");
+                    .setName("Â§6Â§nEmeraude");
             inv.setItem(10, Emerald.toItemStack());
         } else {
             ItemsBuilder Emerald = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nEmeraude");
+                    .setName("Â§7Â§nEmeraude");
             inv.setItem(10,Emerald.toItemStack());
         }
 
         if(!main.getCosmeticsManager().hasCosmetic("particleHeart",player.getUniqueId())) {
             ItemsBuilder Heart = new ItemsBuilder(Material.RED_ROSE)
-                    .setName("§6§nCoeur");
+                    .setName("Â§6Â§nCoeur");
             inv.setItem(11,Heart.toItemStack());
         } else {
             ItemsBuilder Heart = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nCoeur");
+                    .setName("Â§7Â§nCoeur");
             inv.setItem(11,Heart.toItemStack());
         }
 
         if(!main.getCosmeticsManager().hasCosmetic("particleAngry",player.getUniqueId())) {
             ItemsBuilder Angry = new ItemsBuilder(Material.FIREBALL)
-                    .setName("§6§nColère");
+                    .setName("Â§6Â§nColÃ¨re");
             inv.setItem(12,Angry.toItemStack());
         } else {
             ItemsBuilder Angry = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nColère");
+                    .setName("Â§7Â§nColÃ¨re");
             inv.setItem(12,Angry.toItemStack());
         }
 
         if(!main.getCosmeticsManager().hasCosmetic("particleFlame",player.getUniqueId())) {
             ItemsBuilder Flame = new ItemsBuilder(Material.FLINT_AND_STEEL)
-                    .setName("§6§nFeu");
+                    .setName("Â§6Â§nFeu");
             inv.setItem(13,Flame.toItemStack());
         } else {
             ItemsBuilder Flame = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nFeu");
+                    .setName("Â§7Â§nFeu");
             inv.setItem(13,Flame.toItemStack());
         }
 
 
         if(!main.getCosmeticsManager().hasCosmetic("particleSpeed",player.getUniqueId())) {
             ItemsBuilder Speed = new ItemsBuilder(Material.FEATHER)
-                    .setName("§6§nVitesse");
+                    .setName("Â§6Â§nVitesse");
             inv.setItem(14,Speed.toItemStack());
         } else {
             ItemsBuilder Speed = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nVitesse");
+                    .setName("Â§7Â§nVitesse");
             inv.setItem(14,Speed.toItemStack());
         }
 
 
         if(!main.getCosmeticsManager().hasCosmetic("particleRain",player.getUniqueId())) {
             ItemsBuilder Rain = new ItemsBuilder(Material.WATER_BUCKET)
-                    .setName("§6§nPluie");
+                    .setName("Â§6Â§nPluie");
             inv.setItem(15,Rain.toItemStack());
         } else {
             ItemsBuilder Rain = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nPluie");
+                    .setName("Â§7Â§nPluie");
             inv.setItem(15,Rain.toItemStack());
         }
 
 
         if(!main.getCosmeticsManager().hasCosmetic("particleRainLava",player.getUniqueId())) {
             ItemsBuilder RainLava = new ItemsBuilder(Material.LAVA_BUCKET)
-                    .setName("§6§nPluie de feu");
+                    .setName("Â§6Â§nPluie de feu");
             inv.setItem(16,RainLava.toItemStack());
         } else {
             ItemsBuilder RainLava = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nPluie de feu");
+                    .setName("Â§7Â§nPluie de feu");
             inv.setItem(16,RainLava.toItemStack());
         }
 
 
         if(!main.getCosmeticsManager().hasCosmetic("particleEnderAura",player.getUniqueId())) {
             ItemsBuilder EnderAura = new ItemsBuilder(Material.ENDER_PEARL)
-                    .setName("§6§nAura de l'end");
+                    .setName("Â§6Â§nAura de l'end");
             inv.setItem(19,EnderAura.toItemStack());
         } else {
             ItemsBuilder EnderAura = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nAura de l'end");
+                    .setName("Â§7Â§nAura de l'end");
             inv.setItem(19,EnderAura.toItemStack());
         }
 
 
         if(!main.getCosmeticsManager().hasCosmetic("particleCrit",player.getUniqueId())) {
             ItemsBuilder Crit = new ItemsBuilder(Material.DIAMOND_SWORD)
-                    .setName("§6§nCage de critique");
+                    .setName("Â§6Â§nCage de critique");
             inv.setItem(20,Crit.toItemStack());
         } else {
             ItemsBuilder Crit = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nCage de critique");
+                    .setName("Â§7Â§nCage de critique");
             inv.setItem(20,Crit.toItemStack());
         }
 
 
         if(!main.getCosmeticsManager().hasCosmetic("particleAngelWings",player.getUniqueId())) {
             ItemsBuilder AngelWings = new ItemsBuilder(Material.SUGAR)
-                    .setName("§6§nAile d'ange");
+                    .setName("Â§6Â§nAile d'ange");
             inv.setItem(21,AngelWings.toItemStack());
         } else {
             ItemsBuilder AngelWings = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nAile d'ange");
+                    .setName("Â§7Â§nAile d'ange");
             inv.setItem(21,AngelWings.toItemStack());
         }
 
 
         if(!main.getCosmeticsManager().hasCosmetic("particleChristmasHat",player.getUniqueId())) {
             ItemsBuilder ChristmasHat = new ItemsBuilder(Material.SNOW_BALL)
-                    .setName("§6§nChapeau de noël");
+                    .setName("Â§6Â§nChapeau de noÃ«l");
             inv.setItem(22,ChristmasHat.toItemStack());
         } else {
             ItemsBuilder ChristmasHat = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nChapeau de noël");
+                    .setName("Â§7Â§nChapeau de noÃ«l");
             inv.setItem(22,ChristmasHat.toItemStack());
         }
 
 
         if(!main.getCosmeticsManager().hasCosmetic("particleSuperHero",player.getUniqueId())) {
             ItemsBuilder SuperHero = new ItemsBuilder(Material.DIAMOND_HELMET)
-                    .setName("§6§nSuper héro");
+                    .setName("Â§6Â§nSuper hÃ©ro");
             inv.setItem(23,SuperHero.toItemStack());
         } else {
             ItemsBuilder SuperHero = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nSuper héro");
+                    .setName("Â§7Â§nSuper hÃ©ro");
             inv.setItem(23,SuperHero.toItemStack());
         }
 
 
         if(!main.getCosmeticsManager().hasCosmetic("particleEnchanted",player.getUniqueId())) {
             ItemsBuilder Enchanted = new ItemsBuilder(Material.ENCHANTMENT_TABLE)
-                    .setName("§6§nEnchanté");
+                    .setName("Â§6Â§nEnchantÃ©");
             inv.setItem(24,Enchanted.toItemStack());
         } else {
             ItemsBuilder Enchanted = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nEnchanté");
+                    .setName("Â§7Â§nEnchantÃ©");
             inv.setItem(24,Enchanted.toItemStack());
         }
 
 
         if(!main.getCosmeticsManager().hasCosmetic("particleBloodHelix",player.getUniqueId())) {
             ItemsBuilder BloodHelix = new ItemsBuilder(Material.REDSTONE)
-                    .setName("§6§nHélice de couleur");
+                    .setName("Â§6Â§nHÃ©lice de couleur");
             inv.setItem(25,BloodHelix.toItemStack());
         } else {
             ItemsBuilder BloodHelix = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nHélice de couleur");
+                    .setName("Â§7Â§nHÃ©lice de couleur");
             inv.setItem(25,BloodHelix.toItemStack());
         }
 
 
         if(!main.getCosmeticsManager().hasCosmetic("particleColorCircle",player.getUniqueId())) {
             ItemsBuilder ColorCircle = new ItemsBuilder(Material.BLAZE_ROD)
-                    .setName("§6§nCercle de couleur");
+                    .setName("Â§6Â§nCercle de couleur");
             inv.setItem(28,ColorCircle.toItemStack());
         } else {
             ItemsBuilder ColorCircle = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nCercle de couleur");
+                    .setName("Â§7Â§nCercle de couleur");
             inv.setItem(28,ColorCircle.toItemStack());
         }
 
 
         ItemsBuilder Retired = new ItemsBuilder(Material.BARRIER)
-                .setName("§6§nRetirer votre particule");
+                .setName("Â§6Â§nRetirer votre particule");
         inv.setItem(49,Retired.toItemStack());
 
         ItemsBuilder Return = new ItemsBuilder(Material.DARK_OAK_DOOR_ITEM)
-                .setName("§6§nRetour");
+                .setName("Â§6Â§nRetour");
         inv.setItem(53,Return.toItemStack());
     }
 
@@ -239,7 +239,7 @@ public class Particles implements GuiBuilder {
                     particle.endTask();
                     particle.removeID();
                 }
-                Emerald emeraldTrail = new Emerald(player);
+                Emerald emeraldTrail = new Emerald(main, player);
                 emeraldTrail.startEmerald();
                 player.closeInventory();
                 break;
@@ -249,7 +249,7 @@ public class Particles implements GuiBuilder {
                     particle.endTask();
                     particle.removeID();
                 }
-                Heart heartTrail = new Heart(player);
+                Heart heartTrail = new Heart(main, player);
                 heartTrail.startHeart();
                 player.closeInventory();
                 break;
@@ -259,7 +259,7 @@ public class Particles implements GuiBuilder {
                     particle.endTask();
                     particle.removeID();
                 }
-                Angry angryTrail = new Angry(player);
+                Angry angryTrail = new Angry(main, player);
                 angryTrail.startAngry();
                 player.closeInventory();
                 break;
@@ -269,7 +269,7 @@ public class Particles implements GuiBuilder {
                     particle.endTask();
                     particle.removeID();
                 }
-                Flame flameTrail = new Flame(player);
+                Flame flameTrail = new Flame(main, player);
                 flameTrail.startFlame();
                 player.closeInventory();
                 break;
@@ -279,7 +279,7 @@ public class Particles implements GuiBuilder {
                     particle.endTask();
                     particle.removeID();
                 }
-                Speed speedTrail = new Speed(player);
+                Speed speedTrail = new Speed(main, player);
                 speedTrail.startSpeed();
                 player.closeInventory();
                 break;
@@ -289,7 +289,7 @@ public class Particles implements GuiBuilder {
                     particle.endTask();
                     particle.removeID();
                 }
-                Rain rainTrail = new Rain(player);
+                Rain rainTrail = new Rain(main, player);
                 rainTrail.startRain();
                 player.closeInventory();
                 break;
@@ -299,7 +299,7 @@ public class Particles implements GuiBuilder {
                     particle.endTask();
                     particle.removeID();
                 }
-                RainLava lavaTrail = new RainLava(player);
+                RainLava lavaTrail = new RainLava(main, player);
                 lavaTrail.startRainLava();
                 player.closeInventory();
                 break;
@@ -309,7 +309,7 @@ public class Particles implements GuiBuilder {
                     particle.endTask();
                     particle.removeID();
                 }
-                EnderAura enderAuraTrail = new EnderAura(player);
+                EnderAura enderAuraTrail = new EnderAura(main, player);
                 enderAuraTrail.startEnderAura();
                 player.closeInventory();
                 break;
@@ -319,7 +319,7 @@ public class Particles implements GuiBuilder {
                     particle.endTask();
                     particle.removeID();
                 }
-                Crit critTrail = new Crit(player);
+                Crit critTrail = new Crit(main, player);
                 critTrail.startCrit();
                 player.closeInventory();
                 break;
@@ -329,7 +329,7 @@ public class Particles implements GuiBuilder {
                     particle.endTask();
                     particle.removeID();
                 }
-                AngelWings angelWingsTrail = new AngelWings(player);
+                AngelWings angelWingsTrail = new AngelWings(main, player);
                 angelWingsTrail.startAngelWings();
                 player.closeInventory();
                 break;
@@ -339,7 +339,7 @@ public class Particles implements GuiBuilder {
                     particle.endTask();
                     particle.removeID();
                 }
-                Enchanted enchantedTrail = new Enchanted(player);
+                Enchanted enchantedTrail = new Enchanted(main, player);
                 enchantedTrail.startEnchanted();
                 player.closeInventory();
                 break;
@@ -349,7 +349,7 @@ public class Particles implements GuiBuilder {
                     particle.endTask();
                     particle.removeID();
                 }
-                ChristmasHat christmasHatTrail = new ChristmasHat(player);
+                ChristmasHat christmasHatTrail = new ChristmasHat(main, player);
                 christmasHatTrail.startChristmasHat();
                 player.closeInventory();
                 break;
@@ -359,7 +359,7 @@ public class Particles implements GuiBuilder {
                     particle.endTask();
                     particle.removeID();
                 }
-                SuperHero superHeroTrail = new SuperHero(player);
+                SuperHero superHeroTrail = new SuperHero(main, player);
                 superHeroTrail.startSuperHero();
                 player.closeInventory();
                 break;
@@ -369,7 +369,7 @@ public class Particles implements GuiBuilder {
                     particle.endTask();
                     particle.removeID();
                 }
-                BloodHelix bloodHelixTrail = new BloodHelix(player);
+                BloodHelix bloodHelixTrail = new BloodHelix(main, player);
                 bloodHelixTrail.startBloodHelix();
                 player.closeInventory();
                 break;
@@ -379,13 +379,13 @@ public class Particles implements GuiBuilder {
                     particle.endTask();
                     particle.removeID();
                 }
-                ColorCircle colorCircleTrail = new ColorCircle(player);
+                ColorCircle colorCircleTrail = new ColorCircle(main, player);
                 colorCircleTrail.startColorCircle();
                 player.closeInventory();
                 break;
 
             case DARK_OAK_DOOR_ITEM:
-                Main.getInstance().getGuiManager().open(player, Cosmetics.class);
+                main.getGuiManager().open(player, Cosmetics.class);
                 break;
 
             case BARRIER:

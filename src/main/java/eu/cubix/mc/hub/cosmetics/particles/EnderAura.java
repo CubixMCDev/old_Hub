@@ -7,15 +7,17 @@ import org.bukkit.entity.Player;
 
 public class EnderAura {
 
+    private final Main main;
     private int taskID;
     private final Player player;
 
-    public EnderAura(Player player) {
+    public EnderAura(Main main, Player player) {
+        this.main = main;
         this.player = player;
     }
 
     public void startEnderAura() {
-        taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getInstance(), new Runnable() {
+        taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
             final ParticleData particle = new ParticleData(player.getUniqueId());
 
             @Override

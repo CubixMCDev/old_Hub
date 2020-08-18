@@ -6,7 +6,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 public class TaskVIP extends BukkitRunnable {
 
-    private Main main;
+    private final Main main;
     private final Player player;
 
     int timer = 2;
@@ -20,7 +20,7 @@ public class TaskVIP extends BukkitRunnable {
     public void run() {
         if(timer == 0) {
             main.getAPI().set().removeCredits(player.getUniqueId(), 4650);
-            player.sendMessage("§eCubixMC §6» §eAchat confirmé. Merci pour votre confiance !");
+            player.sendMessage("Â§eCubixMC Â§6Â» Â§eAchat confirmÃ©. Merci pour votre confiance !");
             main.getAPI().set().setRank(player.getUniqueId(), "vip", false);
             this.cancel();
         }

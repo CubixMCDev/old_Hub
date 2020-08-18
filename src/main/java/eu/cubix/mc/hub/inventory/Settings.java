@@ -20,7 +20,7 @@ public class Settings implements GuiBuilder {
 
     @Override
     public String name() {
-        return "§0Profil » Paramètres";
+        return "Â§0Profil Â» ParamÃ¨tres";
     }
 
     @Override
@@ -59,75 +59,75 @@ public class Settings implements GuiBuilder {
         inv.setItem(52, Separateur.toItemStack());
 
         ItemsBuilder Friends = new ItemsBuilder(Material.RAW_FISH)
-                .setName("§6§nAmis")
-                .setLore("§eActiver/Désactiver les demandes d'amis");
+                .setName("Â§6Â§nAmis")
+                .setLore("Â§eActiver/DÃ©sactiver les demandes d'amis");
         inv.setItem(20, Friends.toItemStack());
 
         ItemsBuilder PrivateMessage = new ItemsBuilder(Material.PAPER)
-                .setName("§6§nMessages privé")
-                .setLore("§eActiver/Désactiver les messages privés");
+                .setName("Â§6Â§nMessages privÃ©")
+                .setLore("Â§eActiver/DÃ©sactiver les messages privÃ©s");
         inv.setItem(23, PrivateMessage.toItemStack());
 
         ItemsBuilder Party = new ItemsBuilder(Material.COMMAND_MINECART)
-                .setName("§6§nGroupe")
-                .setLore("§eActiver/Désactiver les demandes de groupes");
+                .setName("Â§6Â§nGroupe")
+                .setLore("Â§eActiver/DÃ©sactiver les demandes de groupes");
         inv.setItem(29, Party.toItemStack());
 
         ItemsBuilder PartyFollow = new ItemsBuilder(Material.MINECART)
-                .setName("§6§nSuivi groupe")
-                .setLore("§eActiver/Désactiver le suivi de groupe");
+                .setName("Â§6Â§nSuivi groupe")
+                .setLore("Â§eActiver/DÃ©sactiver le suivi de groupe");
         inv.setItem(32, PartyFollow.toItemStack());
 
         if (main.getAPI().getFriendsManager().isAllowed(player.getUniqueId()) == 1) {
             ItemsBuilder Friends_option = new ItemsBuilder(Material.INK_SACK, 1, (byte) 10)
-                    .setName("§6§nOption ami")
-                    .setLore(Arrays.asList("§eClic gauche pour désactiver", "§eStatus : §6Activer"));
+                    .setName("Â§6Â§nOption ami")
+                    .setLore(Arrays.asList("Â§eClic gauche pour dÃ©sactiver", "Â§eStatus : Â§6Activer"));
             inv.setItem(21, Friends_option.toItemStack());
         } else if (main.getAPI().getFriendsManager().isAllowed(player.getUniqueId()) == 0) {
             ItemsBuilder Friends_option = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§6§nOption ami")
-                    .setLore(Arrays.asList("§eClic gauche pour activer", "§eStatus : §6Désactiver"));
+                    .setName("Â§6Â§nOption ami")
+                    .setLore(Arrays.asList("Â§eClic gauche pour activer", "Â§eStatus : Â§6DÃ©sactiver"));
             inv.setItem(21, Friends_option.toItemStack());
         }
 
         if (main.getAPI().getFriendsManager().hasAllowedMessages(player.getUniqueId())) {
             ItemsBuilder PrivateMessage_option = new ItemsBuilder(Material.INK_SACK, 1, (byte) 10)
-                    .setName("§6§nOption msg")
-                    .setLore(Arrays.asList("§eClic gauche pour désactiver", "§eStatus : §6Activer"));
+                    .setName("Â§6Â§nOption msg")
+                    .setLore(Arrays.asList("Â§eClic gauche pour dÂ§sactiver", "Â§eStatus : Â§6Activer"));
             inv.setItem(24, PrivateMessage_option.toItemStack());
         } else if (!main.getAPI().getFriendsManager().hasAllowedMessages(player.getUniqueId())) {
             ItemsBuilder PrivateMessage_option = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§6§nOption msg")
-                    .setLore(Arrays.asList("§eClic gauche pour activer", "§eStatus : §6Désactiver"));
+                    .setName("Â§6Â§nOption msg")
+                    .setLore(Arrays.asList("Â§eClic gauche pour activer", "Â§eStatus : Â§6DÃ©sactiver"));
             inv.setItem(24, PrivateMessage_option.toItemStack());
         }
 
         if (main.getAPI().getPartyManager().getAllow(player.getUniqueId()) == 1) {
             ItemsBuilder Party_option = new ItemsBuilder(Material.INK_SACK, 1, (byte) 10)
-                    .setName("§6§nOption groupe")
-                    .setLore(Arrays.asList("§eClic gauche pour désactiver", "§eStatus : §6Activer"));
+                    .setName("Â§6Â§nOption groupe")
+                    .setLore(Arrays.asList("Â§eClic gauche pour dÃ©sactiver", "Â§eStatus : Â§6Activer"));
             inv.setItem(30, Party_option.toItemStack());
         } else if (main.getAPI().getPartyManager().getAllow(player.getUniqueId()) == 0) {
             ItemsBuilder Party_option = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§6§nOption groupe")
-                    .setLore(Arrays.asList("§eClic gauche pour activer", "§eStatus : §6Désactiver"));
+                    .setName("Â§6Â§nOption groupe")
+                    .setLore(Arrays.asList("Â§eClic gauche pour activer", "Â§eStatus : Â§6DÃ©sactiver"));
             inv.setItem(30, Party_option.toItemStack());
         }
 
         if (main.getAPI().getPartyManager().getFollow(player.getUniqueId()) == 1) {
             ItemsBuilder PartyFollow_option = new ItemsBuilder(Material.INK_SACK, 1, (byte) 10)
-                    .setName("§6§nOption suivi groupe")
-                    .setLore(Arrays.asList("§eClic gauche pour désactiver", "§eStatus : §6Activer"));
+                    .setName("Â§6Â§nOption suivi groupe")
+                    .setLore(Arrays.asList("Â§eClic gauche pour dÃ©sactiver", "Â§eStatus : Â§6Activer"));
             inv.setItem(33, PartyFollow_option.toItemStack());
         } else if (main.getAPI().getPartyManager().getFollow(player.getUniqueId()) == 0) {
             ItemsBuilder PartyFollow_option = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§6§nOption suivi groupe")
-                    .setLore(Arrays.asList("§eClic gauche pour activer", "§eStatus : §6Désactiver"));
+                    .setName("Â§6Â§nOption suivi groupe")
+                    .setLore(Arrays.asList("Â§eClic gauche pour activer", "Â§eStatus : Â§6DÃ©sactiver"));
             inv.setItem(33, PartyFollow_option.toItemStack());
         }
 
         ItemsBuilder Return = new ItemsBuilder(Material.DARK_OAK_DOOR_ITEM)
-                .setName("§6§nRetour");
+                .setName("Â§6Â§nRetour");
         inv.setItem(53, Return.toItemStack());
     }
 
@@ -139,7 +139,7 @@ public class Settings implements GuiBuilder {
                 break;
         }
 
-        if (current != null && current.getType() == Material.INK_SACK && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nOption ami")) {
+        if (current != null && current.getType() == Material.INK_SACK && current.getItemMeta().getDisplayName().equalsIgnoreCase("Â§6Â§nOption ami")) {
             if (main.getAPI().getFriendsManager().isAllowed(player.getUniqueId()) == 1) {
                 main.getAPI().getFriendsManager().setAllow(0, player.getUniqueId());
                 player.updateInventory();
@@ -150,7 +150,7 @@ public class Settings implements GuiBuilder {
                 main.getGuiManager().open(player, Settings.class);
             }
         }
-        if (current != null && current.getType() == Material.INK_SACK && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nOption msg")) {
+        if (current != null && current.getType() == Material.INK_SACK && current.getItemMeta().getDisplayName().equalsIgnoreCase("Â§6Â§nOption msg")) {
             if (main.getAPI().getFriendsManager().hasAllowedMessages(player.getUniqueId())) {
                 main.getAPI().getFriendsManager().setAllowMessages(player.getUniqueId(),0);
                 player.updateInventory();
@@ -161,7 +161,7 @@ public class Settings implements GuiBuilder {
                 main.getGuiManager().open(player, Settings.class);
             }
         }
-        if (current != null && current.getType() == Material.INK_SACK && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nOption groupe")) {
+        if (current != null && current.getType() == Material.INK_SACK && current.getItemMeta().getDisplayName().equalsIgnoreCase("Â§6Â§nOption groupe")) {
             if (main.getAPI().getPartyManager().getAllow(player.getUniqueId()) == 1) {
                 main.getAPI().getPartyManager().setAllow(0, player.getUniqueId());
                 player.updateInventory();
@@ -172,7 +172,7 @@ public class Settings implements GuiBuilder {
                 main.getGuiManager().open(player, Settings.class);
             }
         }
-        if (current != null && current.getType() == Material.INK_SACK && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nOption suivi groupe")) {
+        if (current != null && current.getType() == Material.INK_SACK && current.getItemMeta().getDisplayName().equalsIgnoreCase("Â§6Â§nOption suivi groupe")) {
             if (main.getAPI().getPartyManager().getFollow(player.getUniqueId()) == 1) {
                 main.getAPI().getPartyManager().setFollow(0, player.getUniqueId());
                 player.updateInventory();

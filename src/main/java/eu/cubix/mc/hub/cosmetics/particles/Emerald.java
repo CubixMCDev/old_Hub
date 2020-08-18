@@ -7,15 +7,17 @@ import org.bukkit.entity.Player;
 
 public class Emerald {
 
+    private final Main main;
     private int taskID;
     private final Player player;
 
-    public Emerald(Player player) {
+    public Emerald(Main main, Player player) {
+        this.main = main;
         this.player = player;
     }
 
     public void startEmerald() {
-        taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getInstance(), new Runnable() {
+        taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
             final ParticleData particle = new ParticleData(player.getUniqueId());
 
             @Override

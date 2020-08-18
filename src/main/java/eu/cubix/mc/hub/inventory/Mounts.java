@@ -17,7 +17,7 @@ public class Mounts implements GuiBuilder {
 
     @Override
     public String name() {
-        return "§0Cosmétiques » Monture";
+        return "Â§0CosmÃ©tiques Â» Monture";
     }
 
     @Override
@@ -55,11 +55,11 @@ public class Mounts implements GuiBuilder {
         inv.setItem(52,Separateur.toItemStack());
 
         ItemsBuilder Retired = new ItemsBuilder(Material.BARRIER)
-                .setName("§6§nRetirer votre monture");
+                .setName("Â§6Â§nRetirer votre monture");
         inv.setItem(49,Retired.toItemStack());
 
         ItemsBuilder Return = new ItemsBuilder(Material.DARK_OAK_DOOR_ITEM)
-                .setName("§6§nRetour");
+                .setName("Â§6Â§nRetour");
         inv.setItem(53,Return.toItemStack());
     }
 

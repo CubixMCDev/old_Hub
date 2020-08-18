@@ -13,6 +13,7 @@ import java.util.List;
 
 public class ColorCircle {
 
+    private final Main main;
     private int taskID;
     private final Player player;
     private static final List<Color> COLORS = new ArrayList<>();
@@ -40,12 +41,13 @@ public class ColorCircle {
     private double angle = 0; // Current angle
     private double heightDiffFactor = MAX_HEIGHT_DIFF; // Height diff between columns. Variates over time with hoveringDirectionUp.
 
-    public ColorCircle(Player player) {
+    public ColorCircle(Main main, Player player) {
+        this.main = main;
         this.player = player;
     }
 
     public void startColorCircle() {
-        taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getInstance(), new Runnable() {
+        taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
             final ParticleData particle = new ParticleData(player.getUniqueId());
 
             @Override

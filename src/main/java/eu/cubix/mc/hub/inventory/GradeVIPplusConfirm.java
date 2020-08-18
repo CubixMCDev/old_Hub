@@ -21,7 +21,7 @@ public class GradeVIPplusConfirm implements GuiBuilder {
 
     @Override
     public String name() {
-        return "§0Boutique » Grades » VIP+";
+        return "Â§0Boutique Â» Grades Â» VIP+";
     }
 
     @Override
@@ -54,29 +54,29 @@ public class GradeVIPplusConfirm implements GuiBuilder {
         inv.setItem(26,Separateur.toItemStack());
 
         ItemsBuilder VIPplus = new ItemsBuilder(Material.GOLD_INGOT)
-                .setName("§6VIP+")
-                .setLore(Arrays.asList(" ","§e§l• Prix: 4650 \u24D2","§e§l• Avantages:","§e- ..."));
+                .setName("Â§6VIP+")
+                .setLore(Arrays.asList(" ","Â§eÂ§lÂ» Prix: 4650 \u24D2","Â§eÂ§lÂ» Avantages:","Â§e- ..."));
         inv.setItem(4,VIPplus.toItemStack());
 
         ItemsBuilder Confirm = new ItemsBuilder(Material.INK_SACK, 1, (byte) 10)
-                .setName("§aConfirmer");
+                .setName("Â§aConfirmer");
         inv.setItem(12,Confirm.toItemStack());
 
         ItemsBuilder Cancel = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                .setName("§cAnnuler");
+                .setName("Â§cAnnuler");
         inv.setItem(14,Cancel.toItemStack());
     }
 
     @Override
-    public void onClick(Player player, Inventory inv, ItemStack current, int slot) throws InterruptedException {
-        if (current.getItemMeta().getDisplayName().equalsIgnoreCase("§aConfirmer")) {
+    public void onClick(Player player, Inventory inv, ItemStack current, int slot) {
+        if (current.getItemMeta().getDisplayName().equalsIgnoreCase("Â§aConfirmer")) {
             player.closeInventory();
-            player.sendMessage("§eCubixMC §6» §eAchat en cours...");
+            player.sendMessage("Â§eCubixMC Â§6Â» Â§eAchat en cours...");
             TaskVIPplus task = new TaskVIPplus(main, player);
             task.runTaskTimer(main, 0, 20);
         }
 
-        if (current.getItemMeta().getDisplayName().equalsIgnoreCase("§cAnnuler")) {
+        if (current.getItemMeta().getDisplayName().equalsIgnoreCase("Â§cAnnuler")) {
             main.getGuiManager().open(player, ShopGrades.class);
         }
     }

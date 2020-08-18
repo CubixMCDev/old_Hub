@@ -9,11 +9,13 @@ import org.bukkit.util.Vector;
 
 public class SuperHero {
 
+    private final Main main;
     private int taskID;
     private final Player player;
     boolean x = true;
 
-    public SuperHero(Player player) {
+    public SuperHero(Main main, Player player) {
+        this.main = main;
         this.player = player;
     }
 
@@ -29,7 +31,7 @@ public class SuperHero {
     };
 
     public void startSuperHero() {
-        taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getInstance(), new Runnable() {
+        taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
             final ParticleData particle = new ParticleData(player.getUniqueId());
 
             @Override

@@ -24,7 +24,7 @@ public class Friends implements GuiBuilder {
 
     @Override
     public String name() {
-        return "§0Profil » Amis";
+        return "Â§0Profil Â» Amis";
     }
 
     @Override
@@ -66,19 +66,19 @@ public class Friends implements GuiBuilder {
             OfflinePlayer friend = Bukkit.getOfflinePlayer(friends.get(i));
             if (friend.isOnline()) {
                 ArrayList<String> lore = new ArrayList<String>();
-                lore.add("§eStatut : §6Connecté");
-                lore.add("§eServeur : §6(In dev)");
-                lore.add("§e» Clic gauche pour se téléporter §6(In dev)");
+                lore.add("Â§eStatut : Â§6ConnectÃ©");
+                lore.add("Â§eServeur : Â§6(In dev)");
+                lore.add("Â§eÂ» Clic gauche pour se tÃ©lÃ©porter Â§6(In dev)");
                 ItemsBuilder head = new ItemsBuilder(Material.SKULL_ITEM, 1, (byte) 3)
-                        .setName("§6§n"+friend.getName())
+                        .setName("Â§6Â§n"+friend.getName())
                         .setLore(lore)
                         .setSkullOwner(friend.getName());
                 inv.setItem(i + 10, head.toItemStack());
             } else {
                 ArrayList<String> lore = new ArrayList<String>();
-                lore.add("§eStatut : §6Déconnecté");
+                lore.add("Â§eStatut : Â§6DÃ©connectÃ©");
                 ItemsBuilder head = new ItemsBuilder(Material.SKULL_ITEM, 1, (byte) 3)
-                        .setName("§6§n"+friend.getName())
+                        .setName("Â§6Â§n"+friend.getName())
                         .setLore(lore)
                         .setSkullOwner(friend.getName());
                 inv.setItem(i + 10, head.toItemStack());
@@ -86,7 +86,7 @@ public class Friends implements GuiBuilder {
         }
 
         ItemsBuilder Return = new ItemsBuilder(Material.DARK_OAK_DOOR_ITEM)
-                .setName("§6§nRetour");
+                .setName("Â§6Â§nRetour");
         inv.setItem(44,Return.toItemStack());
     }
 

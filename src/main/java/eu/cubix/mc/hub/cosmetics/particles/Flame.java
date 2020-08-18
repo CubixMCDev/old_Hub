@@ -9,16 +9,18 @@ import org.bukkit.util.Vector;
 
 public class Flame {
 
+    private final Main main;
     private int taskID;
     private final Player player;
 
-    public Flame(Player player) {
+    public Flame(Main main, Player player) {
+        this.main = main;
         this.player = player;
     }
 
     public void startFlame() {
 
-        taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getInstance(), new Runnable() {
+        taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
             final ParticleData particle = new ParticleData(player.getUniqueId());
             float step = 0;
 

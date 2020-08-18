@@ -32,15 +32,15 @@ public class Key implements CommandExecutor {
             if (player.hasPermission("*")) {
                 ItemStack voteKey = new ItemStack(Material.TRIPWIRE_HOOK);
                 ItemMeta meta = voteKey.getItemMeta();
-                meta.setDisplayName("§6Clé de vote");
-                meta.setLore(Collections.singletonList("§eType: Commun"));
+                meta.setDisplayName("Â§6ClÃ© de vote");
+                meta.setLore(Collections.singletonList("Â§eType: Commun"));
                 meta.addEnchant(Enchantment.LUCK, 10, true);
                 meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
                 voteKey.setItemMeta(meta);
 
                 player.getInventory().addItem(voteKey);
             } else {
-                player.sendMessage("§cCubixMC §4» §cErreur: commande inconnue.");
+                player.sendMessage("Â§cCubixMC Â§4Â» Â§cErreur: commande inconnue.");
             }
         }
         return false;

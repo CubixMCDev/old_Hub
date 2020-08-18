@@ -31,7 +31,7 @@ public class ScoreboardManager {
                 main.getExecutorMonoThread().execute(() -> scoreboard.setLines(ip));
         }, 80, 80, TimeUnit.MILLISECONDS);
 
-        reloadingTask = Main.getInstance().getScheduledExecutorService().scheduleAtFixedRate(() ->
+        reloadingTask = main.getScheduledExecutorService().scheduleAtFixedRate(() ->
         {
             for (PersonalScoreboard scoreboard : scoreboards.values())
                 main.getExecutorMonoThread().execute(scoreboard::reloadData);

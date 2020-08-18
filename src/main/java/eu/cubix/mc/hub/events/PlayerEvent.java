@@ -15,8 +15,6 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.Inventory;
 
-import java.util.UUID;
-
 public class PlayerEvent implements Listener {
 
     private final Main main;
@@ -27,9 +25,9 @@ public class PlayerEvent implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
-        Title titlePrison = new Title("§4Vous êtes banni","§cQuel dommage!");
-        Title title = new Title("§6Bienvenue","§eBon jeu!");
-        ActionBar actionBar = new ActionBar("§cLe serveur est en phase de développement.");
+        Title titlePrison = new Title("Â§4Vous Ãªtes banni","Â§cQuel dommage!");
+        Title title = new Title("Â§6Bienvenue","Â§eBon jeu!");
+        ActionBar actionBar = new ActionBar("Â§cLe serveur est en phase de dÃ©veloppement.");
         Player player = e.getPlayer();
         Inventory inv = player.getInventory();
         Location spawn = new Location(Bukkit.getServer().getWorld("Hub"), 110.5, 16, 772.5, 180, 0);
@@ -43,7 +41,7 @@ public class PlayerEvent implements Listener {
         e.getPlayer().getInventory().setHeldItemSlot(4);
 
         if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip")) {
-            e.setJoinMessage("§e" + main.getAPI().get().getRankWithColors(player.getUniqueId()) + "§8\u2758§r " + player.getName() + " §6a rejoint le hub !");
+            e.setJoinMessage("Â§e" + main.getAPI().get().getRankWithColors(player.getUniqueId()) + "Â§8\u2758Â§r " + player.getName() + " Â§6a rejoint le hub !");
         } else {
             e.setJoinMessage("");
         }
@@ -52,11 +50,11 @@ public class PlayerEvent implements Listener {
 
         if(main.getAPI().getBanManager().isBanned(player.getUniqueId())) {
             player.teleport(prison);
-            player.sendMessage("§cCubixMC §4» §cErreur: vous êtes banni §4"+"un temps"+"§c.");
+            player.sendMessage("Â§cCubixMC Â§4Â» Â§cErreur: vous Ãªtes banni Â§4"+"un temps"+"Â§c.");
 
             titlePrison.send(player,1,7,1);
 
-            ItemsBuilder ban = new ItemsBuilder(Material.BARRIER).setName("§4Vous êtes banni").setLore("§cQuel dommage!");
+            ItemsBuilder ban = new ItemsBuilder(Material.BARRIER).setName("Â§4Vous Ãªtes banni").setLore("Â§cQuel dommage!");
             inv.setItem(0,ban.toItemStack());
             inv.setItem(1,ban.toItemStack());
             inv.setItem(2,ban.toItemStack());
@@ -70,17 +68,17 @@ public class PlayerEvent implements Listener {
             if(!main.getAPI().getModManager().isInMod(player.getUniqueId())) {
                 inv.clear();
 
-                ItemsBuilder profil = new ItemsBuilder(Material.SKULL_ITEM, 1, (byte) 3).setName("§6Profil").setLore("§eClic droit").setSkullOwner(player.getName());
+                ItemsBuilder profil = new ItemsBuilder(Material.SKULL_ITEM, 1, (byte) 3).setName("Â§6Profil").setLore("Â§eClic droit").setSkullOwner(player.getName());
                 inv.setItem(0,profil.toItemStack());
-                ItemsBuilder menu = new ItemsBuilder(Material.COMPASS).setName("§6Menu").setLore("§eClic droit");
+                ItemsBuilder menu = new ItemsBuilder(Material.COMPASS).setName("Â§6Menu").setLore("Â§eClic droit");
                 inv.setItem(3,menu.toItemStack());
                 if(main.getAPI().getPartyManager().isInParty(String.valueOf(player))) {
-                    ItemsBuilder joinLeaderParty = new ItemsBuilder(Material.FLINT).setName("§6Rejoindre le chef de groupe").setLore("§eClic droit");
+                    ItemsBuilder joinLeaderParty = new ItemsBuilder(Material.FLINT).setName("Â§6Rejoindre le chef de groupe").setLore("Â§eClic droit");
                     inv.setItem(4,joinLeaderParty.toItemStack());
                 }
-                ItemsBuilder cosmetiques = new ItemsBuilder(Material.ENDER_CHEST).setName("§6Cosmétiques").setLore("§eClic droit");
+                ItemsBuilder cosmetiques = new ItemsBuilder(Material.ENDER_CHEST).setName("Â§6CosmÃ©tiques").setLore("Â§eClic droit");
                 inv.setItem(5,cosmetiques.toItemStack());
-                ItemsBuilder boutique = new ItemsBuilder(Material.GOLD_INGOT).setName("§6Boutique").setLore("§eClic droit");
+                ItemsBuilder boutique = new ItemsBuilder(Material.GOLD_INGOT).setName("Â§6Boutique").setLore("Â§eClic droit");
                 inv.setItem(8,boutique.toItemStack());
             }
 
@@ -89,19 +87,19 @@ public class PlayerEvent implements Listener {
             title.send(player,1,7,1);
             actionBar.send(player);
 
-            Hologram hologram = new Hologram("§6§lVotre profil",
-                    "§8§m---------------------------",
-                    "§6Pseudo : §e"+player.getName(),
-                    "§6Grade : §e"+ main.getAPI().get().getRankWithColors(player.getUniqueId()),
-                    "§6Crédits : §e" + main.getAPI().get().getCredits(player.getUniqueId()) + " \u24D2",
-                    "§6Coins : §e"+ main.getAPI().get().getCoins(player.getUniqueId()) + " \u26C3",
-                    "§6Temps de jeu : §e"+"0 minutes §c(Soon)",
-                    "§6Niveau : §e"+main.getAPI().get().getLevel(player.getUniqueId())+" §6(§e"+main.getAPI().get().getExp(player.getUniqueId())+" Exp.§6)",
-                    "§6Progression : §e"+"§6[§e\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758§6] §e"+"0%",
-                    "§8§m---------------------------");
+            Hologram hologram = new Hologram("Â§6Â§lVotre profil",
+                    "Â§8Â§m---------------------------",
+                    "Â§6Pseudo : Â§e"+player.getName(),
+                    "Â§6Grade : Â§e"+ main.getAPI().get().getRankWithColors(player.getUniqueId()),
+                    "Â§6CrÃ©dits : Â§e" + main.getAPI().get().getCredits(player.getUniqueId()) + " \u24D2",
+                    "Â§6Coins : Â§e"+ main.getAPI().get().getCoins(player.getUniqueId()) + " \u26C3",
+                    "Â§6Temps de jeu : Â§e"+"0 minutes Â§c(Soon)",
+                    "Â§6Niveau : Â§e"+main.getAPI().get().getLevel(player.getUniqueId())+" Â§6(Â§e"+main.getAPI().get().getExp(player.getUniqueId())+" Exp.Â§6)",
+                    "Â§6Progression : Â§e"+"Â§6[Â§e\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758Â§6] Â§e"+"0%",
+                    "Â§8Â§m---------------------------");
             hologram.show(player, new Location(player.getWorld(),110.5,15.5,765.5));
 
-            Hologram hologram2 = new Hologram("§6Caisse", "§eClé de vote");
+            Hologram hologram2 = new Hologram("Â§6Caisse", "Â§eClÃ© de vote");
             hologram2.show(player, new Location(player.getWorld(),103.5,16,765.5));
 
             player.setAllowFlight(player.hasPermission("fly.hub"));
@@ -126,7 +124,7 @@ public class PlayerEvent implements Listener {
         ParticleData particle = new ParticleData(player.getUniqueId());
 
         if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip")) {
-            e.setQuitMessage("§e" + main.getAPI().get().getRankWithColors(player.getUniqueId()) + "§8\u2758§r " + player.getName() + " §6a quitté le hub !");
+            e.setQuitMessage("Â§e" + main.getAPI().get().getRankWithColors(player.getUniqueId()) + "Â§8\u2758Â§r " + player.getName() + " Â§6a quittÃ© le hub !");
         } else {
             e.setQuitMessage("");
         }

@@ -18,7 +18,7 @@ public class Shop implements GuiBuilder {
 
     @Override
     public String name() {
-        return "§0Boutique";
+        return "Â§0Boutique";
     }
 
     @Override
@@ -57,32 +57,32 @@ public class Shop implements GuiBuilder {
         inv.setItem(52,Separateur.toItemStack());
 
         ItemsBuilder Pets = new ItemsBuilder(Material.BONE)
-                .setName("§6§nCompagnons")
-                .setLore("§eAchète un petit compagnon tout mignon");
+                .setName("Â§6Â§nCompagnons")
+                .setLore("Â§eAchÂ§te un petit compagnon tout mignon");
         inv.setItem(20,Pets.toItemStack());
 
         ItemsBuilder Gadgets = new ItemsBuilder(Material.PISTON_BASE)
-                .setName("§6§nGadgets")
-                .setLore("§eAchète un gadget pour t'amuser");
+                .setName("Â§6Â§nGadgets")
+                .setLore("Â§eAchÃ¨te un gadget pour t'amuser");
         inv.setItem(22,Gadgets.toItemStack());
 
         ItemsBuilder Particules = new ItemsBuilder(Material.REDSTONE)
-                .setName("§6§nParticules")
-                .setLore("§eAchète de magnifique particules");
+                .setName("Â§6Â§nParticules")
+                .setLore("Â§eAchÃ¨te de magnifique particules");
         inv.setItem(24,Particules.toItemStack());
 
         ItemsBuilder Mounts = new ItemsBuilder(Material.SADDLE)
-                .setName("§6§nMontures")
-                .setLore("§eAchète une petite monture pour t'y amener");
+                .setName("Â§6Â§nMontures")
+                .setLore("Â§eAchÃ¨te une petite monture pour t'y amener");
         inv.setItem(30,Mounts.toItemStack());
 
         ItemsBuilder Grades = new ItemsBuilder(Material.DIAMOND)
-                .setName("§6§nGrades")
-                .setLore("§eAchète un grade");
+                .setName("Â§6Â§nGrades")
+                .setLore("Â§eAchÃ¨te un grade pour plus de swag");
         inv.setItem(32,Grades.toItemStack());
 
         ItemsBuilder Return = new ItemsBuilder(Material.DARK_OAK_DOOR_ITEM)
-                .setName("§6§nRetour");
+                .setName("Â§6Â§nRetour");
         inv.setItem(53,Return.toItemStack());
     }
 

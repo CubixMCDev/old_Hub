@@ -23,7 +23,7 @@ public class Profile implements GuiBuilder {
 
     @Override
     public String name() {
-        return "§0Profil";
+        return "Â§0Profil";
     }
 
     @Override
@@ -61,68 +61,68 @@ public class Profile implements GuiBuilder {
         inv.setItem(52,Separateur.toItemStack());
 
         ItemsBuilder profil = new ItemsBuilder(Material.SKULL_ITEM, 1, (byte) 3)
-                .setName("§6§n"+player.getName())
-                .setLore(Arrays.asList("§eGrade: "+ main.getAPI().get().getRankWithColors(player.getUniqueId()),
-                        "§eCrédits: §6" + main.getAPI().get().getCredits(player.getUniqueId()) + " \u24D2",
-                        "§eCoins: §6"+ main.getAPI().get().getCoins(player.getUniqueId()) + " \u26C3",
-                        "§eNiveau: §6" + main.getAPI().get().getLevel(player.getUniqueId()),
-                        "§eExp: §6"+ main.getAPI().get().getExp(player.getUniqueId())+" / "+ main.getAPI().get().getXPfromLevel(main.getAPI().get().getLevel(player.getUniqueId()))))
+                .setName("Â§6Â§n"+player.getName())
+                .setLore(Arrays.asList("Â§eGrade: "+ main.getAPI().get().getRankWithColors(player.getUniqueId()),
+                        "Â§eCrÃ©dits: Â§6" + main.getAPI().get().getCredits(player.getUniqueId()) + " \u24D2",
+                        "Â§eCoins: Â§6"+ main.getAPI().get().getCoins(player.getUniqueId()) + " \u26C3",
+                        "Â§eNiveau: Â§6" + main.getAPI().get().getLevel(player.getUniqueId()),
+                        "Â§eExp: Â§6"+ main.getAPI().get().getExp(player.getUniqueId())+" / "+ main.getAPI().get().getXPfromLevel(main.getAPI().get().getLevel(player.getUniqueId()))))
                 .setSkullOwner(player.getName());
         inv.setItem(4,profil.toItemStack());
 
         ItemsBuilder Pvpbox = new ItemsBuilder(Material.IRON_SWORD)
-                .setName("§6§nPvpbox")
+                .setName("Â§6Â§nPvpbox")
                 .setFlags(ItemFlag.HIDE_ATTRIBUTES)
-                .setLore(Arrays.asList("§eKills: §6"+"main.getAPI().getUserManager().getUser(player.getUniqueId()).getKills(player)", "§eMorts: §6"+"api.getPvPBoxManager().getDeaths(player)"));
+                .setLore(Arrays.asList("Â§eKills: Â§6"+"main.getAPI().getUserManager().getUser(player.getUniqueId()).getKills(player)", "Â§eMorts: Â§6"+"api.getPvPBoxManager().getDeaths(player)"));
         inv.setItem(20,Pvpbox.toItemStack());
 
         ItemsBuilder DeACoudre = new ItemsBuilder(Material.WOOL, 1, (byte) 1)
-                .setName("§6§nDéACoudre")
-                .setLore(Arrays.asList("§eDAC réalisé: §60","§ePartie gagnée: §60", "§ePartie perdue: §60"));
+                .setName("Â§6Â§nDÃ©ACoudre")
+                .setLore(Arrays.asList("Â§eDAC rÃ©alisÃ©: Â§60","Â§ePartie gagnÃ©e: Â§60", "Â§ePartie perdue: Â§60"));
         inv.setItem(21,DeACoudre.toItemStack());
 
         ItemsBuilder Punch = new ItemsBuilder(Material.STICK)
-                .setName("§6§nPunch")
-                .setLore(Arrays.asList("§ePartie gagnée: §60", "§ePartie perdue: §60"));
+                .setName("Â§6Â§nPunch")
+                .setLore(Arrays.asList("Â§ePartie gagnÃ©e: Â§60", "Â§ePartie perdue: Â§60"));
         inv.setItem(22,Punch.toItemStack());
 
         ItemsBuilder UHCRun = new ItemsBuilder(Material.GOLDEN_APPLE)
-                .setName("§6§nUHC Run")
-                .setLore(Arrays.asList("§eKills: §60", "§ePartie gagnée: §60", "§ePartie perdue: §60"));
+                .setName("Â§6Â§nUHC Run")
+                .setLore(Arrays.asList("Â§eKills: Â§60", "Â§ePartie gagnÃ©e: Â§60", "Â§ePartie perdue: Â§60"));
             inv.setItem(23,UHCRun.toItemStack());
 
         ItemsBuilder DeathNoteUHC = new ItemsBuilder(Material.BOOK)
-                .setName("§6§nDeathNoteUHC")
-                .setLore(Arrays.asList("§eKills: §60", "§ePartie gagnée: §60", "§ePartie perdue: §60"));
+                .setName("Â§6Â§nDeathNoteUHC")
+                .setLore(Arrays.asList("Â§eKills: Â§60", "Â§ePartie gagnÃ©e: Â§60", "Â§ePartie perdue: Â§60"));
         inv.setItem(24,DeathNoteUHC.toItemStack());
 
         ItemsBuilder SurvivalGames = new ItemsBuilder(Material.APPLE)
-                .setName("§6§nSurvival Games")
-                .setLore(Arrays.asList("§eKills: §60", "§ePartie gagnée: §60", "§ePartie perdue: §60"));
+                .setName("Â§6Â§nSurvival Games")
+                .setLore(Arrays.asList("Â§eKills: Â§60", "Â§ePartie gagnÃ©e: Â§60", "Â§ePartie perdue: Â§60"));
         inv.setItem(30,SurvivalGames.toItemStack());
 
         ItemsBuilder HideAndSeek = new ItemsBuilder(Material.SLIME_BLOCK)
-                .setName("§6§nHide And Seek")
-                .setLore(Arrays.asList("§eKills: §60", "§ePartie gagnée: §60", "§ePartie perdue: §60"));
+                .setName("Â§6Â§nHide And Seek")
+                .setLore(Arrays.asList("Â§eKills: Â§60", "Â§ePartie gagnÃ©e: Â§60", "Â§ePartie perdue: Â§60"));
         inv.setItem(32,HideAndSeek.toItemStack());
 
         ItemsBuilder amis = new ItemsBuilder(Material.RAW_FISH)
-                .setName("§6§nAmis")
-                .setLore("§eVous avez des amis?");
+                .setName("Â§6Â§nAmis")
+                .setLore("Â§eVous avez des amis?");
         inv.setItem(45,amis.toItemStack());
 
         ItemsBuilder parametres = new ItemsBuilder(Material.REDSTONE_COMPARATOR)
-                .setName("§6§nParamètres")
-                .setLore("§eQu'est-ce que vous préférez?");
+                .setName("Â§6Â§nParamÃ¨tres")
+                .setLore("Â§eQuels sont vos prÃ©fÃ©rences?");
         inv.setItem(47,parametres.toItemStack());
 
         inv.setItem(49, new ItemFactory(CustomSkull.getCustomSkull("http://textures.minecraft.net/texture/98daa1e3ed94ff3e33e1d4c6e43f024c47d78a57ba4d38e75e7c9264106"))
-                .withName("§6§nLangues")
-                .withLore("§eVous parler français?")
+                .withName("Â§6Â§nLangues")
+                .withLore("Â§eVous parler franÃ§ais?")
                 .done());
 
         ItemsBuilder Return = new ItemsBuilder(Material.DARK_OAK_DOOR_ITEM)
-                .setName("§6§nRetour");
+                .setName("Â§6Â§nRetour");
         inv.setItem(53,Return.toItemStack());
     }
 
@@ -144,7 +144,7 @@ public class Profile implements GuiBuilder {
             main.getGuiManager().open(player, Friends.class);
         }
 
-        if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nLangues")) {
+        if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("Â§6Â§nLangues")) {
             main.getGuiManager().open(player, Languages.class);
         }
     }

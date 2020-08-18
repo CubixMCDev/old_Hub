@@ -21,7 +21,7 @@ public class GadgetSheepExplodeConfirm implements GuiBuilder {
 
     @Override
     public String name() {
-        return "§0Boutique » Gadgets » Mouton";
+        return "Â§0Boutique Â» Gadgets Â» Mouton";
     }
 
     public int getSize() {
@@ -57,30 +57,30 @@ public class GadgetSheepExplodeConfirm implements GuiBuilder {
         inv.setItem(44,Separateur.toItemStack());
 
         ItemsBuilder VIP = new ItemsBuilder(Material.WOOL, 1, (byte) 14)
-                .setName("§6§nMouton explosif")
-                .setLore(Arrays.asList(" ", "§e§l• Prix: 10 \u24D2"));
+                .setName("Â§6Â§nMouton explosif")
+                .setLore(Arrays.asList(" ", "Â§eÂ§lÂ» Prix: 10 \u24D2"));
         inv.setItem(4, VIP.toItemStack());
 
         ItemsBuilder Confirm = new ItemsBuilder(Material.INK_SACK, 1, (byte) 10)
-                .setName("§aConfirmer");
+                .setName("Â§aConfirmer");
         inv.setItem(21, Confirm.toItemStack());
 
         ItemsBuilder Cancel = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                .setName("§cAnnuler");
+                .setName("Â§cAnnuler");
         inv.setItem(23, Cancel.toItemStack());
     }
 
     @Override
     public void onClick(Player player, Inventory inv, ItemStack current, int slot) {
 
-        if (current.getItemMeta().getDisplayName().equalsIgnoreCase("§aConfirmer")) {
+        if (current.getItemMeta().getDisplayName().equalsIgnoreCase("Â§aConfirmer")) {
             player.closeInventory();
-            player.sendMessage("§eCubixMC §6» §eAchat en cours...");
+            player.sendMessage("Â§eCubixMC Â§6Â» Â§eAchat en cours...");
             TaskGadgetSheepExplode task = new TaskGadgetSheepExplode(main, player);
             task.runTaskTimer(main, 0, 20);
         }
 
-        if (current.getItemMeta().getDisplayName().equalsIgnoreCase("§cAnnuler")) {
+        if (current.getItemMeta().getDisplayName().equalsIgnoreCase("Â§cAnnuler")) {
             main.getGuiManager().open(player, ShopGadgets.class);
         }
     }

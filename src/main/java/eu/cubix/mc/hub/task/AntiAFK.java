@@ -24,7 +24,7 @@ public class AntiAFK extends BukkitRunnable {
 
         if(timer == 0) {
             if((block.getX() == player.getLocation().getBlock().getX()) && (block.getZ() == player.getLocation().getBlock().getZ())) {
-                player.kickPlayer("§cVous avez été éjecté pour AFK! §4(15 minutes)");
+                player.kickPlayer("Â§cVous avez Ã©tÃ© Ã©jectÃ© pour AFK! Â§4(15 minutes)");
             }
         }
 

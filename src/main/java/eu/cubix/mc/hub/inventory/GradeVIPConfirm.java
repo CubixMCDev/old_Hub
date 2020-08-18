@@ -21,7 +21,7 @@ public class GradeVIPConfirm implements GuiBuilder {
 
     @Override
     public String name() {
-        return "§0Boutique » Grades » VIP";
+        return "Â§0Boutique Â» Grades Â» VIP";
     }
 
     @Override
@@ -54,30 +54,30 @@ public class GradeVIPConfirm implements GuiBuilder {
         inv.setItem(26, Separateur.toItemStack());
 
         ItemsBuilder VIP = new ItemsBuilder(Material.IRON_INGOT)
-                .setName("§6VIP")
-                .setLore(Arrays.asList(" ", "§e§l• Prix: 2325 \u24D2", "§e§l• Avantages:", "§e- ..."));
+                .setName("Â§6VIP")
+                .setLore(Arrays.asList(" ", "Â§eÂ§lÂ» Prix: 2325 \u24D2", "Â§eÂ§lÂ» Avantages:", "Â§e- ..."));
         inv.setItem(4, VIP.toItemStack());
 
         ItemsBuilder Confirm = new ItemsBuilder(Material.INK_SACK, 1, (byte) 10)
-                .setName("§aConfirmer");
+                .setName("Â§aConfirmer");
         inv.setItem(12, Confirm.toItemStack());
 
         ItemsBuilder Cancel = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                .setName("§cAnnuler");
+                .setName("Â§cAnnuler");
         inv.setItem(14, Cancel.toItemStack());
     }
 
     @Override
     public void onClick(Player player, Inventory inv, ItemStack current, int slot) {
 
-        if (current.getItemMeta().getDisplayName().equalsIgnoreCase("§aConfirmer")) {
+        if (current.getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½aConfirmer")) {
             player.closeInventory();
-            player.sendMessage("§eCubixMC §6» §eAchat en cours...");
+            player.sendMessage("ï¿½eCubixMC ï¿½6ï¿½ ï¿½eAchat en cours...");
             TaskVIP task = new TaskVIP(main, player);
             task.runTaskTimer(main, 0, 20);
         }
 
-        if (current.getItemMeta().getDisplayName().equalsIgnoreCase("§cAnnuler")) {
+        if (current.getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½cAnnuler")) {
             main.getGuiManager().open(player, ShopGrades.class);
         }
     }

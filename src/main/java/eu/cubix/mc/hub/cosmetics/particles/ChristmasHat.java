@@ -9,16 +9,18 @@ import org.bukkit.entity.Player;
 
 public class ChristmasHat {
 
+    private final Main main;
     private int taskID;
     private final Player player;
     public int particles = 12;
 
-    public ChristmasHat(Player player) {
+    public ChristmasHat(Main main, Player player) {
+        this.main = main;
         this.player = player;
     }
 
     public void startChristmasHat() {
-        taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getInstance(), new Runnable() {
+        taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
             final ParticleData particle = new ParticleData(player.getUniqueId());
 
             @Override

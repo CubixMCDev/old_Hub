@@ -44,7 +44,7 @@ public class Vote implements Listener {
         this.crateUsesMap.putIfAbsent(player.getUniqueId(), 0);
         this.crateUsesMap.put(player.getUniqueId(), this.crateUsesMap.get(player.getUniqueId()) + 1);
 
-        Inventory inventory = Bukkit.createInventory(null, InventoryType.CHEST, ChatColor.BLACK + "Caisse | Clé vote");
+        Inventory inventory = Bukkit.createInventory(null, InventoryType.CHEST, ChatColor.BLACK + "Caisse | ClÃ© vote");
         player.openInventory(inventory);
         startInventory(inventory, player);
     }
@@ -124,7 +124,7 @@ public class Vote implements Listener {
             return;
         } else if(e.getItem().getType() != Material.TRIPWIRE_HOOK) {
             return;
-        } else if(!e.getItem().getItemMeta().getDisplayName().equals("§6Clé de vote")) {
+        } else if(!e.getItem().getItemMeta().getDisplayName().equals("Â§6ClÃ© de vote")) {
             return;
         }
 
@@ -140,7 +140,7 @@ public class Vote implements Listener {
 
         e.setCancelled(true);
 
-        player.sendMessage("§eCubixMC §6» §eVous avez utilisé votre §6Clé de vote§e.");
+        player.sendMessage("Â§eCubixMC Â§6Â» Â§eVous avez utilisÃ© votre Â§6ClÃ© de voteÂ§e.");
     }
 
 }

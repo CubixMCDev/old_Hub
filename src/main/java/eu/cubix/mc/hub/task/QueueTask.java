@@ -9,10 +9,12 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 public class QueueTask extends BukkitRunnable {
 
+    private final Main main;
     private int timer;
     private final Queue queue;
 
-    public QueueTask(Queue queue) {
+    public QueueTask(Main main, Queue queue) {
+        this.main = main;
         this.queue = queue;
         this.timer = queue.getTimer();
     }
@@ -25,7 +27,7 @@ public class QueueTask extends BukkitRunnable {
                     int place = queue.getPlayers().get(player);
                     if(place == 0){
                         queue.getPlayers().remove(player);
-                        teleport(player, queue.getName());
+                        teleport(main, player, queue.getName());
                         break;
                     }
                 }
@@ -45,11 +47,11 @@ public class QueueTask extends BukkitRunnable {
         }
 
 
-        private void teleport(Player player, String server){
+        private void teleport(Main main, Player player, String server){
             ByteArrayDataOutput out = ByteStreams.newDataOutput();
             out.writeUTF("Connect");
             out.writeUTF(server);
-            player.sendPluginMessage(Main.getInstance(), "BungeeCord", out.toByteArray());
+            player.sendPluginMessage(main, "BungeeCord", out.toByteArray());
     }
 
 }

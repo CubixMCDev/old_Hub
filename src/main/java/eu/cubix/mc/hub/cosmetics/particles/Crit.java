@@ -8,15 +8,17 @@ import org.bukkit.util.Vector;
 
 public class Crit {
 
+    private final Main main;
     private int taskID;
     private final Player player;
 
-    public Crit(Player player) {
+    public Crit(Main main, Player player) {
+        this.main = main;
         this.player = player;
     }
 
     public void startCrit() {
-        taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getInstance(), new Runnable() {
+        taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
             final ParticleData particle = new ParticleData(player.getUniqueId());
             final float[] height = {0, 0, 2, 2};
             final boolean[] up = {true, false, true, false};

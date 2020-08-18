@@ -27,23 +27,23 @@ public class PersonalScoreboard {
 
     public void setLines(String ip){
         //double pourcent = (double) Main.api.get().getExp(player.getUniqueId()) / (double) Main.api.get().getXPfromLevel(Main.api.get().getExp(player.getUniqueId()));
-        objectiveSign.setDisplayName("§eCubix§6MC");
+        objectiveSign.setDisplayName("Â§eCubixÂ§6MC");
 
-        objectiveSign.setLine(0, "§1");
-        objectiveSign.setLine(1, "§8» §6§n" + player.getName()+"§r §7("+((CraftPlayer) player).getHandle().ping+" ms)");
-        objectiveSign.setLine(2, "§2");
-        objectiveSign.setLine(3, "§8» §6Grade: " +  main.getAPI().get().getRankWithColors(player.getUniqueId()));
-        objectiveSign.setLine(4, "§3");
-        objectiveSign.setLine(5, "§8» §6Crédits: §e"+ main.getAPI().get().getCoins(player.getUniqueId()) + " \u24D2");
-        objectiveSign.setLine(6, "§8» §6Coins: §e" + main.getAPI().get().getCredits(player.getUniqueId()) + " \u26C3");
-        objectiveSign.setLine(7, "§4");
-        objectiveSign.setLine(8, "§8» §6Niveau: §e"+ main.getAPI().get().getLevel(player.getUniqueId()));
-        objectiveSign.setLine(9, "§8» §6[§e\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758§6] §e"+"Nope"+"%");
-        objectiveSign.setLine(10, "§6");
-        objectiveSign.setLine(11, "§8» §6Connectés: §e" + Bukkit.getOnlinePlayers().size() + "§6/§e" + Bukkit.getMaxPlayers());
-        objectiveSign.setLine(12, "§8» §6Serveur: §e" + Bukkit.getMotd());
-        objectiveSign.setLine(13, "§7");
-        objectiveSign.setLine(14, "§8» " + ip);
+        objectiveSign.setLine(0, "Â§1");
+        objectiveSign.setLine(1, "Â§8Â» Â§6Â§n" + player.getName()+"Â§r Â§7("+((CraftPlayer) player).getHandle().ping+" ms)");
+        objectiveSign.setLine(2, "Â§2");
+        objectiveSign.setLine(3, "Â§8Â» Â§6Grade: " +  main.getAPI().get().getRankWithColors(player.getUniqueId()));
+        objectiveSign.setLine(4, "Â§3");
+        objectiveSign.setLine(5, "Â§8Â» Â§6CrÃ©dits: Â§e"+ main.getAPI().get().getCoins(player.getUniqueId()) + " \u24D2");
+        objectiveSign.setLine(6, "Â§8Â» Â§6Coins: Â§e" + main.getAPI().get().getCredits(player.getUniqueId()) + " \u26C3");
+        objectiveSign.setLine(7, "Â§4");
+        objectiveSign.setLine(8, "Â§8Â» Â§6Niveau: Â§e"+ main.getAPI().get().getLevel(player.getUniqueId()));
+        objectiveSign.setLine(9, "Â§8Â» Â§6[Â§e\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758Â§6] Â§e"+"Nope"+"%");
+        objectiveSign.setLine(10, "Â§6");
+        objectiveSign.setLine(11, "Â§8Â» Â§6ConnectÃ©s: Â§e" + Bukkit.getOnlinePlayers().size() + "Â§6/Â§e" + Bukkit.getMaxPlayers());
+        objectiveSign.setLine(12, "Â§8Â» Â§6Serveur: Â§e" + Bukkit.getMotd());
+        objectiveSign.setLine(13, "Â§7");
+        objectiveSign.setLine(14, "Â§8Â» " + ip);
 
         objectiveSign.updateLines();
     }

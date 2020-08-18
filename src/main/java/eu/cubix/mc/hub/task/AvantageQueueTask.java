@@ -9,10 +9,12 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 public class AvantageQueueTask extends BukkitRunnable {
 
+    private final Main main;
     private int timer;
     private final AvantageQueue queue;
 
-    public AvantageQueueTask(AvantageQueue queue) {
+    public AvantageQueueTask(Main main,AvantageQueue queue) {
+        this.main = main;
         this.queue = queue;
         this.timer = queue.getTimer();
     }
@@ -24,9 +26,9 @@ public class AvantageQueueTask extends BukkitRunnable {
             for(Player player : queue.getPlayers().keySet()){
                 int place = queue.getPlayers().get(player);
                 if(place == 0){
-                    player.sendMessage("§eCubixMC §6» §eConnexion au serveur en cours... §6(§e" + queue.getName() +"§6)");
+                    player.sendMessage("Â§eCubixMC Â§6Â» Â§eConnexion au serveur en cours... Â§6(Â§e" + queue.getName() +"Â§6)");
                     queue.getPlayers().remove(player);
-                    teleport(player, queue.getName());
+                    teleport(main, player, queue.getName());
                     break;
                 }
             }
@@ -46,10 +48,10 @@ public class AvantageQueueTask extends BukkitRunnable {
     }
 
 
-    private void teleport(Player player, String server){
+    private void teleport(Main main, Player player, String server){
         ByteArrayDataOutput out = ByteStreams.newDataOutput();
         out.writeUTF("Connect");
         out.writeUTF(server);
-        player.sendPluginMessage(Main.getInstance(), "BungeeCord", out.toByteArray());
+        player.sendPluginMessage(main, "BungeeCord", out.toByteArray());
     }
 }

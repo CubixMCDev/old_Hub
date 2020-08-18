@@ -63,7 +63,7 @@ public class Protect implements Listener {
 
         if (location.getBlockY() <= 0) {
             player.teleport(spawn);
-            player.sendMessage("§7Hopopop, vous allez où comme ça ?");
+            player.sendMessage("Â§7Hopopop, vous allez oÃ¹ comme Ã§a ?");
         }
     }
 

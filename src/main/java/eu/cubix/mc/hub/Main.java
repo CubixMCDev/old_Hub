@@ -130,7 +130,7 @@ public class Main extends JavaPlugin implements Listener {
     }
 
     private void loadGui(){
-        guiManager = new GuiManager();
+        guiManager = new GuiManager(this);
         Bukkit.getPluginManager().registerEvents(guiManager, this);
         registeredMenus = new HashMap<>();
         guiManager.addMenu(new Profile(this));

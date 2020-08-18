@@ -44,7 +44,7 @@ public class Bossbar {
                         break;
                     case 1:
                         bar.setColor(BarColor.GREEN);
-                        bar.setTitle(format("ง7Visitez notre site web : &ahttps://cubixmc.fr"));
+                        bar.setTitle(format("ยง7Visitez notre site web : &ahttps://cubixmc.fr"));
                         break;
                     case 2:
                         bar.setColor(BarColor.PURPLE);

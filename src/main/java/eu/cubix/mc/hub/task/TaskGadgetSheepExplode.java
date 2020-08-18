@@ -19,7 +19,7 @@ public class TaskGadgetSheepExplode extends BukkitRunnable {
     public void run() {
         if(timer == 0) {
             main.getAPI().set().removeCoins(player.getUniqueId(), 10);
-            player.sendMessage("§eCubixMC §6» §eAchat confirmé. Merci pour votre confiance !");
+            player.sendMessage("Â§eCubixMC Â§6Â» Â§eAchat confirmÃ©. Merci pour votre confiance !");
             main.getCosmeticsManager().setCosmeticSQL("gadgetSheepExplode",true,player.getUniqueId());
             this.cancel();
         }

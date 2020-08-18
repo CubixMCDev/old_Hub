@@ -21,7 +21,7 @@ public class Pets implements GuiBuilder {
 
     @Override
     public String name() {
-        return "§0Cosmétiques » Compagnons";
+        return "Â§0CosmÃ©tiques Â» Compagnons";
     }
 
     @Override
@@ -60,191 +60,191 @@ public class Pets implements GuiBuilder {
 
         if(main.getCosmeticsManager().hasCosmetic("petVillager",player.getUniqueId())) {
             inv.setItem(10, new ItemFactory(CustomSkull.getCustomSkull("http://textures.minecraft.net/texture/822d8e751c8f2fd4c8942c44bdb2f5ca4d8ae8e575ed3eb34c18a86e93b"))
-                    .withName("§6§nVillageois")
+                    .withName("Â§6Â§nVillageois")
                     .done());
         } else {
             ItemsBuilder Villager = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nVillageois");
+                    .setName("Â§7Â§nVillageois");
             inv.setItem(10,Villager.toItemStack());
         }
 
         if(main.getCosmeticsManager().hasCosmetic("petCow",player.getUniqueId())) {
             inv.setItem(11, new ItemFactory(CustomSkull.getCustomSkull("http://textures.minecraft.net/texture/5d6c6eda942f7f5f71c3161c7306f4aed307d82895f9d2b07ab4525718edc5"))
-                    .withName("§6§nVache")
+                    .withName("Â§6Â»nVache")
                     .done());
         } else {
             ItemsBuilder Cow = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nVache");
+                    .setName("Â§7Â§nVache");
             inv.setItem(11,Cow.toItemStack());
         }
 
         if(main.getCosmeticsManager().hasCosmetic("petSheep",player.getUniqueId())) {
             inv.setItem(12, new ItemFactory(CustomSkull.getCustomSkull("http://textures.minecraft.net/texture/f31f9ccc6b3e32ecf13b8a11ac29cd33d18c95fc73db8a66c5d657ccb8be70"))
-                    .withName("§6§nMouton")
+                    .withName("Â§6Â§nMouton")
                     .done());
         } else {
             ItemsBuilder Sheep = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nMouton");
+                    .setName("Â§7Â§nMouton");
             inv.setItem(12,Sheep.toItemStack());
         }
 
         if(main.getCosmeticsManager().hasCosmetic("petCat",player.getUniqueId())) {
             inv.setItem(13, new ItemFactory(CustomSkull.getCustomSkull("http://textures.minecraft.net/texture/5657cd5c2989ff97570fec4ddcdc6926a68a3393250c1be1f0b114a1db1"))
-                    .withName("§6§nChat")
+                    .withName("Â§6Â§nChat")
                     .done());
         } else {
             ItemsBuilder Cat = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nChat");
+                    .setName("Â§7Â§nChat");
             inv.setItem(13,Cat.toItemStack());
         }
 
         if(main.getCosmeticsManager().hasCosmetic("petPig",player.getUniqueId())) {
             inv.setItem(14, new ItemFactory(CustomSkull.getCustomSkull("http://textures.minecraft.net/texture/621668ef7cb79dd9c22ce3d1f3f4cb6e2559893b6df4a469514e667c16aa4"))
-                    .withName("§6§nCochon")
+                    .withName("Â§6Â§nCochon")
                     .done());
         } else {
             ItemsBuilder Pig = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nCochon");
+                    .setName("Â§7Â§nCochon");
             inv.setItem(14,Pig.toItemStack());
         }
 
         if(main.getCosmeticsManager().hasCosmetic("petHorse",player.getUniqueId())) {
             inv.setItem(15, new ItemFactory(CustomSkull.getCustomSkull("http://textures.minecraft.net/texture/628d1ab4be1e28b7b461fdea46381ac363a7e5c3591c9e5d2683fbe1ec9fcd3"))
-                    .withName("§6§nCheval")
+                    .withName("Â§6Â§nCheval")
                     .done());
         } else {
             ItemsBuilder Horse = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nCheval");
+                    .setName("Â§7Â§nCheval");
             inv.setItem(15,Horse.toItemStack());
         }
 
         if(main.getCosmeticsManager().hasCosmetic("petRabbit",player.getUniqueId())) {
             inv.setItem(16, new ItemFactory(CustomSkull.getCustomSkull("http://textures.minecraft.net/texture/7d1169b2694a6aba826360992365bcda5a10c89a3aa2b48c438531dd8685c3a7"))
-                    .withName("§6§nLapin")
+                    .withName("Â§6Â§nLapin")
                     .done());
         } else {
             ItemsBuilder Rabbit = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nLapin");
+                    .setName("Â§7Â§nLapin");
             inv.setItem(16,Rabbit.toItemStack());
         }
 
         if(main.getCosmeticsManager().hasCosmetic("petChicken",player.getUniqueId())) {
             inv.setItem(19, new ItemFactory(CustomSkull.getCustomSkull("http://textures.minecraft.net/texture/1638469a599ceef7207537603248a9ab11ff591fd378bea4735b346a7fae893"))
-                    .withName("§6§nPoule")
+                    .withName("Â§6Â§nPoule")
                     .done());
         } else {
             ItemsBuilder Chicken = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nPoule");
+                    .setName("Â§7Â§nPoule");
             inv.setItem(19,Chicken.toItemStack());
         }
 
         if(main.getCosmeticsManager().hasCosmetic("petCreeper",player.getUniqueId())) {
             inv.setItem(20, new ItemFactory(CustomSkull.getCustomSkull("http://textures.minecraft.net/texture/f4254838c33ea227ffca223dddaabfe0b0215f70da649e944477f44370ca6952"))
-                    .withName("§6§nCreeper")
+                    .withName("Â§6Â§nCreeper")
                     .done());
         } else {
             ItemsBuilder Creeper = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nCreeper");
+                    .setName("Â§7Â§nCreeper");
             inv.setItem(20,Creeper.toItemStack());
         }
 
         if(main.getCosmeticsManager().hasCosmetic("petSpider",player.getUniqueId())) {
             inv.setItem(21, new ItemFactory(CustomSkull.getCustomSkull("http://textures.minecraft.net/texture/cd541541daaff50896cd258bdbdd4cf80c3ba816735726078bfe393927e57f1"))
-                    .withName("§6§nAraignée")
+                    .withName("Â§6Â§nAraignÃ©e")
                     .done());
         } else {
             ItemsBuilder Spider = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nAraignée");
+                    .setName("Â§7Â§nAraignÃ©e");
             inv.setItem(21,Spider.toItemStack());
         }
 
         if(main.getCosmeticsManager().hasCosmetic("petZombie",player.getUniqueId())) {
             inv.setItem(22, new ItemFactory(CustomSkull.getCustomSkull("http://textures.minecraft.net/texture/56fc854bb84cf4b7697297973e02b79bc10698460b51a639c60e5e417734e11"))
-                    .withName("§6§nZombie")
+                    .withName("Â§6Â§nZombie")
                     .done());
         } else {
             ItemsBuilder Spider = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nZombie");
+                    .setName("Â§7Â§nZombie");
             inv.setItem(22,Spider.toItemStack());
         }
 
         if(main.getCosmeticsManager().hasCosmetic("petWolf",player.getUniqueId())) {
             inv.setItem(23, new ItemFactory(CustomSkull.getCustomSkull("http://textures.minecraft.net/texture/69d1d3113ec43ac2961dd59f28175fb4718873c6c448dfca8722317d67"))
-                    .withName("§6§nChien")
+                    .withName("Â§6Â§nChien")
                     .done());
         } else {
             ItemsBuilder Wolf = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nChien");
+                    .setName("Â§7Â§nChien");
             inv.setItem(23,Wolf.toItemStack());
         }
 
         ItemsBuilder Retired = new ItemsBuilder(Material.BARRIER)
-                .setName("§6§nRetirer votre compagnon");
+                .setName("Â§6Â§nRetirer votre compagnon");
         inv.setItem(49,Retired.toItemStack());
 
         ItemsBuilder Return = new ItemsBuilder(Material.DARK_OAK_DOOR_ITEM)
-                .setName("§6§nRetour");
+                .setName("Â§6Â§nRetour");
         inv.setItem(53,Return.toItemStack());
     }
 
     @Override
     public void onClick(Player player, Inventory inv, ItemStack current, int slot) {
-        if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nVillageois")) {
+        if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("Â§6Â§nVillageois")) {
             new Pet().createPet(player, EntityType.VILLAGER);
             player.closeInventory();
         }
 
-        if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nVache")) {
+        if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("Â§6Â§nVache")) {
             new Pet().createPet(player, EntityType.COW);
             player.closeInventory();
         }
 
-        if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nMouton")) {
+        if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("Â§6Â§nMouton")) {
             new Pet().createPet(player, EntityType.SHEEP);
             player.closeInventory();
         }
 
-        if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nChat")) {
+        if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("Â§6Â§nChat")) {
             new Pet().createPet(player, EntityType.OCELOT);
             player.closeInventory();
         }
 
-        if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nCochon")) {
+        if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("Â§6Â§nCochon")) {
             new Pet().createPet(player, EntityType.PIG);
             player.closeInventory();
         }
 
-        if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nCheval")) {
+        if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("Â§6Â§nCheval")) {
             new Pet().createPet(player, EntityType.HORSE);
             player.closeInventory();
         }
 
-        if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nLapin")) {
+        if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("Â§6Â§nLapin")) {
             new Pet().createPet(player, EntityType.RABBIT);
             player.closeInventory();
         }
 
-        if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nPoule")) {
+        if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("Â§6Â§nPoule")) {
             new Pet().createPet(player, EntityType.CHICKEN);
             player.closeInventory();
         }
 
-        if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nCreeper")) {
+        if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("Â§6Â§nCreeper")) {
             new Pet().createPet(player, EntityType.CREEPER);
             player.closeInventory();
         }
 
-        if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nAraignée")) {
+        if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("Â§6Â§nAraignÃ©e")) {
             new Pet().createPet(player, EntityType.SPIDER);
             player.closeInventory();
         }
 
-        if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nZombie")) {
+        if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("Â§6Â§nZombie")) {
             new Pet().createPet(player, EntityType.ZOMBIE);
             player.closeInventory();
         }
 
-        if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nChien")) {
+        if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("Â§6Â§nChien")) {
             new Pet().createPet(player, EntityType.WOLF);
             player.closeInventory();
         }

@@ -10,15 +10,17 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 public class Speed {
 
+    private final Main main;
     private int taskID;
     private final Player player;
 
-    public Speed(Player player) {
+    public Speed(Main main, Player player) {
+        this.main = main;
         this.player = player;
     }
 
     public void startSpeed() {
-        taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getInstance(), new Runnable() {
+        taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
             final ParticleData particle = new ParticleData(player.getUniqueId());
 
             @Override
@@ -44,7 +46,7 @@ public class Speed {
         private final Player player;
 
         public SpeedEffect(double time, Player player) {
-            this.runTaskLater(Main.getInstance(), (int) time);
+            this.runTaskLater(main, (int) time);
             this.player = player;
         }
 

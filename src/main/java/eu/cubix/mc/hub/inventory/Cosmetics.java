@@ -20,7 +20,7 @@ public class Cosmetics implements GuiBuilder {
 
     @Override
     public String name() {
-        return "§0Cosmétiques";
+        return "Â§0CosmÃ©tiques";
     }
 
     @Override
@@ -59,31 +59,31 @@ public class Cosmetics implements GuiBuilder {
         inv.setItem(52,Separateur.toItemStack());
 
         ItemsBuilder Pets = new ItemsBuilder(Material.BONE)
-                .setName("§6§nCompagnons");
+                .setName("Â§6Â§nCompagnons");
         inv.setItem(20,Pets.toItemStack());
 
         ItemsBuilder Gadgets = new ItemsBuilder(Material.PISTON_BASE)
-                .setName("§6§nGadgets");
+                .setName("Â§6Â§nGadgets");
         inv.setItem(22,Gadgets.toItemStack());
 
         ItemsBuilder Particles = new ItemsBuilder(Material.REDSTONE)
-                .setName("§6§nParticules");
+                .setName("Â§6Â§nParticules");
         inv.setItem(24,Particles.toItemStack());
 
         ItemsBuilder Mounts = new ItemsBuilder(Material.SADDLE)
-                .setName("§6§nMontures");
+                .setName("Â§6Â§nMontures");
         inv.setItem(30,Mounts.toItemStack());
 
         ItemsBuilder Effects = new ItemsBuilder(Material.REDSTONE_BLOCK)
-                .setName("§6§nEffets");
+                .setName("Â§6Â§nEffets");
         inv.setItem(32,Effects.toItemStack());
 
         ItemsBuilder Retired = new ItemsBuilder(Material.BARRIER)
-                .setName("§6§nRetirer vos cosmétiques");
+                .setName("Â§6Â§nRetirer vos cosmÃ©tiques");
         inv.setItem(49,Retired.toItemStack());
 
         ItemsBuilder Return = new ItemsBuilder(Material.DARK_OAK_DOOR_ITEM)
-                .setName("§6§nRetour");
+                .setName("Â§6Â§nRetour");
         inv.setItem(53,Return.toItemStack());
     }
 
@@ -91,23 +91,23 @@ public class Cosmetics implements GuiBuilder {
     public void onClick(Player player, Inventory inv, ItemStack current, int slot) {
         switch (current.getType()) {
             case BONE:
-                Main.getInstance().getGuiManager().open(player, Pets.class);
+                main.getGuiManager().open(player, Pets.class);
                 break;
 
             case PISTON_BASE:
-                Main.getInstance().getGuiManager().open(player, Gadgets.class);
+                main.getGuiManager().open(player, Gadgets.class);
                 break;
 
             case REDSTONE:
-                Main.getInstance().getGuiManager().open(player, Particles.class);
+                main.getGuiManager().open(player, Particles.class);
                 break;
 
             case SADDLE:
-                Main.getInstance().getGuiManager().open(player, Mounts.class);
+                main.getGuiManager().open(player, Mounts.class);
                 break;
 
             case REDSTONE_BLOCK:
-                Main.getInstance().getGuiManager().open(player, Effects.class);
+                main.getGuiManager().open(player, Effects.class);
                 break;
 
             case BARRIER:

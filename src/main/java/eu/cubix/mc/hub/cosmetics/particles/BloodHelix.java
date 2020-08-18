@@ -9,16 +9,18 @@ import org.bukkit.util.Vector;
 
 public class BloodHelix {
 
+    private final Main main;
     private int taskID;
     private final Player player;
     double i = 0;
 
-    public BloodHelix(Player player) {
+    public BloodHelix(Main main, Player player) {
+        this.main = main;
         this.player = player;
     }
 
     public void startBloodHelix() {
-        taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getInstance(), new Runnable() {
+        taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
             ParticleData particle = new ParticleData(player.getUniqueId());
 
             @Override

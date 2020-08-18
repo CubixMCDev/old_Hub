@@ -18,7 +18,7 @@ public class ShopMounts implements GuiBuilder {
 
     @Override
     public String name() {
-        return "§0Boutique » Montures";
+        return "Â§0Boutique Â» Montures";
     }
 
     @Override
@@ -57,7 +57,7 @@ public class ShopMounts implements GuiBuilder {
         inv.setItem(52,Separateur.toItemStack());
 
         ItemsBuilder Return = new ItemsBuilder(Material.DARK_OAK_DOOR_ITEM)
-                .setName("§6§nRetour");
+                .setName("Â§6Â§nRetour");
         inv.setItem(53,Return.toItemStack());
     }
 

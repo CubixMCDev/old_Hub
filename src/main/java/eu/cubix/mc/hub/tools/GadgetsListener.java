@@ -33,7 +33,7 @@ public class GadgetsListener implements Listener {
                         long seconds = ((cooldowns.get(player.getName()) / 1000) + cooldowntime) - (System.currentTimeMillis() / 1000);
 
                         if(seconds > 0){
-                            player.sendMessage("§eCubixMC §6» §eVous devez attendre §6" + seconds + " seconde(s) §eavant d'utiliser ce gadget.");
+                            player.sendMessage("Â§eCubixMC Â§6Â» Â§eVous devez attendre Â§6" + seconds + " seconde(s) Â§eavant d'utiliser ce gadget.");
                             return;
                         }
                     }

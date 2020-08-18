@@ -7,15 +7,17 @@ import org.bukkit.entity.Player;
 
 public class RainLava {
 
+    private final Main main;
     private int taskID;
     private final Player player;
 
-    public RainLava(Player player) {
+    public RainLava(Main main, Player player) {
+        this.main = main;
         this.player = player;
     }
 
     public void startRainLava() {
-        taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getInstance(), new Runnable() {
+        taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
             final ParticleData particle = new ParticleData(player.getUniqueId());
 
             int timer = 10;

@@ -59,14 +59,14 @@ public class MathUtil {
         return (int) (java.lang.Math.random() < 0.5 ? ((1 - java.lang.Math.random()) * (max - min) + min) : (java.lang.Math.random() * (max - min) + min));
     }
 
-    public static void applyVelocity(final Entity ent, Vector v) {
+    public static void applyVelocity(Main main, final Entity ent, Vector v) {
         ent.setVelocity(v);
-        Bukkit.getScheduler().runTaskLaterAsynchronously(Main.getInstance(), () -> FallDamageManager.addNoFall(ent), 5);
+        Bukkit.getScheduler().runTaskLaterAsynchronously(main, () -> FallDamageManager.addNoFall(ent), 5);
     }
 
-    public static void applyVelocity(final Entity ent, Vector v, boolean ignoreGadgetsEnabled) {
+    public static void applyVelocity(Main main, final Entity ent, Vector v, boolean ignoreGadgetsEnabled) {
         ent.setVelocity(v);
-        Bukkit.getScheduler().runTaskLaterAsynchronously(Main.getInstance(), () -> FallDamageManager.addNoFall(ent), 4);
+        Bukkit.getScheduler().runTaskLaterAsynchronously(main, () -> FallDamageManager.addNoFall(ent), 4);
     }
 
     public static final Vector rotateAroundAxisZ(Vector v, double angle) {

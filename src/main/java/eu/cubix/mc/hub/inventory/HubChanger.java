@@ -20,7 +20,7 @@ public class HubChanger implements GuiBuilder {
 
     @Override
     public String name() {
-        return "§0Menu » Hubs";
+        return "Â§0Menu Â» Hubs";
     }
 
     @Override
@@ -53,13 +53,13 @@ public class HubChanger implements GuiBuilder {
         inv.setItem(25,Separateur.toItemStack());
 
         ItemsBuilder HubChanger = new ItemsBuilder(Material.ENDER_PORTAL_FRAME)
-                .setName("§6§nHub #1")
+                .setName("Â§6Â§nHub #1")
                 .addEnchant(Enchantment.LUCK,1)
                 .setFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_UNBREAKABLE);
         inv.setItem(10,HubChanger.toItemStack());
 
         ItemsBuilder Return = new ItemsBuilder(Material.DARK_OAK_DOOR_ITEM)
-                .setName("§6§nRetour");
+                .setName("Â§6Â§nRetour");
         inv.setItem(26,Return.toItemStack());
     }
 

@@ -12,6 +12,12 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 public class GuiManager implements Listener {
 
+    private final Main main;
+
+    public GuiManager(Main main) {
+        this.main = main;
+    }
+
     @EventHandler
     public void onClick(InventoryClickEvent event){
 
@@ -21,7 +27,7 @@ public class GuiManager implements Listener {
 
         if(event.getCurrentItem() == null) return;
 
-        Main.getInstance().getRegisteredMenus().values().stream()
+        main.getRegisteredMenus().values().stream()
                 .filter(menu -> inv.getName().equalsIgnoreCase(menu.name()))
                 .forEach(menu -> {
                     try {
@@ -35,14 +41,14 @@ public class GuiManager implements Listener {
     }
 
     public void addMenu(GuiBuilder m){
-        Main.getInstance().getRegisteredMenus().put(m.getClass(), m);
+        main.getRegisteredMenus().put(m.getClass(), m);
     }
 
     public void open(Player player, Class<? extends GuiBuilder> gClass){
 
-        if(!Main.getInstance().getRegisteredMenus().containsKey(gClass)) return;
+        if(!main.getRegisteredMenus().containsKey(gClass)) return;
 
-        GuiBuilder menu = Main.getInstance().getRegisteredMenus().get(gClass);
+        GuiBuilder menu = main.getRegisteredMenus().get(gClass);
         Inventory inv = Bukkit.createInventory(null, menu.getSize(), menu.name());
         menu.contents(player, inv);
 
@@ -53,7 +59,7 @@ public class GuiManager implements Listener {
                 player.openInventory(inv);
             }
 
-        }.runTaskLater(Main.getInstance(), 1);
+        }.runTaskLater(main, 1);
 
     }
 

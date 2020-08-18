@@ -445,10 +445,10 @@ public class VObjective
             {
                 PacketPlayOutScoreboardScore packet = new PacketPlayOutScoreboardScore();
 
-                Reflection.setValue(packet, "a", scoreName); //Nom du joueur
-                Reflection.setValue(packet, "b", objectiveName); //Nom de l'objective
-                Reflection.setValue(packet, "c", scoreValue); //Valeur du score
-                Reflection.setValue(packet, "d", action); //Action du packet
+                Reflection.setValue(packet, "a", scoreName);
+                Reflection.setValue(packet, "b", objectiveName);
+                Reflection.setValue(packet, "c", scoreValue);
+                Reflection.setValue(packet, "d", action);
 
                 return packet;
             }
@@ -466,10 +466,10 @@ public class VObjective
             {
                 PacketPlayOutScoreboardObjective packet = new PacketPlayOutScoreboardObjective();
 
-                Reflection.setValue(packet, "a", objectiveName); //Nom de l'objective
-                Reflection.setValue(packet, "b", objectiveDisplayName); //Nom affiché de l'objective
-                Reflection.setValue(packet, "c", format); //Affichage des données Nombre/Coeurs
-                Reflection.setValue(packet, "d", action); //Action à effectuer - 0: Create 1: Remove 2: Update
+                Reflection.setValue(packet, "a", objectiveName);
+                Reflection.setValue(packet, "b", objectiveDisplayName);
+                Reflection.setValue(packet, "c", format);
+                Reflection.setValue(packet, "d", action);
 
                 return packet;
             }
@@ -487,8 +487,8 @@ public class VObjective
             {
                 PacketPlayOutScoreboardDisplayObjective packet = new PacketPlayOutScoreboardDisplayObjective();
 
-                Reflection.setValue(packet, "a", location); //Emplacement de l'objective - 0 = list, 1 = sidebar, 2 = belowName
-                Reflection.setValue(packet, "b", objectiveName); //Nom de l'objective
+                Reflection.setValue(packet, "a", location);
+                Reflection.setValue(packet, "b", objectiveName);
 
                 return packet;
             }

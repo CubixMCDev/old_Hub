@@ -7,15 +7,17 @@ import org.bukkit.entity.Player;
 
 public class Enchanted {
 
+    private final Main main;
     private int taskID;
     private final Player player;
 
-    public Enchanted(Player player) {
+    public Enchanted(Main main, Player player) {
+        this.main = main;
         this.player = player;
     }
 
     public void startEnchanted() {
-        taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getInstance(), new Runnable() {
+        taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
             final ParticleData particle = new ParticleData(player.getUniqueId());
 
             @Override
