@@ -2,6 +2,8 @@ package eu.cubix.mc.hub.cosmetics.particles;
 
 import eu.cubix.mc.hub.Main;
 import eu.cubix.mc.hub.tools.ParticleData;
+import eu.cubix.mc.hub.tools.ParticleEffect;
+import net.minecraft.server.v1_8_R3.EnumParticle;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -25,21 +27,21 @@ public class ColorCircle {
         COLORS.add(new Color(0, 36, 0));
     }
 
-    private final double RADIUS = 1.1; // radius between player and rods
-    private final double ROD_HEIGHT = 1; // Height of each height
-    private final int TOTAL_COLUMNS = 8; // Amount of rods (columns)
-    private final double BASE_HEIGHT = 0.4; // Added to avoid rods in the floor.
-    private final double MIN_HEIGHT = 0; // Min height...
-    private final double MAX_HEIGHT = 0.6; // Max height...
-    private final double HEIGHT_STEP = 0.03; // Height step...
-    private final double MAX_HEIGHT_DIFF = 0.5; // Max height diff between columns
-    private final double HEIGHT_DIFF_STEP = 0.04; // Height diff step...
+    private final double RADIUS = 1.1;
+    private final double ROD_HEIGHT = 1;
+    private final int TOTAL_COLUMNS = 8;
+    private final double BASE_HEIGHT = 0.4;
+    private final double MIN_HEIGHT = 0;
+    private final double MAX_HEIGHT = 0.6;
+    private final double HEIGHT_STEP = 0.03;
+    private final double MAX_HEIGHT_DIFF = 0.5;
+    private final double HEIGHT_DIFF_STEP = 0.04;
 
-    private boolean heightDirectionUp; // Indicates whether the "overall" height is going up or down
-    private boolean hoveringDirectionUp; // Indicates whether the height diff between columns is going up or down (gives dynamism)
-    private double height = 0; // Current height
-    private double angle = 0; // Current angle
-    private double heightDiffFactor = MAX_HEIGHT_DIFF; // Height diff between columns. Variates over time with hoveringDirectionUp.
+    private boolean heightDirectionUp;
+    private boolean hoveringDirectionUp;
+    private double height = 0;
+    private double angle = 0;
+    private double heightDiffFactor = MAX_HEIGHT_DIFF;
 
     public ColorCircle(Main main, Player player) {
         this.main = main;
@@ -78,33 +80,25 @@ public class ColorCircle {
         }, 0, 3);
     }
 
-    /**
-     * Draws the rods around the player.
-     *
-     * @param height    The current height to work with.
-     * @param suppAngle Angle rotation step
-     */
     private void drawColumns(Double height, double suppAngle) {
         int cycles = TOTAL_COLUMNS / COLORS.size();
-        double workingSpace = 2 * Math.PI / cycles; // Each cycle has its angle span.
-        double startAngle = 0; // Step angle for each cycle.
+        double workingSpace = 2 * Math.PI / cycles;
+        double startAngle = 0;
         Vector v = new Vector(0, 0, 0);
         Location loc;
 
         for (int i = 0; i < cycles; i++) {
-            double angleStep = startAngle; // Angle for each column.
+            double angleStep = startAngle;
             for (int j = 0; j < COLORS.size(); j++) {
                 v.setX(Math.cos(angleStep + suppAngle) * RADIUS);
                 v.setZ(Math.sin(angleStep + suppAngle) * RADIUS);
-                v.setY(BASE_HEIGHT + Math.sin(angleStep * 3) * heightDiffFactor); // The height of the columns is a sine wave.
+                v.setY(BASE_HEIGHT + Math.sin(angleStep * 3) * heightDiffFactor);
                 loc = player.getPlayer().getLocation().add(v);
 
-                /*
                 ParticleEffect packet1 = new ParticleEffect(EnumParticle.REDSTONE, loc.clone().add(0, ROD_HEIGHT, 0),
                         0.1f, 0.1f, 0.1f, 0.07f, ((int) ROD_HEIGHT) * 5);
                 for(Player p : Bukkit.getOnlinePlayers())
                     packet1.sendToPlayer(p);
-                 */
 
                 angleStep += workingSpace / COLORS.size();
                 height += (i >= 3 && i <= 5) ? heightDiffFactor : -heightDiffFactor;

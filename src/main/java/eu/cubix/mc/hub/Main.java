@@ -34,8 +34,6 @@ public class Main extends JavaPlugin implements Listener {
     private final Map<Class<? extends GadgetBuilder>, GadgetBuilder> registerGadgets = new HashMap<>();
     private Map<Class<? extends GuiBuilder>, GuiBuilder> registeredMenus;
 
-    public static HashMap<String, Entity> Pets = new HashMap<>();
-
     private final Map<Player, AntiAFK> antiAFK = new HashMap<>();
     private final Map<Player, Integer> antiAFKTime = new HashMap<>();
 
@@ -105,10 +103,6 @@ public class Main extends JavaPlugin implements Listener {
         System.out.println("[CubixHub] Le plugin est OFF");
 
         //bar.getBar().removeAll();
-
-        for(String name : Pets.keySet()){
-            Pets.get(name).remove();
-        }
 
         getScoreboardManager().onDisable();
     }

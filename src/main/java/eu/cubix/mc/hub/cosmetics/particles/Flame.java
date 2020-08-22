@@ -3,6 +3,8 @@ package eu.cubix.mc.hub.cosmetics.particles;
 import eu.cubix.mc.hub.Main;
 import eu.cubix.mc.hub.tools.MathUtil;
 import eu.cubix.mc.hub.tools.ParticleData;
+import eu.cubix.mc.hub.tools.ParticleEffect;
+import net.minecraft.server.v1_8_R3.EnumParticle;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
@@ -44,12 +46,10 @@ public class Flame {
                     } else {
                         MathUtil.rotateAroundAxisZ(v, 90);
                     }
-                    /*
                     ParticleEffect packet1 = new ParticleEffect(EnumParticle.FLAME, player.getPlayer().getLocation().add(0, 1, 0),
                             0.1f, 0.1f, 0.1f, 0.07f, (int)1.0);
                     for(Player p : Bukkit.getOnlinePlayers())
                         packet1.sendToPlayer(p);
-                     */
                 }
                 step += 3;
             }

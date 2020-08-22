@@ -145,7 +145,7 @@ public class Menu implements GuiBuilder {
                         "§e» Clic gauche pour ouvrir",
                         "§ele menu des jeux UHC",
                         " ",
-                        "»eDéveloppeur: §6ZelphixSama"));
+                        "§eDéveloppeur: §6ZelphixSama"));
         inv.setItem(24,UHCRun.toItemStack());
 
         ItemsBuilder SurvivalGames = new ItemsBuilder(Material.APPLE)
@@ -260,7 +260,7 @@ public class Menu implements GuiBuilder {
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
                     player.getInventory().setItem(2,quitQueue.toItemStack());
                     
-                }else if (player.hasPermission("queues.bypass")) {
+                }else if (player.hasPermission("queues.bypass")  || player.hasPermission("*")) {
                 	player.sendMessage("§eCubixMC §6» §eConnexion au serveur en cours... §6(§ePvp§6)");
                     teleport(main, player, "Pvp");
                 }else if (main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("youtube")){
@@ -289,7 +289,7 @@ public class Menu implements GuiBuilder {
                     int place = pvpQueue.getPlayers().get(player);
                     player.sendMessage("§eCubixMC §6» §eVous avez bien été ajouté(e) à la §efile d'attente.");
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + pvpQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
-                    ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("�6Quitter la file d'attente").setLore("§eClic droit");
+                    ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
                     player.getInventory().setItem(2,quitQueue.toItemStack());
                 }
             	break;
@@ -325,7 +325,7 @@ public class Menu implements GuiBuilder {
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
                     player.getInventory().setItem(2,quitQueue.toItemStack());
                     
-                }else if (player.hasPermission("queues.bypass")) {
+                }else if (player.hasPermission("queues.bypass")  || player.hasPermission("*")) {
                 	player.sendMessage("§eCubixMC §6» §eConnexion au serveur en cours... §6(§eDeACoudre§6)");
                     teleport(main, player, "DeACoudre");
                 }else if (main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("youtube")){
@@ -390,7 +390,7 @@ public class Menu implements GuiBuilder {
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
                     player.getInventory().setItem(2,quitQueue.toItemStack());
                     
-                }else if (player.hasPermission("queues.bypass")) {
+                }else if (player.hasPermission("queues.bypass")  || player.hasPermission("*")) {
                 	player.sendMessage("§eCubixMC §6» §eConnexion au serveur en cours... §6(§ePunch§6)");
                     teleport(main, player, "Punch");
                 }else if (main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("youtube")){
@@ -459,7 +459,7 @@ public class Menu implements GuiBuilder {
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
                     player.getInventory().setItem(2,quitQueue.toItemStack());
 
-                }else if (player.hasPermission("queues.bypass")) {
+                }else if (player.hasPermission("queues.bypass")  || player.hasPermission("*")) {
                     player.sendMessage("§eCubixMC §6» §eConnexion au serveur en cours... §6(§eSurvival Games§6)");
                     teleport(main, player, "SG01");
                 }else if (main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("youtube")){

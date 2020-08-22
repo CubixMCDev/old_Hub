@@ -1,17 +1,16 @@
 package eu.cubix.mc.hub.events;
 
 import eu.cubix.mc.hub.Main;
-import eu.cubix.mc.hub.pets.Pet;
 import eu.cubix.mc.hub.task.AntiAFK;
 import eu.cubix.mc.hub.tools.*;
+import net.minecraft.server.v1_8_R3.WorldServer;
 import org.bukkit.*;
-import org.bukkit.entity.Creature;
+import org.bukkit.craftbukkit.v1_8_R3.CraftWorld;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.Inventory;
 
@@ -40,7 +39,7 @@ public class PlayerEvent implements Listener {
 
         e.getPlayer().getInventory().setHeldItemSlot(4);
 
-        if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip")) {
+        if(player.hasPermission("joinquit.message") || player.hasPermission("*")) {
             e.setJoinMessage("§e" + main.getAPI().get().getRankWithColors(player.getUniqueId()) + "§8\u2758§r " + player.getName() + " §6a rejoint le hub !");
         } else {
             e.setJoinMessage("");
@@ -102,7 +101,7 @@ public class PlayerEvent implements Listener {
             Hologram hologram2 = new Hologram("§6Caisse", "§eClé de vote");
             hologram2.show(player, new Location(player.getWorld(),103.5,16,765.5));
 
-            player.setAllowFlight(player.hasPermission("fly.hub"));
+            player.setAllowFlight(player.hasPermission("fly.hub") || player.hasPermission("*"));
         }
 
         player.setHealth(2.0);
@@ -111,7 +110,7 @@ public class PlayerEvent implements Listener {
         player.setGameMode(GameMode.ADVENTURE);
         player.playSound(player.getLocation(), Sound.ORB_PICKUP, 1f, 1f);
 
-        if(player.hasPermission("antiafk.bypass")) {
+        if(!player.hasPermission("antiafk.bypass") || player.hasPermission("*")) {
             AntiAFK antiAFK = new AntiAFK(player, player.getLocation().getBlock());
             main.getAntiAFK().put(player, antiAFK);
             antiAFK.runTaskTimer(main, 0L, 20L);
@@ -123,7 +122,7 @@ public class PlayerEvent implements Listener {
         Player player = e.getPlayer();
         ParticleData particle = new ParticleData(player.getUniqueId());
 
-        if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip")) {
+        if(player.hasPermission("joinquit.message") || player.hasPermission("*")) {
             e.setQuitMessage("§e" + main.getAPI().get().getRankWithColors(player.getUniqueId()) + "§8\u2758§r " + player.getName() + " §6a quitté le hub !");
         } else {
             e.setQuitMessage("");
@@ -143,15 +142,6 @@ public class PlayerEvent implements Listener {
         }
 
         main.getScoreboardManager().onLogout(player);
-    }
-
-    @EventHandler
-    public void onMove(PlayerMoveEvent e){
-        Player player = e.getPlayer();
-
-        if(Main.Pets.containsKey(player.getName())){
-            new Pet().followPlayer((Creature) Main.Pets.get(player.getName()), player, 1.3);
-        }
     }
 
     @EventHandler

@@ -2,6 +2,8 @@ package eu.cubix.mc.hub.cosmetics.particles;
 
 import eu.cubix.mc.hub.Main;
 import eu.cubix.mc.hub.tools.ParticleData;
+import eu.cubix.mc.hub.tools.ParticleEffect;
+import net.minecraft.server.v1_8_R3.EnumParticle;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
@@ -48,12 +50,10 @@ public class Crit {
                     v.setX(Math.cos(angle) * 1.1);
                     v.setZ(Math.sin(angle) * 1.1);
                     try {
-                        /*
                         ParticleEffect packet1 = new ParticleEffect(EnumParticle.CRIT_MAGIC, player.getPlayer().getLocation().clone().add(v).add(0, height[i], 0),
                                 0.15f, 0.15f, 0.15f, 0.07f, 4);
                         for(Player p : Bukkit.getOnlinePlayers())
                             packet1.sendToPlayer(p);
-                         */
                     } catch (Exception exc) {
 
                     }

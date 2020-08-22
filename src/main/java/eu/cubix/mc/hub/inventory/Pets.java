@@ -1,7 +1,6 @@
 package eu.cubix.mc.hub.inventory;
 
 import eu.cubix.mc.hub.Main;
-import eu.cubix.mc.hub.pets.Pet;
 import eu.cubix.mc.hub.tools.CustomSkull;
 import eu.cubix.mc.hub.tools.GuiBuilder;
 import eu.cubix.mc.hub.tools.ItemFactory;
@@ -190,62 +189,62 @@ public class Pets implements GuiBuilder {
     @Override
     public void onClick(Player player, Inventory inv, ItemStack current, int slot) {
         if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nVillageois")) {
-            new Pet().createPet(player, EntityType.VILLAGER);
+
             player.closeInventory();
         }
 
         if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nVache")) {
-            new Pet().createPet(player, EntityType.COW);
+
             player.closeInventory();
         }
 
         if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nMouton")) {
-            new Pet().createPet(player, EntityType.SHEEP);
+
             player.closeInventory();
         }
 
         if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nChat")) {
-            new Pet().createPet(player, EntityType.OCELOT);
+
             player.closeInventory();
         }
 
         if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nCochon")) {
-            new Pet().createPet(player, EntityType.PIG);
+
             player.closeInventory();
         }
 
         if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nCheval")) {
-            new Pet().createPet(player, EntityType.HORSE);
+
             player.closeInventory();
         }
 
         if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nLapin")) {
-            new Pet().createPet(player, EntityType.RABBIT);
+
             player.closeInventory();
         }
 
         if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nPoule")) {
-            new Pet().createPet(player, EntityType.CHICKEN);
+
             player.closeInventory();
         }
 
         if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nCreeper")) {
-            new Pet().createPet(player, EntityType.CREEPER);
+
             player.closeInventory();
         }
 
         if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nAraignée")) {
-            new Pet().createPet(player, EntityType.SPIDER);
+
             player.closeInventory();
         }
 
         if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nZombie")) {
-            new Pet().createPet(player, EntityType.ZOMBIE);
+
             player.closeInventory();
         }
 
         if (current.getType() == Material.SKULL_ITEM && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nChien")) {
-            new Pet().createPet(player, EntityType.WOLF);
+
             player.closeInventory();
         }
 

@@ -8,7 +8,7 @@ import java.util.UUID;
 
 public class ParticleData {
 
-    private static Map<UUID, Integer> TRAILS = new HashMap<UUID, Integer>();
+    private static final Map<UUID, Integer> TRAILS = new HashMap<UUID, Integer>();
     private final UUID uuid;
 
     public ParticleData(UUID uuid) {

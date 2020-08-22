@@ -58,7 +58,7 @@ public class Shop implements GuiBuilder {
 
         ItemsBuilder Pets = new ItemsBuilder(Material.BONE)
                 .setName("§6§nCompagnons")
-                .setLore("§eAch§te un petit compagnon tout mignon");
+                .setLore("§eAchète un petit compagnon tout mignon");
         inv.setItem(20,Pets.toItemStack());
 
         ItemsBuilder Gadgets = new ItemsBuilder(Material.PISTON_BASE)

@@ -2,6 +2,8 @@ package eu.cubix.mc.hub.cosmetics.particles;
 
 import eu.cubix.mc.hub.Main;
 import eu.cubix.mc.hub.tools.ParticleData;
+import eu.cubix.mc.hub.tools.ParticleEffect;
+import net.minecraft.server.v1_8_R3.EnumParticle;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
@@ -29,12 +31,10 @@ public class Speed {
                     particle.setID(taskID);
                 }
 
-                /*
                 ParticleEffect packet1 = new ParticleEffect(EnumParticle.SPELL_INSTANT, player.getPlayer().getLocation().add(0, 0, 0),
                         0.1f, 0.1f, 0.1f, 0.07f, 2);
                 for(Player p : Bukkit.getOnlinePlayers())
                     packet1.sendToPlayer(p);
-                 */
 
                 new SpeedEffect(4,player);
             }
