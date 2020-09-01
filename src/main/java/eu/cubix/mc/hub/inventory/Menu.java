@@ -244,7 +244,7 @@ public class Menu implements GuiBuilder {
                     player.sendMessage("§eCubixMC §6» §eVous avez bien été ajouté(e) à la §efile d'attente.");
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + pvpQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
-                    player.getInventory().setItem(2,quitQueue.toItemStack());
+                    player.getInventory().setItem(4,quitQueue.toItemStack());
                 }else if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip+")){
                     VIPplusQueue pvpQueue = main.getVIPplusQueueByName("Pvp");
                     if(pvpQueue.getPlayers().containsKey(player)) {
@@ -258,7 +258,7 @@ public class Menu implements GuiBuilder {
                     player.sendMessage("§eCubixMC §6» §eVous avez bien été ajouté(e) à la §efile d'attente.");
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + pvpQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
-                    player.getInventory().setItem(2,quitQueue.toItemStack());
+                    player.getInventory().setItem(4,quitQueue.toItemStack());
                     
                 }else if (player.hasPermission("queues.bypass")  || player.hasPermission("*")) {
                 	player.sendMessage("§eCubixMC §6» §eConnexion au serveur en cours... §6(§ePvp§6)");
@@ -276,7 +276,7 @@ public class Menu implements GuiBuilder {
                     player.sendMessage("§eCubixMC §6» §eVous avez bien été ajouté(e) à la §efile d'attente.");
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + pvpQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
-                    player.getInventory().setItem(2,quitQueue.toItemStack());
+                    player.getInventory().setItem(4,quitQueue.toItemStack());
                 }else if (main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("player")){
                     Queue pvpQueue = main.getQueueByName("Pvp");
                     if(pvpQueue.getPlayers().containsKey(player)) {
@@ -290,7 +290,7 @@ public class Menu implements GuiBuilder {
                     player.sendMessage("§eCubixMC §6» §eVous avez bien été ajouté(e) à la §efile d'attente.");
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + pvpQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
-                    player.getInventory().setItem(2,quitQueue.toItemStack());
+                    player.getInventory().setItem(4,quitQueue.toItemStack());
                 }
             	break;
             
@@ -309,7 +309,7 @@ public class Menu implements GuiBuilder {
                     player.sendMessage("§eCubixMC §6» §eVous avez bien été ajouté(e) à la §efile d'attente.");
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + dacQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
-                    player.getInventory().setItem(2,quitQueue.toItemStack());
+                    player.getInventory().setItem(4,quitQueue.toItemStack());
                 }else if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip+")){
                     VIPplusQueue dacQueue = main.getVIPplusQueueByName("DeACoudre");
                     if(dacQueue.getPlayers().containsKey(player)) {
@@ -323,7 +323,7 @@ public class Menu implements GuiBuilder {
                     player.sendMessage("§eCubixMC §6» §eVous avez bien été ajouté(e) à la §efile d'attente.");
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + dacQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
-                    player.getInventory().setItem(2,quitQueue.toItemStack());
+                    player.getInventory().setItem(4,quitQueue.toItemStack());
                     
                 }else if (player.hasPermission("queues.bypass")  || player.hasPermission("*")) {
                 	player.sendMessage("§eCubixMC §6» §eConnexion au serveur en cours... §6(§eDeACoudre§6)");
@@ -341,7 +341,7 @@ public class Menu implements GuiBuilder {
                     player.sendMessage("§eCubixMC §6» §eVous avez bien été ajouté(e) à la §efile d'attente.");
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + dacQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
-                    player.getInventory().setItem(2,quitQueue.toItemStack());
+                    player.getInventory().setItem(4,quitQueue.toItemStack());
                 }else if (main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("player")){
                     Queue dacQueue = main.getQueueByName("DeACoudre");
                     if(dacQueue.getPlayers().containsKey(player)) {
@@ -355,7 +355,7 @@ public class Menu implements GuiBuilder {
                     player.sendMessage("§eCubixMC §6» §eVous avez bien été ajouté(e) à la §efile d'attente.");
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + dacQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
-                    player.getInventory().setItem(2,quitQueue.toItemStack());
+                    player.getInventory().setItem(4,quitQueue.toItemStack());
                 }
                 break;
                 
@@ -374,7 +374,7 @@ public class Menu implements GuiBuilder {
                     player.sendMessage("§eCubixMC §6» §eVous avez bien été ajouté(e) à la §efile d'attente.");
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + punchQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
-                    player.getInventory().setItem(2,quitQueue.toItemStack());
+                    player.getInventory().setItem(4,quitQueue.toItemStack());
                 }else if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip+")) {
                     VIPplusQueue punchQueue = main.getVIPplusQueueByName("Punch");
                     if(punchQueue.getPlayers().containsKey(player)) {
@@ -388,7 +388,7 @@ public class Menu implements GuiBuilder {
                     player.sendMessage("§eCubixMC §6» §eVous avez bien été ajouté(e) à la §efile d'attente.");
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + punchQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
-                    player.getInventory().setItem(2,quitQueue.toItemStack());
+                    player.getInventory().setItem(4,quitQueue.toItemStack());
                     
                 }else if (player.hasPermission("queues.bypass")  || player.hasPermission("*")) {
                 	player.sendMessage("§eCubixMC §6» §eConnexion au serveur en cours... §6(§ePunch§6)");
@@ -406,7 +406,7 @@ public class Menu implements GuiBuilder {
                     player.sendMessage("§eCubixMC §6» §eVous avez bien été ajouté(e) à la §efile d'attente.");
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + punchQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
-                    player.getInventory().setItem(2,quitQueue.toItemStack());
+                    player.getInventory().setItem(4,quitQueue.toItemStack());
                 }else if (main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("player")){
                     Queue punchQueue = main.getQueueByName("Punch");
                     if(punchQueue.getPlayers().containsKey(player)) {
@@ -420,7 +420,7 @@ public class Menu implements GuiBuilder {
                     player.sendMessage("§eCubixMC §6» §eVous avez bien été ajouté(e) à la §efile d'attente.");
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + punchQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
-                    player.getInventory().setItem(2,quitQueue.toItemStack());
+                    player.getInventory().setItem(4,quitQueue.toItemStack());
                 }
             	break;
 
@@ -443,7 +443,7 @@ public class Menu implements GuiBuilder {
                     player.sendMessage("§eCubixMC §6» §eVous avez bien été ajouté(e) à la §efile d'attente.");
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + sgQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
-                    player.getInventory().setItem(2,quitQueue.toItemStack());
+                    player.getInventory().setItem(4,quitQueue.toItemStack());
                 }else if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip+")) {
                     VIPplusQueue sgQueue = main.getVIPplusQueueByName("SG01");
                     if(sgQueue.getPlayers().containsKey(player)) {
@@ -457,7 +457,7 @@ public class Menu implements GuiBuilder {
                     player.sendMessage("§eCubixMC §6» §eVous avez bien été ajouté(e) à la §efile d'attente.");
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + sgQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
-                    player.getInventory().setItem(2,quitQueue.toItemStack());
+                    player.getInventory().setItem(4,quitQueue.toItemStack());
 
                 }else if (player.hasPermission("queues.bypass")  || player.hasPermission("*")) {
                     player.sendMessage("§eCubixMC §6» §eConnexion au serveur en cours... §6(§eSurvival Games§6)");
@@ -475,7 +475,7 @@ public class Menu implements GuiBuilder {
                     player.sendMessage("§eCubixMC §6» §eVous avez bien été ajouté(e) à la §efile d'attente.");
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + sgQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
-                    player.getInventory().setItem(2,quitQueue.toItemStack());
+                    player.getInventory().setItem(4,quitQueue.toItemStack());
                 }else if (main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("player")){
                     Queue sgQueue = main.getQueueByName("SG01");
                     if(sgQueue.getPlayers().containsKey(player)) {
@@ -489,7 +489,7 @@ public class Menu implements GuiBuilder {
                     player.sendMessage("§eCubixMC §6» §eVous avez bien été ajouté(e) à la §efile d'attente.");
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + sgQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
-                    player.getInventory().setItem(2,quitQueue.toItemStack());
+                    player.getInventory().setItem(4,quitQueue.toItemStack());
                 }
                 break;
 
