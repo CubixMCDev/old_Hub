@@ -1,9 +1,7 @@
 package eu.cubix.mc.hub.inventory;
 
 import eu.cubix.mc.hub.Main;
-import eu.cubix.mc.hub.tools.CustomSkull;
 import eu.cubix.mc.hub.tools.GuiBuilder;
-import eu.cubix.mc.hub.tools.ItemFactory;
 import eu.cubix.mc.hub.tools.ItemsBuilder;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -12,6 +10,8 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.Arrays;
+
+import static eu.cubix.mc.hub.tools.ItemsBuilder.setSkullID;
 
 public class Profile implements GuiBuilder {
 
@@ -106,20 +106,20 @@ public class Profile implements GuiBuilder {
                 .setLore(Arrays.asList("§eKills: §60", "§ePartie gagnée: §60", "§ePartie perdue: §60"));
         inv.setItem(32,HideAndSeek.toItemStack());
 
-        ItemsBuilder amis = new ItemsBuilder(Material.RAW_FISH)
+        ItemsBuilder Amis = new ItemsBuilder(Material.RAW_FISH)
                 .setName("§6§nAmis")
                 .setLore("§eVous avez des amis?");
-        inv.setItem(45,amis.toItemStack());
+        inv.setItem(45,Amis.toItemStack());
 
-        ItemsBuilder parametres = new ItemsBuilder(Material.REDSTONE_COMPARATOR)
+        ItemsBuilder Parametres = new ItemsBuilder(Material.REDSTONE_COMPARATOR)
                 .setName("§6§nParamètres")
                 .setLore("§eQuels sont vos préférences?");
-        inv.setItem(47,parametres.toItemStack());
-
-        inv.setItem(49, new ItemFactory(CustomSkull.getCustomSkull("http://textures.minecraft.net/texture/98daa1e3ed94ff3e33e1d4c6e43f024c47d78a57ba4d38e75e7c9264106"))
-                .withName("§6§nLangues")
-                .withLore("§eVous parler français?")
-                .done());
+        inv.setItem(47,Parametres.toItemStack());
+        
+        ItemsBuilder Languages = new ItemsBuilder(setSkullID("98daa1e3ed94ff3e33e1d4c6e43f024c47d78a57ba4d38e75e7c9264106"))
+                .setName("§6§nLangues")
+                .setLore("§eVous parler français?");
+        inv.setItem(49,Languages.toItemStack());
 
         ItemsBuilder Return = new ItemsBuilder(Material.DARK_OAK_DOOR_ITEM)
                 .setName("§6§nRetour");

@@ -2,7 +2,6 @@ name: Hub
 version: 1.5.3
 main: eu.cubix.mc.hub.Main
 author: PipoSurYouTube
-description: Plugin de Hub
 commands:
   key:
     aliases: [cles]

@@ -11,9 +11,7 @@ import eu.cubix.mc.hub.task.AvantageQueueTask;
 import eu.cubix.mc.hub.task.QueueTask;
 import eu.cubix.mc.hub.task.VIPQueueTask;
 import eu.cubix.mc.hub.task.VIPplusQueueTask;
-import eu.cubix.mc.hub.tools.CustomSkull;
 import eu.cubix.mc.hub.tools.GuiBuilder;
-import eu.cubix.mc.hub.tools.ItemFactory;
 import eu.cubix.mc.hub.tools.ItemsBuilder;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -25,6 +23,8 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.Arrays;
 import java.util.Objects;
+
+import static eu.cubix.mc.hub.tools.ItemsBuilder.setSkullID;
 
 public class Menu implements GuiBuilder {
 
@@ -80,35 +80,35 @@ public class Menu implements GuiBuilder {
                 .setLore("§eChanger de hub.");
         inv.setItem(5,HubChanger.toItemStack());
 
-        inv.setItem(0, new ItemFactory(CustomSkull.getCustomSkull("http://textures.minecraft.net/texture/deb46126904463f07ecfc972aaa37373a22359b5ba271821b689cd5367f75762"))
-                .withName("§6§nFacebook")
-                .withLore("§ehttps://www.facebook.com/CubixMC")
-                .done());
+        ItemsBuilder Facebook = new ItemsBuilder(setSkullID("deb46126904463f07ecfc972aaa37373a22359b5ba271821b689cd5367f75762"))
+                .setName("§6§nFacebook")
+                .setLore("§ehttps://www.facebook.com/CubixMC");
+        inv.setItem(0,Facebook.toItemStack());
 
-        inv.setItem(9, new ItemFactory(CustomSkull.getCustomSkull("http://textures.minecraft.net/texture/fb95209d36c5aa1bf6c6f307f09b16d9058844ac560340c88f8394682ef57a0a"))
-                .withName("§6§nYouTube")
-                .withLore("§ehttps://www.youtube.com/CubixMC")
-                .done());
+        ItemsBuilder YouTube = new ItemsBuilder(setSkullID("fb95209d36c5aa1bf6c6f307f09b16d9058844ac560340c88f8394682ef57a0a"))
+                .setName("§6§nYouTube")
+                .setLore("§ehttps://www.youtube.com/CubixMC");
+        inv.setItem(9,YouTube.toItemStack());
 
-        inv.setItem(18, new ItemFactory(CustomSkull.getCustomSkull("http://textures.minecraft.net/texture/cc745a06f537aea80505559149ea16bd4a84d4491f12226818c3881c08e860fc"))
-                .withName("§6§nTwitter")
-                .withLore("§ehttps://www.twitter.com/CubixMCFR")
-                .done());
+        ItemsBuilder Twitter = new ItemsBuilder(setSkullID("cc745a06f537aea80505559149ea16bd4a84d4491f12226818c3881c08e860fc"))
+                .setName("§6§nTwitter")
+                .setLore("§ehttps://www.twitter.com/CubixMCFR");
+        inv.setItem(18,Twitter.toItemStack());
 
-        inv.setItem(27, new ItemFactory(CustomSkull.getCustomSkull("http://textures.minecraft.net/texture/ac88d6163fabe7c5e62450eb37a074e2e2c88611c998536dbd8429faa0819453"))
-                .withName("§6§nInstagram")
-                .withLore("§ehttps://www.instagram.com/cubixmc")
-                .done());
+        ItemsBuilder Instagram = new ItemsBuilder(setSkullID("ac88d6163fabe7c5e62450eb37a074e2e2c88611c998536dbd8429faa0819453"))
+                .setName("§6§nInstagram")
+                .setLore("§ehttps://www.instagram.com/cubixmc");
+        inv.setItem(27,Instagram.toItemStack());
 
-        inv.setItem(36, new ItemFactory(CustomSkull.getCustomSkull("http://textures.minecraft.net/texture/7873c12bffb5251a0b88d5ae75c7247cb39a75ff1a81cbe4c8a39b311ddeda"))
-                .withName("§6§nDiscord")
-                .withLore("§ehttps://discord.gg/UFd3eRh")
-                .done());
+        ItemsBuilder Discord = new ItemsBuilder(setSkullID("7873c12bffb5251a0b88d5ae75c7247cb39a75ff1a81cbe4c8a39b311ddeda"))
+                .setName("§6§nDiscord")
+                .setLore("§ehttps://discord.gg/UFd3eRh");
+        inv.setItem(36,Discord.toItemStack());
 
-        inv.setItem(45, new ItemFactory(CustomSkull.getCustomSkull("http://textures.minecraft.net/texture/be3db27cbd1789310409081ad8c42d690b08961b55cadd45b42d46bca28b8"))
-                .withName("§6§nSite")
-                .withLore("§ehttps://cubixmc.fr")
-                .done());
+        ItemsBuilder WebSite = new ItemsBuilder(setSkullID("be3db27cbd1789310409081ad8c42d690b08961b55cadd45b42d46bca28b8"))
+                .setName("§6§nSite")
+                .setLore("§ehttps://cubixmc.fr");
+        inv.setItem(45,WebSite.toItemStack());
 
         ItemsBuilder Pvpbox = new ItemsBuilder(Material.IRON_SWORD)
                 .setName("§6§nPvpbox")

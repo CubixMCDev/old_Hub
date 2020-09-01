@@ -114,9 +114,6 @@ public class Cosmetics implements GuiBuilder {
                 ParticleData particle = new ParticleData(player.getUniqueId());
 
                 player.getInventory().setItem(6,new ItemStack(Material.AIR));
-                if(main.Pets.containsKey(player.getName())){
-                    main.Pets.get(player.getName()).remove();
-                }
                 if(particle.hasID()) {
                     particle.endTask();
                     particle.removeID();

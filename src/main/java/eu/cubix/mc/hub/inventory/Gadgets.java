@@ -56,7 +56,7 @@ public class Gadgets implements GuiBuilder {
         inv.setItem(51,Separateur.toItemStack());
         inv.setItem(52,Separateur.toItemStack());
 
-        if(main.getCosmeticsManager().hasCosmetic("gadgetSheepExplode",player.getUniqueId())) {
+        if(!main.getCosmeticsManager().hasCosmetic("gadgetSheepExplode",player.getUniqueId())) {
             ItemsBuilder SheepExplode = new ItemsBuilder(Material.WOOL, 1, (byte) 14)
                     .setName("§6§nMouton explosif");
             inv.setItem(10,SheepExplode.toItemStack());

@@ -128,10 +128,6 @@ public class PlayerEvent implements Listener {
             e.setQuitMessage("");
         }
 
-        if(Main.Pets.containsKey(player.getName())){
-            Main.Pets.get(player.getName()).remove();
-        }
-
         if(particle.hasID()) {
             particle.endTask();
             particle.removeID();
