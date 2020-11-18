@@ -1,6 +1,7 @@
 package eu.cubix.mc.hub.commands;
 
 import eu.cubix.mc.hub.Main;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -32,15 +33,15 @@ public class Key implements CommandExecutor {
             if (player.hasPermission("*")) {
                 ItemStack voteKey = new ItemStack(Material.TRIPWIRE_HOOK);
                 ItemMeta meta = voteKey.getItemMeta();
-                meta.setDisplayName("§6Clé de vote");
-                meta.setLore(Collections.singletonList("§eType: Commun"));
+                meta.setDisplayName(ChatColor.GOLD+"Clé de vote");
+                meta.setLore(Collections.singletonList(ChatColor.YELLOW+"Type: Commun"));
                 meta.addEnchant(Enchantment.LUCK, 10, true);
                 meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
                 voteKey.setItemMeta(meta);
 
                 player.getInventory().addItem(voteKey);
             } else {
-                player.sendMessage("§cCubixMC §4» §cErreur: commande inconnue.");
+                player.sendMessage(main.prefixError+ChatColor.RED+"Erreur: commande inconnue.");
             }
         }
         return false;

@@ -2,6 +2,7 @@ package eu.cubix.mc.hub.cosmetics.gadgets;
 
 import eu.cubix.mc.hub.Main;
 import eu.cubix.mc.hub.tools.GadgetBuilder;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Projectile;
@@ -27,7 +28,7 @@ public class PaintBallGun extends GadgetBuilder implements Listener {
 
     @Override
     public String name() {
-        return "§6Gadget: §ePaintBall";
+        return ChatColor.GOLD+"Gadget: "+ChatColor.YELLOW+"PaintBall";
     }
 
     @Override

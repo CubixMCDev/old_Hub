@@ -115,7 +115,7 @@ public class Menu implements GuiBuilder {
                 .setFlags(ItemFlag.HIDE_ATTRIBUTES)
                 .setLore(Arrays.asList(" ",
                         "§eEn jeu: §60",
-                        "§e Clic gauche pour jouer",
+                        "§e» Clic gauche pour jouer",
                         " ",
                         "§eDéveloppeur: §6Eliviel"));
         inv.setItem(21,Pvpbox.toItemStack());
@@ -166,15 +166,23 @@ public class Menu implements GuiBuilder {
                         "§eDéveloppeur: §6Eliviel"));
         inv.setItem(31,HideAndSeek.toItemStack());
 
-        ItemsBuilder CubixGames7 = new ItemsBuilder(Material.BARRIER)
-                .setName("§4§n§kCubixGame")
-                .setLore("§cComing Soon");
-        inv.setItem(32,CubixGames7.toItemStack());
+        ItemsBuilder PlantTheBomb = new ItemsBuilder(Material.REDSTONE_TORCH_ON)
+                .setName("§6§nPlant The Bomb")
+                .setLore(Arrays.asList(" ",
+                        "§eEn jeu: §60",
+                        "§e» Clic gauche pour jouer",
+                        " ",
+                        "§eDéveloppeur: §6Karamouche"));
+        inv.setItem(32,PlantTheBomb.toItemStack());
 
-        ItemsBuilder CubixGames8 = new ItemsBuilder(Material.BARRIER)
-                .setName("§4§n§kCubixGame")
-                .setLore("§cComing Soon");
-        inv.setItem(33,CubixGames8.toItemStack());
+        ItemsBuilder AmongBlocks = new ItemsBuilder(Material.POWERED_RAIL)
+                .setName("§6§nAmong Blocks")
+                .setLore(Arrays.asList(" ",
+                        "§eEn jeu: §60",
+                        "§e» Clic gauche pour jouer",
+                        " ",
+                        "§eDéveloppeur: §6Karamouche"));
+        inv.setItem(33,AmongBlocks.toItemStack());
 
         ItemsBuilder Return = new ItemsBuilder(Material.DARK_OAK_DOOR_ITEM)
                 .setName("§6§nRetour");
@@ -488,6 +496,71 @@ public class Menu implements GuiBuilder {
                     int place = sgQueue.getPlayers().get(player);
                     player.sendMessage("§eCubixMC §6» §eVous avez bien été ajouté(e) à la §efile d'attente.");
                     player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + sgQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
+                    ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
+                    player.getInventory().setItem(4,quitQueue.toItemStack());
+                }
+                break;
+
+            case REDSTONE_TORCH_ON:
+                player.closeInventory();
+                if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip")) {
+                    VIPQueue ptbQueue = main.getVIPQueueByName("PlantTheBomb01");
+                    if(ptbQueue.getPlayers().containsKey(player)) {
+                        player.sendMessage("§cCubixMC §4» §cErreur: vous êtes déjà dans la file d'attente.");
+                        return;
+                    }
+                    ptbQueue.getPlayers().put(player, ptbQueue.getPlayers().size() + 1);
+                    VIPQueueTask queueTask = new VIPQueueTask(main, ptbQueue);
+                    queueTask.runTaskTimer(main, 0, 20);
+                    int place = ptbQueue.getPlayers().get(player);
+                    player.sendMessage("§eCubixMC §6» §eVous avez bien été ajouté(e) à la §efile d'attente.");
+                    player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + ptbQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
+                    ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
+                    player.getInventory().setItem(4,quitQueue.toItemStack());
+                }else if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip+")) {
+                    VIPplusQueue ptbQueue = main.getVIPplusQueueByName("PlantTheBomb01");
+                    if(ptbQueue.getPlayers().containsKey(player)) {
+                        player.sendMessage("§cCubixMC §4» §cErreur: vous êtes déjà dans la file d'attente.");
+                        return;
+                    }
+                    ptbQueue.getPlayers().put(player, ptbQueue.getPlayers().size() + 1);
+                    VIPplusQueueTask queueTask = new VIPplusQueueTask(main, ptbQueue);
+                    queueTask.runTaskTimer(main, 0, 20);
+                    int place = ptbQueue.getPlayers().get(player);
+                    player.sendMessage("§eCubixMC §6» §eVous avez bien été ajouté(e) à la §efile d'attente.");
+                    player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + ptbQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
+                    ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
+                    player.getInventory().setItem(4,quitQueue.toItemStack());
+
+                }else if (player.hasPermission("queues.bypass")  || player.hasPermission("*")) {
+                    player.sendMessage("§eCubixMC §6» §eConnexion au serveur en cours... §6(§ePlant The Bomb§6)");
+                    teleport(main, player, "PlantTheBomb01");
+                }else if (main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("youtube")){
+                    AvantageQueue ptbQueue = main.getAvantageQueueByName("PlantTheBomb01");
+                    if(ptbQueue.getPlayers().containsKey(player)) {
+                        player.sendMessage("§cCubixMC §4» §cErreur: vous êtes déjà dans la file d'attente.");
+                        return;
+                    }
+                    ptbQueue.getPlayers().put(player, ptbQueue.getPlayers().size() + 1);
+                    AvantageQueueTask queueTask = new AvantageQueueTask(main, ptbQueue);
+                    queueTask.runTaskTimer(main, 0, 20);
+                    int place = ptbQueue.getPlayers().get(player);
+                    player.sendMessage("§eCubixMC §6» §eVous avez bien été ajouté(e) à la §efile d'attente.");
+                    player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + ptbQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
+                    ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
+                    player.getInventory().setItem(4,quitQueue.toItemStack());
+                }else if (main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("player")){
+                    Queue ptbQueue = main.getQueueByName("PlantTheBomb01");
+                    if(ptbQueue.getPlayers().containsKey(player)) {
+                        player.sendMessage("§cCubixMC §4» §cErreur: vous êtes déjà dans la file d'attente.");
+                        return;
+                    }
+                    ptbQueue.getPlayers().put(player, ptbQueue.getPlayers().size() + 1);
+                    QueueTask queueTask = new QueueTask(main, ptbQueue);
+                    queueTask.runTaskTimer(main, 0, 20);
+                    int place = ptbQueue.getPlayers().get(player);
+                    player.sendMessage("§eCubixMC §6» §eVous avez bien été ajouté(e) à la §efile d'attente.");
+                    player.sendMessage("§eCubixMC §6» §eVous êtes §6" + place + "§e/§6" + ptbQueue.getPlayers().size() + " §ejoueur(s) dans la file d'attente.");
                     ItemsBuilder quitQueue = new ItemsBuilder(Material.BARRIER).setName("§6Quitter la file d'attente").setLore("§eClic droit");
                     player.getInventory().setItem(4,quitQueue.toItemStack());
                 }

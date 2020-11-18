@@ -21,7 +21,8 @@ public class Jump implements Listener {
     @EventHandler
     public void doubleJump(PlayerToggleFlightEvent e) {
         Player p = e.getPlayer();
-        if (main.getAPI().get().getRankID(p.getUniqueId()).equals("player")) {
+
+        if (main.getAPI().get().getRankID(p.getUniqueId()).equals("vip")) {
             if (p.getGameMode() != GameMode.CREATIVE) {
                 e.setCancelled(true);
                 Block b = p.getWorld().getBlockAt(p.getLocation().subtract(0, 2, 0));
@@ -31,11 +32,8 @@ public class Jump implements Listener {
                 }
             }
         }
-        if (main.getAPI().get().getRankID(p.getUniqueId()).equals("vip")) {
-            // CODE TRIPLE JUMP
-        }
         if (main.getAPI().get().getRankID(p.getUniqueId()).equals("vip+")) {
-            // CODE QUADRUPLE JUMP
+            // CODE TRIPLE JUMP
         }
     }
 }

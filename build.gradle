@@ -3,8 +3,7 @@ plugins {
     id 'java'
 }
 
-group = 'cubixmc.com'
-version = '1.0.0.0'
+group 'cubixmc.com'
 sourceCompatibility = '1.8'
 
 /*

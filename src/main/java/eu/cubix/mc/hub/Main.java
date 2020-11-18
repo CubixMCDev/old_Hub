@@ -18,7 +18,9 @@ import eu.cubix.mc.hub.scoreboard.ScoreboardManager;
 import eu.cubix.mc.hub.task.AntiAFK;
 import eu.cubix.mc.hub.tools.*;
 import eu.cubixmc.com.CubixAPI;
+import eu.cubixmc.com.data.User;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -28,6 +30,10 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 
 public class Main extends JavaPlugin implements Listener {
+
+    public String prefix = ChatColor.YELLOW+"CubixMC "+ChatColor.GOLD+"» ";
+    public String prefixError = ChatColor.RED+"CubixMC "+ChatColor.DARK_RED+"» ";
+    public String verticalBarreUnicode = "\u2758";
 
     private GuiManager guiManager;
     private final Map<Class<? extends GadgetBuilder>, GadgetBuilder> registerGadgets = new HashMap<>();
@@ -161,6 +167,7 @@ public class Main extends JavaPlugin implements Listener {
         games.add("UHCRun01");
         games.add("DeathNoteUHC01");
         games.add("SG01");
+        games.add("PlantTheBomb01");
         for(String game : games){
             VIPplusQueue vipplusqueue = new VIPplusQueue(game, new HashMap<>());
             VIPQueue vipqueue = new VIPQueue(game, new HashMap<>());

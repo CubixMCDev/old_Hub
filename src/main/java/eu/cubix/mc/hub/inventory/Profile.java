@@ -99,12 +99,22 @@ public class Profile implements GuiBuilder {
         ItemsBuilder SurvivalGames = new ItemsBuilder(Material.APPLE)
                 .setName("§6§nSurvival Games")
                 .setLore(Arrays.asList("§eKills: §60", "§ePartie gagnée: §60", "§ePartie perdue: §60"));
-        inv.setItem(30,SurvivalGames.toItemStack());
+        inv.setItem(29,SurvivalGames.toItemStack());
 
         ItemsBuilder HideAndSeek = new ItemsBuilder(Material.SLIME_BLOCK)
                 .setName("§6§nHide And Seek")
                 .setLore(Arrays.asList("§eKills: §60", "§ePartie gagnée: §60", "§ePartie perdue: §60"));
-        inv.setItem(32,HideAndSeek.toItemStack());
+        inv.setItem(30,HideAndSeek.toItemStack());
+
+        ItemsBuilder PlantTheBomb = new ItemsBuilder(Material.REDSTONE_TORCH_ON)
+                .setName("§6§nPlant The Bomb")
+                .setLore(Arrays.asList("§eKills: §60", "§ePartie gagnée: §60", "§ePartie perdue: §60"));
+        inv.setItem(32,PlantTheBomb.toItemStack());
+
+        ItemsBuilder AmongBlocks = new ItemsBuilder(Material.POWERED_RAIL)
+                .setName("§6§nAmong Blocks")
+                .setLore(Arrays.asList("§eTâches faites: §60", "§eKills: §60","§ePartie gagnée: §60", "§ePartie perdue: §60"));
+        inv.setItem(33,AmongBlocks.toItemStack());
 
         ItemsBuilder Amis = new ItemsBuilder(Material.RAW_FISH)
                 .setName("§6§nAmis")

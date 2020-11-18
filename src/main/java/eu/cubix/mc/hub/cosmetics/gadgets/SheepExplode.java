@@ -3,6 +3,8 @@ package eu.cubix.mc.hub.cosmetics.gadgets;
 import eu.cubix.mc.hub.Main;
 import eu.cubix.mc.hub.tools.GadgetBuilder;
 import eu.cubix.mc.hub.tools.MathUtil;
+import eu.cubix.mc.hub.tools.ParticleEffect;
+import net.minecraft.server.v1_8_R3.EnumParticle;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Sheep;
@@ -27,7 +29,7 @@ public class SheepExplode extends GadgetBuilder {
 
     @Override
     public String name() {
-        return "§6Gadget: §eMouton explosif";
+        return ChatColor.GOLD+"Gadget: "+ChatColor.YELLOW+"Mouton explosif";
     }
 
     @Override
@@ -84,12 +86,10 @@ public class SheepExplode extends GadgetBuilder {
 
             if (time < 0.5) {
                 player.playSound(player.getLocation(), Sound.EXPLODE, 1.4f, 1.5f);
-                /*
                 ParticleEffect packet = new ParticleEffect(EnumParticle.EXPLOSION_HUGE, s.getLocation(),
-                        0.5f, 0.5f, 0.5f, 0.07f, 1);
+                        0.5f, 0.5f, 0.5f, 0f, 1);
                 for(Player p : Bukkit.getOnlinePlayers())
                     packet.sendToPlayer(p);
-                 */
                 for (int i = 0; i < 50; i++) {
                     final Sheep sheep = player.getPlayer().getWorld().spawn(s.getLocation(), Sheep.class);
                     try {
@@ -104,12 +104,10 @@ public class SheepExplode extends GadgetBuilder {
                     sheep.setNoDamageTicks(120);
                     sheepArrayList.add(sheep);
                     Bukkit.getScheduler().runTaskLater(main, () -> {
-                        /*
                         ParticleEffect pa = new ParticleEffect(EnumParticle.FLAME, sheep.getLocation(),
-                                0.5f, 0.5f, 0.5f, 0.07f, 1);
+                                0.5f, 0.5f, 0.5f, 0f, 1);
                         for(Player p : Bukkit.getOnlinePlayers())
                             pa.sendToPlayer(p);
-                         */
                         sheep.remove();
                         sheep.remove();
                         EXPLOSIVE_SHEEP.remove(gadgetExplosiveSheep);

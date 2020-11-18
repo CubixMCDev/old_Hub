@@ -91,7 +91,8 @@ public class Vote implements Listener {
                 String[] prizeIndex = prize.split(":");
 
                 if (prize.contains("Money")) {
-                    // CODE POUR GAGNER
+                    main.getAPI().set().addCoins(player.getUniqueId(), 100);
+                    player.sendMessage(main.prefix+"Vous avez reçu 100 coins.");
 
                     ItemStack prizeItem = new ItemStack(Material.DOUBLE_PLANT);
                     ItemMeta prizeMeta = prizeItem.getItemMeta();
@@ -124,7 +125,7 @@ public class Vote implements Listener {
             return;
         } else if(e.getItem().getType() != Material.TRIPWIRE_HOOK) {
             return;
-        } else if(!e.getItem().getItemMeta().getDisplayName().equals("§6Clé de vote")) {
+        } else if(!e.getItem().getItemMeta().getDisplayName().equals(ChatColor.GOLD+"Clé de vote")) {
             return;
         }
 
@@ -140,7 +141,7 @@ public class Vote implements Listener {
 
         e.setCancelled(true);
 
-        player.sendMessage("§eCubixMC §6» §eVous avez utilisé votre §6Clé de vote§e.");
+        player.sendMessage(main.prefix+ChatColor.YELLOW+"Vous avez utilisé votre "+ChatColor.GOLD+"Clé de vote"+ChatColor.YELLOW+".");
     }
 
 }

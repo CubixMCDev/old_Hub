@@ -9,8 +9,7 @@ public class ActionBar {
     private final PacketPlayOutChat packet;
 
     public ActionBar(String message) {
-        PacketPlayOutChat packet = new PacketPlayOutChat(IChatBaseComponent.ChatSerializer.a("{\"text\":\""+message+"\"}"), (byte) 2);
-        this.packet = packet;
+        this.packet = new PacketPlayOutChat(IChatBaseComponent.ChatSerializer.a("{\"text\":\""+message+"\"}"), (byte) 2);
     }
 
     public void send(Player player) {

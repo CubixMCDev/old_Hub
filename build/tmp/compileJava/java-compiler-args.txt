@@ -3,23 +3,20 @@
 -target
 1.8
 -d
-"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\build\\classes\\java\\main"
+C:\\Users\\yoris\\Documents\\Dossiers-Fichiers\\Développements\\IntelliJ\\CubixMC\\Hub\\build\\classes\\java\\main
 -encoding
 UTF-8
 -h
-"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\build\\generated\\sources\\headers\\java\\main"
+C:\\Users\\yoris\\Documents\\Dossiers-Fichiers\\Développements\\IntelliJ\\CubixMC\\Hub\\build\\generated\\sources\\headers\\java\\main
 -g
 -sourcepath
 ""
 -proc:none
 -s
-"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\build\\generated\\sources\\annotationProcessor\\java\\main"
+C:\\Users\\yoris\\Documents\\Dossiers-Fichiers\\Développements\\IntelliJ\\CubixMC\\Hub\\build\\generated\\sources\\annotationProcessor\\java\\main
 -XDuseUnsharedTable=true
 -classpath
-"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\libs\\spigot.jar;C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\libs\\cubixapi.jar;C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\build\\classes\\java\\main"
+C:\\Users\\yoris\\Documents\\Dossiers-Fichiers\\Développements\\IntelliJ\\CubixMC\\Hub\\libs\\spigot.jar;C:\\Users\\yoris\\Documents\\Dossiers-Fichiers\\Développements\\IntelliJ\\CubixMC\\Hub\\libs\\cubixapi.jar;C:\\Users\\yoris\\Documents\\Dossiers-Fichiers\\Développements\\IntelliJ\\CubixMC\\Hub\\build\\classes\\java\\main
 -parameters
-"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\events\\InteractEvent.java"
-"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\HubChanger.java"
-"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Menu.java"
-"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\UHCs.java"
-"C:\\Users\\Yoris B\\Documents\\Dossiers & Fichiers\\Développements\\IntelliJ\\CubixMC\\CubixHub\\src\\main\\java\\eu\\cubix\\mc\\hub\\Main.java"
+C:\\Users\\yoris\\Documents\\Dossiers-Fichiers\\Développements\\IntelliJ\\CubixMC\\Hub\\src\\main\\java\\eu\\cubix\\mc\\hub\\events\\PlayerEvent.java
+C:\\Users\\yoris\\Documents\\Dossiers-Fichiers\\Développements\\IntelliJ\\CubixMC\\Hub\\src\\main\\java\\eu\\cubix\\mc\\hub\\Main.java
