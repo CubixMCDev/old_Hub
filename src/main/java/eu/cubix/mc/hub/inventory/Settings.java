@@ -1,6 +1,8 @@
 package eu.cubix.mc.hub.inventory;
 
 import eu.cubix.mc.hub.Main;
+import eu.cubix.mc.hub.task.JoinTask;
+import eu.cubix.mc.hub.task.SettingsUpdateTask;
 import eu.cubix.mc.hub.tools.GuiBuilder;
 import eu.cubix.mc.hub.tools.ItemsBuilder;
 import org.bukkit.Material;
@@ -93,7 +95,7 @@ public class Settings implements GuiBuilder {
         if (main.getAPI().getFriendsManager().hasAllowedMessages(player.getUniqueId())) {
             ItemsBuilder PrivateMessage_option = new ItemsBuilder(Material.INK_SACK, 1, (byte) 10)
                     .setName("§6§nOption msg")
-                    .setLore(Arrays.asList("§eClic gauche pour d§sactiver", "§eStatus : §6Activer"));
+                    .setLore(Arrays.asList("§eClic gauche pour activer", "§eStatus : §6Activer"));
             inv.setItem(24, PrivateMessage_option.toItemStack());
         } else if (!main.getAPI().getFriendsManager().hasAllowedMessages(player.getUniqueId())) {
             ItemsBuilder PrivateMessage_option = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
@@ -133,6 +135,8 @@ public class Settings implements GuiBuilder {
 
     @Override
     public void onClick(Player player, Inventory inv, ItemStack current, int slot) {
+        SettingsUpdateTask task = new SettingsUpdateTask(main, player);
+
         switch (current.getType()) {
             case DARK_OAK_DOOR_ITEM:
                 main.getGuiManager().open(player, Profile.class);
@@ -142,45 +146,53 @@ public class Settings implements GuiBuilder {
         if (current != null && current.getType() == Material.INK_SACK && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nOption ami")) {
             if (main.getAPI().getFriendsManager().isAllowed(player.getUniqueId()) == 1) {
                 main.getAPI().getFriendsManager().setAllow(0, player.getUniqueId());
-                player.updateInventory();
-                main.getGuiManager().open(player, Settings.class);
+                player.closeInventory();
+                player.sendMessage("§eCubixMC §6» §eRechargement des paramètres...");
+                task.runTaskTimer(main, 0, 20);
             } else if (main.getAPI().getFriendsManager().isAllowed(player.getUniqueId()) == 0) {
                 main.getAPI().getFriendsManager().setAllow(1, player.getUniqueId());
-                player.updateInventory();
-                main.getGuiManager().open(player, Settings.class);
+                player.closeInventory();
+                player.sendMessage("§eCubixMC §6» §eRechargement des paramètres...");
+                task.runTaskTimer(main, 0, 20);
             }
         }
         if (current != null && current.getType() == Material.INK_SACK && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nOption msg")) {
             if (main.getAPI().getFriendsManager().hasAllowedMessages(player.getUniqueId())) {
                 main.getAPI().getFriendsManager().setAllowMessages(player.getUniqueId(),0);
-                player.updateInventory();
-                main.getGuiManager().open(player, Settings.class);
+                player.closeInventory();
+                player.sendMessage("§eCubixMC §6» §eRechargement des paramètres...");
+                task.runTaskTimer(main, 0, 20);
             } else if (!main.getAPI().getFriendsManager().hasAllowedMessages(player.getUniqueId())) {
                 main.getAPI().getFriendsManager().setAllowMessages(player.getUniqueId(),1);
-                player.updateInventory();
-                main.getGuiManager().open(player, Settings.class);
+                player.closeInventory();
+                player.sendMessage("§eCubixMC §6» §eRechargement des paramètres...");
+                task.runTaskTimer(main, 0, 20);
             }
         }
         if (current != null && current.getType() == Material.INK_SACK && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nOption groupe")) {
             if (main.getAPI().getPartyManager().getAllow(player.getUniqueId()) == 1) {
                 main.getAPI().getPartyManager().setAllow(0, player.getUniqueId());
-                player.updateInventory();
-                main.getGuiManager().open(player, Settings.class);
+                player.closeInventory();
+                player.sendMessage("§eCubixMC §6» §eRechargement des paramètres...");
+                task.runTaskTimer(main, 0, 20);
             } else if (main.getAPI().getPartyManager().getAllow(player.getUniqueId()) == 0) {
                 main.getAPI().getPartyManager().setAllow(1, player.getUniqueId());
-                player.updateInventory();
-                main.getGuiManager().open(player, Settings.class);
+                player.closeInventory();
+                player.sendMessage("§eCubixMC §6» §eRechargement des paramètres...");
+                task.runTaskTimer(main, 0, 20);
             }
         }
         if (current != null && current.getType() == Material.INK_SACK && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nOption suivi groupe")) {
             if (main.getAPI().getPartyManager().getFollow(player.getUniqueId()) == 1) {
                 main.getAPI().getPartyManager().setFollow(0, player.getUniqueId());
-                player.updateInventory();
-                main.getGuiManager().open(player, Settings.class);
+                player.closeInventory();
+                player.sendMessage("§eCubixMC §6» §eRechargement des paramètres...");
+                task.runTaskTimer(main, 0, 20);
             } else if (main.getAPI().getPartyManager().getFollow(player.getUniqueId()) == 0) {
                 main.getAPI().getPartyManager().setFollow(1, player.getUniqueId());
-                player.updateInventory();
-                main.getGuiManager().open(player, Settings.class);
+                player.closeInventory();
+                player.sendMessage("§eCubixMC §6» §eRechargement des paramètres...");
+                task.runTaskTimer(main, 0, 20);
             }
         }
     }

@@ -2,6 +2,8 @@ package eu.cubix.mc.hub.events;
 
 import eu.cubix.mc.hub.Main;
 import eu.cubix.mc.hub.task.AntiAFK;
+import eu.cubix.mc.hub.task.JoinTask;
+import eu.cubix.mc.hub.task.TaskVIP;
 import eu.cubix.mc.hub.tools.*;
 import eu.cubixmc.com.data.User;
 import net.minecraft.server.v1_8_R3.WorldServer;
@@ -35,7 +37,8 @@ public class PlayerEvent implements Listener {
         Scoreboard sb = Bukkit.getScoreboardManager().getMainScoreboard();
         Location spawn = new Location(Bukkit.getServer().getWorld("Hub"), 110.5, 16, 772.5, 180, 0);
         Location prison = new Location(Bukkit.getServer().getWorld("Hub"), 145, 3, 756, 0, 0);
-        User user = main.getAPI().getUserManager().getUser(player.getUniqueId());
+
+        e.setJoinMessage("");
 
         Team Admin = sb.getTeam("aadmin");
         if(Admin == null) {
@@ -53,9 +56,9 @@ public class PlayerEvent implements Listener {
         if(Moderator == null) {
             Moderator = sb.registerNewTeam("dmoderator");
         }
-        Team Helper = sb.getTeam("0003Helper");
+        Team Helper = sb.getTeam("ehelper");
         if(Helper == null) {
-            Helper = sb.registerNewTeam("0003Helper");
+            Helper = sb.registerNewTeam("ehelper");
         }
         Team Builder = sb.getTeam("fbuilder");
         if(Builder == null) {
@@ -127,9 +130,6 @@ public class PlayerEvent implements Listener {
         }
 
         main.getScoreboardManager().onLogin(player);
-        //if(!main.bar.getBar().getPlayers().contains(e.getPlayer())) {
-            //main.bar.addPlayer(e.getPlayer());
-    //}
 
         e.getPlayer().getInventory().setHeldItemSlot(4);
 
@@ -140,12 +140,6 @@ public class PlayerEvent implements Listener {
         player.setFoodLevel(20);
         player.setGameMode(GameMode.ADVENTURE);
         player.playSound(player.getLocation(), Sound.ORB_PICKUP, 1f, 1f);
-
-        if(player.hasPermission("joinquit.message") || player.hasPermission("*")) {
-            e.setJoinMessage(main.getAPI().get().getRankWithColors(player.getUniqueId())+ChatColor.DARK_GRAY+" \u2758 "+ChatColor.RESET+ main.getAPI().get().getRankColor(player.getUniqueId()) + player.getName()+ChatColor.GOLD+" a rejoint le hub !");
-        } else {
-            e.setJoinMessage("");
-        }
 
         if(main.getAPI().getBanManager().isBanned(player.getUniqueId())) {
             player.teleport(prison);
@@ -183,28 +177,11 @@ public class PlayerEvent implements Listener {
 
             player.teleport(spawn);
 
+            JoinTask task = new JoinTask(main, player);
+            task.runTaskTimer(main, 0, 1);
+
             title.send(player,1,7,1);
             actionBar.send(player);
-
-            Hologram hologram = new Hologram("§6§lVotre profil",
-                    "§8§m---------------------------",
-                    "§6Pseudo : §e"+player.getName(),
-                    "§6Grade : §e"+ main.getAPI().get().getRankWithColors(player.getUniqueId()),
-                    "§6Crédits : §e" + main.getAPI().get().getCredits(player.getUniqueId()) + " \u24D2",
-                    "§6Coins : §e"+ main.getAPI().get().getCoins(player.getUniqueId()) + " \u26C3",
-                    "§6Temps de jeu : §e"+"0 minutes §c(Soon)",
-                    "§6Niveau : §e"+main.getAPI().get().getLevel(player.getUniqueId())+" §6(§e"+main.getAPI().get().getExp(player.getUniqueId())+" Exp.§6)",
-                    "§6Progression : §e"+"§6[§e\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758§6] §e"+"0%",
-                    "§8§m---------------------------");
-            hologram.show(player, new Location(player.getWorld(),110.5,15.5,765.5));
-
-            Hologram hologram2 = new Hologram("§6§lCaisse",
-                    "§8§m--------------",
-                    "§eClé de vote",
-                    "§8§m--------------");
-            hologram2.show(player, new Location(player.getWorld(),103.5,16,765.5));
-
-            player.setAllowFlight(player.hasPermission("fly.hub") || player.hasPermission("*"));
         }
 
         if(!player.hasPermission("antiafk.bypass") || player.hasPermission("*")) {
@@ -217,14 +194,10 @@ public class PlayerEvent implements Listener {
     @EventHandler
     public void onQuit(PlayerQuitEvent e) {
         Player player = e.getPlayer();
-        User user = main.getAPI().getUserManager().getUser(player.getUniqueId());
         ParticleData particle = new ParticleData(player.getUniqueId());
 
-        if(player.hasPermission("joinquit.message") || player.hasPermission("*")) {
-            e.setQuitMessage(main.getAPI().get().getRankWithColors(player.getUniqueId())+ChatColor.DARK_GRAY+" \u2758 "+main.getAPI().get().getRankColor(player.getUniqueId())+player.getName() + " §6a quitté le hub !");
-        } else {
-            e.setQuitMessage("");
-        }
+        e.setQuitMessage("");
+
 
         if(particle.hasID()) {
             particle.endTask();
@@ -241,8 +214,12 @@ public class PlayerEvent implements Listener {
         User user = main.getAPI().getUserManager().getUser(player.getUniqueId());
         String message = e.getMessage();
 
-        if(player.hasPermission("rank.messagesyntax") || player.hasPermission("*")) {
+        if(!main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("player")) {
             e.setFormat(user.getRankToStringWithColor()+ChatColor.DARK_GRAY+" \u2758 "+ChatColor.RESET+ main.getAPI().get().getRankColor(player.getUniqueId()) + player.getName() + ChatColor.DARK_GRAY+" » "+ChatColor.RESET+ message);
+        } else if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip+")) {
+            e.setFormat(ChatColor.GOLD+"VIP+"+ChatColor.DARK_GRAY+" \u2758 "+ChatColor.GOLD + player.getName() + ChatColor.DARK_GRAY+" » "+ChatColor.RESET+ message);
+        } else if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("vip")) {
+            e.setFormat(ChatColor.YELLOW+"VIP"+ChatColor.DARK_GRAY+" \u2758 "+ChatColor.YELLOW + player.getName() + ChatColor.DARK_GRAY+" » "+ChatColor.RESET+ message);
         } else {
             e.setFormat(ChatColor.GRAY+player.getName() + ChatColor.DARK_GRAY+" » "+ChatColor.GRAY+ message);
         }

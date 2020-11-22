@@ -2,6 +2,7 @@ package eu.cubix.mc.hub.scoreboard;
 
 import eu.cubix.mc.hub.Main;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 
@@ -32,10 +33,25 @@ public class PersonalScoreboard {
         objectiveSign.setLine(0, "§1");
         objectiveSign.setLine(1, "§8» §6§n" + player.getName()+"§r §7("+((CraftPlayer) player).getHandle().ping+" ms)");
         objectiveSign.setLine(2, "§2");
-        objectiveSign.setLine(3, "§8» §6Grade: " +  main.getAPI().get().getRankWithColors(player.getUniqueId()));
+        if(player.hasPermission("staff.use") && player.hasPermission("vipplus.use")) {
+            objectiveSign.setLine(3, "§8» §6Grade: "+
+                    main.getAPI().get().getRankWithColors(player.getUniqueId())+ChatColor.GRAY+"/"+ChatColor.GOLD+"VIP+");
+
+        } else if(player.hasPermission("staff.use") && player.hasPermission("vip.use")) {
+            objectiveSign.setLine(3, "§8» §6Grade: "+
+                    main.getAPI().get().getRankWithColors(player.getUniqueId())+ChatColor.GRAY+"/"+ChatColor.YELLOW+"VIP");
+
+        } else if(player.hasPermission("vipplus.use")){
+            objectiveSign.setLine(3, "§8» §6Grade: "+ ChatColor.GOLD+"VIP+");
+
+        } else if(player.hasPermission("vip.use")){
+            objectiveSign.setLine(3, "§8» §6Grade: "+ ChatColor.YELLOW+"VIP");
+        } else {
+            objectiveSign.setLine(3, "§8» §6Grade: "+ main.getAPI().get().getRankWithColors(player.getUniqueId()));
+        }
         objectiveSign.setLine(4, "§3");
-        objectiveSign.setLine(5, "§8» §6Crédits: §e"+ main.getAPI().get().getCoins(player.getUniqueId()) + " \u24D2");
-        objectiveSign.setLine(6, "§8» §6Coins: §e" + main.getAPI().get().getCredits(player.getUniqueId()) + " \u26C3");
+        objectiveSign.setLine(5, "§8» §6Crédits: §e"+ main.getAPI().get().getCredits(player.getUniqueId()) + " \u24D2");
+        objectiveSign.setLine(6, "§8» §6Coins: §e" + main.getAPI().get().getCoins(player.getUniqueId()) + " \u26C3");
         objectiveSign.setLine(7, "§4");
         objectiveSign.setLine(8, "§8» §6Niveau: §e"+ main.getAPI().get().getLevel(player.getUniqueId()));
         objectiveSign.setLine(9, "§8» §6[§e\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758\u2758§6] §e"+"Nope"+"%");

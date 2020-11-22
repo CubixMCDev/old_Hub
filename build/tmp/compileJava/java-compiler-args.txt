@@ -18,5 +18,9 @@ C:\\Users\\yoris\\Documents\\Dossiers-Fichiers\\Développements\\IntelliJ\\CubixM
 -classpath
 C:\\Users\\yoris\\Documents\\Dossiers-Fichiers\\Développements\\IntelliJ\\CubixMC\\Hub\\libs\\spigot.jar;C:\\Users\\yoris\\Documents\\Dossiers-Fichiers\\Développements\\IntelliJ\\CubixMC\\Hub\\libs\\cubixapi.jar;C:\\Users\\yoris\\Documents\\Dossiers-Fichiers\\Développements\\IntelliJ\\CubixMC\\Hub\\build\\classes\\java\\main
 -parameters
-C:\\Users\\yoris\\Documents\\Dossiers-Fichiers\\Développements\\IntelliJ\\CubixMC\\Hub\\src\\main\\java\\eu\\cubix\\mc\\hub\\events\\PlayerEvent.java
+C:\\Users\\yoris\\Documents\\Dossiers-Fichiers\\Développements\\IntelliJ\\CubixMC\\Hub\\src\\main\\java\\eu\\cubix\\mc\\hub\\events\\InteractEvent.java
+C:\\Users\\yoris\\Documents\\Dossiers-Fichiers\\Développements\\IntelliJ\\CubixMC\\Hub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Friends.java
+C:\\Users\\yoris\\Documents\\Dossiers-Fichiers\\Développements\\IntelliJ\\CubixMC\\Hub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Languages.java
+C:\\Users\\yoris\\Documents\\Dossiers-Fichiers\\Développements\\IntelliJ\\CubixMC\\Hub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Profile.java
+C:\\Users\\yoris\\Documents\\Dossiers-Fichiers\\Développements\\IntelliJ\\CubixMC\\Hub\\src\\main\\java\\eu\\cubix\\mc\\hub\\inventory\\Settings.java
 C:\\Users\\yoris\\Documents\\Dossiers-Fichiers\\Développements\\IntelliJ\\CubixMC\\Hub\\src\\main\\java\\eu\\cubix\\mc\\hub\\Main.java

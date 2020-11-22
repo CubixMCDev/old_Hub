@@ -3,6 +3,7 @@ package eu.cubix.mc.hub.inventory;
 import eu.cubix.mc.hub.Main;
 import eu.cubix.mc.hub.tools.GuiBuilder;
 import eu.cubix.mc.hub.tools.ItemsBuilder;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -62,12 +63,41 @@ public class Profile implements GuiBuilder {
 
         ItemsBuilder profil = new ItemsBuilder(Material.SKULL_ITEM, 1, (byte) 3)
                 .setName("§6§n"+player.getName())
-                .setLore(Arrays.asList("§eGrade: "+ main.getAPI().get().getRankWithColors(player.getUniqueId()),
-                        "§eCrédits: §6" + main.getAPI().get().getCredits(player.getUniqueId()) + " \u24D2",
-                        "§eCoins: §6"+ main.getAPI().get().getCoins(player.getUniqueId()) + " \u26C3",
-                        "§eNiveau: §6" + main.getAPI().get().getLevel(player.getUniqueId()),
-                        "§eExp: §6"+ main.getAPI().get().getExp(player.getUniqueId())+" / "+ main.getAPI().get().getXPfromLevel(main.getAPI().get().getLevel(player.getUniqueId()))))
                 .setSkullOwner(player.getName());
+        if(player.hasPermission("staff.use") && player.hasPermission("vipplus.use")) {
+                    profil.setLore(Arrays.asList("§eGrade: "+ main.getAPI().get().getRankWithColors(player.getUniqueId())+ ChatColor.GRAY+"/"+ChatColor.GOLD+"VIP+",
+                            "§eCrédits: §6" + main.getAPI().get().getCredits(player.getUniqueId()) + " \u24D2",
+                            "§eCoins: §6"+ main.getAPI().get().getCoins(player.getUniqueId()) + " \u26C3",
+                            "§eNiveau: §6" + main.getAPI().get().getLevel(player.getUniqueId()),
+                            "§eExp: §6"+ main.getAPI().get().getExp(player.getUniqueId())+" / "+ main.getAPI().get().getXPfromLevel(main.getAPI().get().getLevel(player.getUniqueId()))));
+
+        } else if(player.hasPermission("staff.use") && player.hasPermission("vip.use")) {
+            profil.setLore(Arrays.asList("§eGrade: "+ main.getAPI().get().getRankWithColors(player.getUniqueId())+ ChatColor.GRAY+"/"+ChatColor.YELLOW+"VIP",
+                    "§eCrédits: §6" + main.getAPI().get().getCredits(player.getUniqueId()) + " \u24D2",
+                    "§eCoins: §6"+ main.getAPI().get().getCoins(player.getUniqueId()) + " \u26C3",
+                    "§eNiveau: §6" + main.getAPI().get().getLevel(player.getUniqueId()),
+                    "§eExp: §6"+ main.getAPI().get().getExp(player.getUniqueId())+" / "+ main.getAPI().get().getXPfromLevel(main.getAPI().get().getLevel(player.getUniqueId()))));
+
+        } else if(player.hasPermission("vipplus.use")){
+            profil.setLore(Arrays.asList("§eGrade: "+ChatColor.GOLD+"VIP+",
+                    "§eCrédits: §6" + main.getAPI().get().getCredits(player.getUniqueId()) + " \u24D2",
+                    "§eCoins: §6"+ main.getAPI().get().getCoins(player.getUniqueId()) + " \u26C3",
+                    "§eNiveau: §6" + main.getAPI().get().getLevel(player.getUniqueId()),
+                    "§eExp: §6"+ main.getAPI().get().getExp(player.getUniqueId())+" / "+ main.getAPI().get().getXPfromLevel(main.getAPI().get().getLevel(player.getUniqueId()))));
+
+        } else if(player.hasPermission("vip.use")){
+            profil.setLore(Arrays.asList("§eGrade: "+ChatColor.GOLD+"VIP",
+                    "§eCrédits: §6" + main.getAPI().get().getCredits(player.getUniqueId()) + " \u24D2",
+                    "§eCoins: §6"+ main.getAPI().get().getCoins(player.getUniqueId()) + " \u26C3",
+                    "§eNiveau: §6" + main.getAPI().get().getLevel(player.getUniqueId()),
+                    "§eExp: §6"+ main.getAPI().get().getExp(player.getUniqueId())+" / "+ main.getAPI().get().getXPfromLevel(main.getAPI().get().getLevel(player.getUniqueId()))));
+        } else {
+            profil.setLore(Arrays.asList("§eGrade: "+ main.getAPI().get().getRankWithColors(player.getUniqueId()),
+                    "§eCrédits: §6" + main.getAPI().get().getCredits(player.getUniqueId()) + " \u24D2",
+                    "§eCoins: §6"+ main.getAPI().get().getCoins(player.getUniqueId()) + " \u26C3",
+                    "§eNiveau: §6" + main.getAPI().get().getLevel(player.getUniqueId()),
+                    "§eExp: §6"+ main.getAPI().get().getExp(player.getUniqueId())+" / "+ main.getAPI().get().getXPfromLevel(main.getAPI().get().getLevel(player.getUniqueId()))));
+        }
         inv.setItem(4,profil.toItemStack());
 
         ItemsBuilder Pvpbox = new ItemsBuilder(Material.IRON_SWORD)

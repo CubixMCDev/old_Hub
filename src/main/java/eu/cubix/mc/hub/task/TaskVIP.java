@@ -21,7 +21,7 @@ public class TaskVIP extends BukkitRunnable {
         if(timer == 0) {
             main.getAPI().set().removeCredits(player.getUniqueId(), 4650);
             player.sendMessage("§eCubixMC §6» §eAchat confirmé. Merci pour votre confiance !");
-            main.getAPI().set().setRank(player.getUniqueId(), "vip", false);
+            main.getAPI().set().setRank(player.getUniqueId(), "vip", true);
             this.cancel();
         }
 

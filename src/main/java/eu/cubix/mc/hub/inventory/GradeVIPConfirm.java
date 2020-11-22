@@ -69,15 +69,14 @@ public class GradeVIPConfirm implements GuiBuilder {
 
     @Override
     public void onClick(Player player, Inventory inv, ItemStack current, int slot) {
-
-        if (current.getItemMeta().getDisplayName().equalsIgnoreCase("�aConfirmer")) {
+        if (current.getItemMeta().getDisplayName().equalsIgnoreCase("§aConfirmer")) {
             player.closeInventory();
-            player.sendMessage("�eCubixMC �6� �eAchat en cours...");
+            player.sendMessage("§eCubixMC §6» §eAchat en cours...");
             TaskVIP task = new TaskVIP(main, player);
             task.runTaskTimer(main, 0, 20);
         }
 
-        if (current.getItemMeta().getDisplayName().equalsIgnoreCase("�cAnnuler")) {
+        if (current.getItemMeta().getDisplayName().equalsIgnoreCase("§cAnnuler")) {
             main.getGuiManager().open(player, ShopGrades.class);
         }
     }

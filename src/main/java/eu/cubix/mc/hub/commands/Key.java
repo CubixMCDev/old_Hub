@@ -30,7 +30,7 @@ public class Key implements CommandExecutor {
         Player player = (Player) cs;
 
         if(cmd.getName().equalsIgnoreCase("key")) {
-            if (player.hasPermission("*")) {
+            if (player.hasPermission("*") || player.hasPermission("key.use")) {
                 ItemStack voteKey = new ItemStack(Material.TRIPWIRE_HOOK);
                 ItemMeta meta = voteKey.getItemMeta();
                 meta.setDisplayName(ChatColor.GOLD+"Clé de vote");
