@@ -175,47 +175,36 @@ public class Particles implements GuiBuilder {
         }
 
 
-        if(!main.getCosmeticsManager().hasCosmetic("particleSuperHero",player.getUniqueId())) {
-            ItemsBuilder SuperHero = new ItemsBuilder(Material.DIAMOND_HELMET)
-                    .setName("§6§nSuper héro");
-            inv.setItem(23,SuperHero.toItemStack());
-        } else {
-            ItemsBuilder SuperHero = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
-                    .setName("§7§nSuper héro");
-            inv.setItem(23,SuperHero.toItemStack());
-        }
-
-
         if(!main.getCosmeticsManager().hasCosmetic("particleEnchanted",player.getUniqueId())) {
             ItemsBuilder Enchanted = new ItemsBuilder(Material.ENCHANTMENT_TABLE)
                     .setName("§6§nEnchanté");
-            inv.setItem(24,Enchanted.toItemStack());
+            inv.setItem(23,Enchanted.toItemStack());
         } else {
             ItemsBuilder Enchanted = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
                     .setName("§7§nEnchanté");
-            inv.setItem(24,Enchanted.toItemStack());
+            inv.setItem(23,Enchanted.toItemStack());
         }
 
 
         if(!main.getCosmeticsManager().hasCosmetic("particleBloodHelix",player.getUniqueId())) {
             ItemsBuilder BloodHelix = new ItemsBuilder(Material.REDSTONE)
                     .setName("§6§nHélice de couleur");
-            inv.setItem(25,BloodHelix.toItemStack());
+            inv.setItem(24,BloodHelix.toItemStack());
         } else {
             ItemsBuilder BloodHelix = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
                     .setName("§7§nHélice de couleur");
-            inv.setItem(25,BloodHelix.toItemStack());
+            inv.setItem(24,BloodHelix.toItemStack());
         }
 
 
         if(!main.getCosmeticsManager().hasCosmetic("particleColorCircle",player.getUniqueId())) {
             ItemsBuilder ColorCircle = new ItemsBuilder(Material.BLAZE_ROD)
                     .setName("§6§nCercle de couleur");
-            inv.setItem(28,ColorCircle.toItemStack());
+            inv.setItem(25,ColorCircle.toItemStack());
         } else {
             ItemsBuilder ColorCircle = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)
                     .setName("§7§nCercle de couleur");
-            inv.setItem(28,ColorCircle.toItemStack());
+            inv.setItem(25,ColorCircle.toItemStack());
         }
 
 
@@ -351,16 +340,6 @@ public class Particles implements GuiBuilder {
                 }
                 ChristmasHat christmasHatTrail = new ChristmasHat(main, player);
                 christmasHatTrail.startChristmasHat();
-                player.closeInventory();
-                break;
-
-            case DIAMOND_HELMET:
-                if(particle.hasID()) {
-                    particle.endTask();
-                    particle.removeID();
-                }
-                SuperHero superHeroTrail = new SuperHero(main, player);
-                superHeroTrail.startSuperHero();
                 player.closeInventory();
                 break;
 

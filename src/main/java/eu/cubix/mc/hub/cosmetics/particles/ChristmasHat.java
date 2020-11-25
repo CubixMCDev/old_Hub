@@ -3,6 +3,8 @@ package eu.cubix.mc.hub.cosmetics.particles;
 import eu.cubix.mc.hub.Main;
 import eu.cubix.mc.hub.tools.MathUtil;
 import eu.cubix.mc.hub.tools.ParticleData;
+import eu.cubix.mc.hub.tools.ParticleEffect;
+import net.minecraft.server.v1_8_R3.EnumParticle;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -22,6 +24,7 @@ public class ChristmasHat {
     public void startChristmasHat() {
         taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
             final ParticleData particle = new ParticleData(player.getUniqueId());
+            ParticleEffect particleEffect = new ParticleEffect(player);
 
             @Override
             public void run() {
@@ -36,9 +39,8 @@ public class ChristmasHat {
                     double x = MathUtil.randomDouble(-0.05, 0.05);
                     double z = MathUtil.randomDouble(-0.05, 0.05);
                     location.add(x, 0.46f, z);
-                    /*
-                    UtilParticles.display(255, 255, 255, location);
-                     */
+                    particleEffect.drawColorParticle(location,255,255,255);
+                    for(Player p : Bukkit.getOnlinePlayers()) particleEffect.sendToPlayer(p);
                     location.subtract(x, 0.46f, z);
                 }
                 for (float f = 0; f <= 0.4f; f += 0.1f) {
@@ -53,15 +55,15 @@ public class ChristmasHat {
     }
 
     private void drawCircle(float radius, float height, Location location, boolean red) {
+        ParticleEffect particleEffect = new ParticleEffect(player);
         for (int i = 0; i < particles; i++) {
             double inc = (2 * Math.PI) / particles;
             float angle = (float) (i * inc);
             float x = (float) (Math.cos(angle) * radius);
             float z = (float) (Math.sin(angle) * radius);
             location.add(x, height, z);
-            /*
-            UtilParticles.display(255, red ? 0 : 255, red ? 0 : 255, location);
-             */
+            particleEffect.drawColorParticle(location,255, red ? 0 : 255, red ? 0 : 255);
+            for(Player p : Bukkit.getOnlinePlayers()) particleEffect.sendToPlayer(p);
             location.subtract(x, height, z);
         }
     }

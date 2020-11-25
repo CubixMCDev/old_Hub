@@ -21,6 +21,7 @@ public class EnderAura {
     public void startEnderAura() {
         taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
             final ParticleData particle = new ParticleData(player.getUniqueId());
+            ParticleEffect particleEffect = new ParticleEffect(player);
 
             @Override
             public void run() {
@@ -28,15 +29,15 @@ public class EnderAura {
                     particle.setID(taskID);
                 }
 
-                ParticleEffect packet1 = new ParticleEffect(EnumParticle.PORTAL, player.getPlayer().getLocation().add(0, 0, 0),
+                particleEffect.drawParticle(EnumParticle.PORTAL, player.getPlayer().getLocation().add(0, 0, 0),
                         0.35f, 0.05f, 0.35f, 0.01f, 128);
                 for(Player p : Bukkit.getOnlinePlayers())
-                    packet1.sendToPlayer(p);
+                    particleEffect.sendToPlayer(p);
 
-                ParticleEffect packet2 = new ParticleEffect(EnumParticle.PORTAL, player.getPlayer().getLocation().add(0, -0.5, 0),
+                particleEffect.drawParticle(EnumParticle.PORTAL, player.getPlayer().getLocation().add(0, -0.5, 0),
                         0.35f, 0.5f, 0.35f, 0.01f, 128);
                 for(Player p : Bukkit.getOnlinePlayers())
-                    packet2.sendToPlayer(p);
+                    particleEffect.sendToPlayer(p);
             }
         }, 0, 3);
     }

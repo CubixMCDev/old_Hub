@@ -24,6 +24,7 @@ public class Flame {
 
         taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
             final ParticleData particle = new ParticleData(player.getUniqueId());
+            ParticleEffect particleEffect = new ParticleEffect(player);
             float step = 0;
 
             @Override
@@ -46,10 +47,10 @@ public class Flame {
                     } else {
                         MathUtil.rotateAroundAxisZ(v, 90);
                     }
-                    ParticleEffect packet1 = new ParticleEffect(EnumParticle.FLAME, player.getPlayer().getLocation().add(0, 1, 0),
+                    particleEffect.drawParticle(EnumParticle.FLAME, player.getPlayer().getLocation().add(0, 1, 0),
                             0.1f, 0.1f, 0.1f, 0.07f, (int)1.0);
                     for(Player p : Bukkit.getOnlinePlayers())
-                        packet1.sendToPlayer(p);
+                        particleEffect.sendToPlayer(p);
                 }
                 step += 3;
             }

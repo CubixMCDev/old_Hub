@@ -33,6 +33,7 @@ public class BloodHelix {
 
                 Location location = player.getPlayer().getLocation();
                 Location location2 = location.clone();
+                ParticleEffect particleEffect = new ParticleEffect(player);
                 double radius = 1.1d;
                 double radius2 = 1.1d;
                 double particles = 100;
@@ -43,10 +44,10 @@ public class BloodHelix {
                     Vector v = new Vector();
                     v.setX(Math.cos(angle) * radius);
                     v.setZ(Math.sin(angle) * radius);
-                    ParticleEffect packet1 = new ParticleEffect(EnumParticle.REDSTONE, location.add(v),
+                    particleEffect.drawParticle(EnumParticle.REDSTONE, location.add(v),
                             0.1f, 0.1f, 0.1f, 0.07f, 1);
                     for(Player p : Bukkit.getOnlinePlayers())
-                        packet1.sendToPlayer(p);
+                        particleEffect.sendToPlayer(p);
                     location.subtract(v);
                     location.add(0, 0.12d, 0);
                     radius -= 0.044f;
@@ -57,10 +58,10 @@ public class BloodHelix {
                     Vector v = new Vector();
                     v.setX(Math.cos(angle) * radius2);
                     v.setZ(Math.sin(angle) * radius2);
-                    ParticleEffect packet1 = new ParticleEffect(EnumParticle.REDSTONE, location2.add(v),
+                    particleEffect.drawParticle(EnumParticle.REDSTONE, location2.add(v),
                             0.1f, 0.1f, 0.1f, 0.07f, 1);
                     for(Player p : Bukkit.getOnlinePlayers())
-                        packet1.sendToPlayer(p);
+                        particleEffect.sendToPlayer(p);
                     location2.subtract(v);
                     location2.add(0, 0.12d, 0);
                     radius2 -= 0.044f;

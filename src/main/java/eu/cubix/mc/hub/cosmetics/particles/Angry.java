@@ -28,10 +28,11 @@ public class Angry {
                     particle.setID(taskID);
                 }
 
-                ParticleEffect packet1 = new ParticleEffect(EnumParticle.VILLAGER_ANGRY, player.getPlayer().getLocation().add(0, 1.9d, 0),
+                ParticleEffect particleEffect = new ParticleEffect(player);
+
+                particleEffect.drawParticle(EnumParticle.VILLAGER_ANGRY, player.getPlayer().getLocation().add(0, 1.9d, 0),
                         0.1f, 0.1f, 0.1f, 1.0f, (int)1.0);
-                for(Player p : Bukkit.getOnlinePlayers())
-                    packet1.sendToPlayer(p);
+                for(Player p : Bukkit.getOnlinePlayers()) particleEffect.sendToPlayer(p);
             }
         }, 0, 3);
     }

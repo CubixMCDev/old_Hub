@@ -20,6 +20,7 @@ public class Enchanted {
     public void startEnchanted() {
         taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
             final ParticleData particle = new ParticleData(player.getUniqueId());
+            ParticleEffect particleEffect = new ParticleEffect(player);
 
             @Override
             public void run() {
@@ -27,10 +28,10 @@ public class Enchanted {
                     particle.setID(taskID);
                 }
 
-                ParticleEffect packet1 = new ParticleEffect(EnumParticle.ENCHANTMENT_TABLE, player.getPlayer().getLocation().add(0, MathUtil.randomDouble(0.1, 2), 0),
+                particleEffect.drawParticle(EnumParticle.ENCHANTMENT_TABLE, player.getPlayer().getLocation().add(0, MathUtil.randomDouble(0.1, 2), 0),
                         0.1f, 0.1f, 0.1f, 8.0f, 60);
                 for(Player p : Bukkit.getOnlinePlayers())
-                    packet1.sendToPlayer(p);
+                    particleEffect.sendToPlayer(p);
             }
         }, 0, 1);
     }

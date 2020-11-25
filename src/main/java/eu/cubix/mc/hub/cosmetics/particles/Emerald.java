@@ -21,6 +21,7 @@ public class Emerald {
     public void startEmerald() {
         taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
             final ParticleData particle = new ParticleData(player.getUniqueId());
+            ParticleEffect particleEffect = new ParticleEffect(player);
 
             @Override
             public void run() {
@@ -28,10 +29,10 @@ public class Emerald {
                     particle.setID(taskID);
                 }
 
-                ParticleEffect packet1 = new ParticleEffect(EnumParticle.VILLAGER_HAPPY, player.getPlayer().getLocation().add(0, 1, 0),
+                particleEffect.drawParticle(EnumParticle.VILLAGER_HAPPY, player.getPlayer().getLocation().add(0, 1, 0),
                         0.1f, 0.1f, 0.1f, 0.07f, 2);
                 for(Player p : Bukkit.getOnlinePlayers())
-                    packet1.sendToPlayer(p);
+                    particleEffect.sendToPlayer(p);
             }
         }, 0, 3);
     }

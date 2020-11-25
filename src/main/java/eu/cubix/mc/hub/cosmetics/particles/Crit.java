@@ -47,13 +47,14 @@ public class Crit {
                     double inc = (2 * Math.PI) / 100;
                     double angle = steps[i] * inc + ((i + 1) % 2 == 0 ? 45 : 0);
                     Vector v = new Vector();
+                    ParticleEffect particleEffect = new ParticleEffect(player);
                     v.setX(Math.cos(angle) * 1.1);
                     v.setZ(Math.sin(angle) * 1.1);
                     try {
-                        ParticleEffect packet1 = new ParticleEffect(EnumParticle.CRIT_MAGIC, player.getPlayer().getLocation().clone().add(v).add(0, height[i], 0),
+                        particleEffect.drawParticle(EnumParticle.CRIT_MAGIC, player.getPlayer().getLocation().clone().add(v).add(0, height[i], 0),
                                 0.15f, 0.15f, 0.15f, 0.07f, 4);
                         for(Player p : Bukkit.getOnlinePlayers())
-                            packet1.sendToPlayer(p);
+                            particleEffect.sendToPlayer(p);
                     } catch (Exception exc) {
 
                     }

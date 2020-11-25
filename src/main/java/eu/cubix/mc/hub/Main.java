@@ -84,30 +84,18 @@ public class Main extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(new Jump(this), this);
         getServer().getPluginManager().registerEvents(new Vote(this), this);
 
-        getServer().getPluginCommand("key").setExecutor(new Key(this));
+        getCommand("key").setExecutor(new Key(this));
 
         scheduledExecutorService = Executors.newScheduledThreadPool(16);
         executorMonoThread = Executors.newScheduledThreadPool(1);
         scoreboardManager = new ScoreboardManager(this);
 
         cosmeticsManager = new CosmeticsManager(this);
-
-        //bar = new Bossbar(this);
-        //bar.createBar();
-
-        if(Bukkit.getOnlinePlayers().size() > 0) {
-            for(Player player : Bukkit.getOnlinePlayers()) {
-                //bar.addPlayer(player);
-                getScoreboardManager().onLogin(player);
-            }
-        }
     }
 
     @Override
     public void onDisable() {
         System.out.println("[CubixHub] Le plugin est OFF");
-
-        //bar.getBar().removeAll();
 
         getScoreboardManager().onDisable();
     }

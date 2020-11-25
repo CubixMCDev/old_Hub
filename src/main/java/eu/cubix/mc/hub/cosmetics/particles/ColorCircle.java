@@ -86,6 +86,7 @@ public class ColorCircle {
         double startAngle = 0;
         Vector v = new Vector(0, 0, 0);
         Location loc;
+        ParticleEffect particleEffect = new ParticleEffect(player);
 
         for (int i = 0; i < cycles; i++) {
             double angleStep = startAngle;
@@ -95,10 +96,10 @@ public class ColorCircle {
                 v.setY(BASE_HEIGHT + Math.sin(angleStep * 3) * heightDiffFactor);
                 loc = player.getPlayer().getLocation().add(v);
 
-                ParticleEffect packet1 = new ParticleEffect(EnumParticle.REDSTONE, loc.clone().add(0, ROD_HEIGHT, 0),
+                particleEffect.drawParticle(EnumParticle.REDSTONE, loc.clone().add(0, ROD_HEIGHT, 0),
                         0.1f, 0.1f, 0.1f, 0.07f, ((int) ROD_HEIGHT) * 5);
                 for(Player p : Bukkit.getOnlinePlayers())
-                    packet1.sendToPlayer(p);
+                    particleEffect.sendToPlayer(p);
 
                 angleStep += workingSpace / COLORS.size();
                 height += (i >= 3 && i <= 5) ? heightDiffFactor : -heightDiffFactor;

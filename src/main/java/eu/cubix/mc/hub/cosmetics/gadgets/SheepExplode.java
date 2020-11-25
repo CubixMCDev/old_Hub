@@ -83,13 +83,16 @@ public class SheepExplode extends GadgetBuilder {
             player.playSound(player.getLocation(), Sound.NOTE_PLING, 1.4f, 1.5f);
             red = !red;
             time -= 0.2;
+            ParticleEffect particleEffect = new ParticleEffect(player);
 
             if (time < 0.5) {
-                player.playSound(player.getLocation(), Sound.EXPLODE, 1.4f, 1.5f);
-                ParticleEffect packet = new ParticleEffect(EnumParticle.EXPLOSION_HUGE, s.getLocation(),
-                        0.5f, 0.5f, 0.5f, 0f, 1);
+                for (Player p : Bukkit.getOnlinePlayers()) {
+                    p.playSound(p.getLocation(), Sound.EXPLODE, 1.4f, 1.5f);
+                }
+                particleEffect.drawParticle(EnumParticle.EXPLOSION_HUGE, s.getLocation(),0,0,0,
+                        0f, 1);
                 for(Player p : Bukkit.getOnlinePlayers())
-                    packet.sendToPlayer(p);
+                    particleEffect.sendToPlayer(p);
                 for (int i = 0; i < 50; i++) {
                     final Sheep sheep = player.getPlayer().getWorld().spawn(s.getLocation(), Sheep.class);
                     try {
@@ -104,10 +107,10 @@ public class SheepExplode extends GadgetBuilder {
                     sheep.setNoDamageTicks(120);
                     sheepArrayList.add(sheep);
                     Bukkit.getScheduler().runTaskLater(main, () -> {
-                        ParticleEffect pa = new ParticleEffect(EnumParticle.FLAME, sheep.getLocation(),
-                                0.5f, 0.5f, 0.5f, 0f, 1);
+                        particleEffect.drawParticle(EnumParticle.FLAME, sheep.getLocation(),0,0,0,
+                                0f, 1);
                         for(Player p : Bukkit.getOnlinePlayers())
-                            pa.sendToPlayer(p);
+                            particleEffect.sendToPlayer(p);
                         sheep.remove();
                         sheep.remove();
                         EXPLOSIVE_SHEEP.remove(gadgetExplosiveSheep);

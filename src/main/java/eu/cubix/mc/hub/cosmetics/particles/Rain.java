@@ -21,6 +21,7 @@ public class Rain {
     public void startRain() {
         taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
             final ParticleData particle = new ParticleData(player.getUniqueId());
+            ParticleEffect particleEffect = new ParticleEffect(player);
 
             @Override
             public void run() {
@@ -28,15 +29,15 @@ public class Rain {
                     particle.setID(taskID);
                 }
 
-                ParticleEffect packet1 = new ParticleEffect(EnumParticle.CLOUD, player.getPlayer().getLocation().add(0, 3, 0),
+                particleEffect.drawParticle(EnumParticle.CLOUD, player.getPlayer().getLocation().add(0, 3, 0),
                         0.5F, 0.1f, 0.5f, 0.001f, 10);
                 for(Player p : Bukkit.getOnlinePlayers())
-                    packet1.sendToPlayer(p);
+                    particleEffect.sendToPlayer(p);
 
-                ParticleEffect packet2 = new ParticleEffect(EnumParticle.WATER_SPLASH, player.getPlayer().getLocation().add(0, 2, 0),
+                particleEffect.drawParticle(EnumParticle.WATER_SPLASH, player.getPlayer().getLocation().add(0, 2, 0),
                         0.25F, 0.45f, 0.25f, 0.01f, 1);
                 for(Player p : Bukkit.getOnlinePlayers())
-                    packet2.sendToPlayer(p);
+                    particleEffect.sendToPlayer(p);
             }
         }, 0, 1);
     }

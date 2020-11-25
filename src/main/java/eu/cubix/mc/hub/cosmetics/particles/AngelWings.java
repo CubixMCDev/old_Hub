@@ -2,6 +2,8 @@ package eu.cubix.mc.hub.cosmetics.particles;
 
 import eu.cubix.mc.hub.Main;
 import eu.cubix.mc.hub.tools.ParticleData;
+import eu.cubix.mc.hub.tools.ParticleEffect;
+import net.minecraft.server.v1_8_R3.EnumParticle;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -54,6 +56,7 @@ public class AngelWings {
         double y = location.clone().getY() + 2;
         double angle = -((location.getYaw() + 180) / 60);
         angle += (location.getYaw() < -180 ? 3.25 : 2.985);
+        ParticleEffect particleEffect = new ParticleEffect(player);
 
         for (boolean[] aShape : shape) {
             for (boolean anAShape : aShape) {
@@ -71,9 +74,8 @@ public class AngelWings {
                     location.add(v);
                     location.add(v2);
                     for (int k = 0; k < 3; k++)
-                        /*
-                        UtilParticles.display(255, 255, 255, location);
-                         */
+                        particleEffect.drawColorParticle(location,255,255,255);
+                    for(Player p : Bukkit.getOnlinePlayers()) particleEffect.sendToPlayer(p);
                     location.subtract(v2);
                     location.subtract(v);
                 }

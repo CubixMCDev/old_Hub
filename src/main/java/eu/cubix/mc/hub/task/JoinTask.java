@@ -8,6 +8,8 @@ import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.scoreboard.Scoreboard;
+import org.bukkit.scoreboard.Team;
 
 public class JoinTask extends BukkitRunnable {
 
@@ -25,9 +27,107 @@ public class JoinTask extends BukkitRunnable {
     public void run() {
         if(timer == 0) {
             User user = main.getAPI().getUserManager().getUser(player.getUniqueId());
+            Scoreboard sb = Bukkit.getScoreboardManager().getMainScoreboard();
 
-            if(player.hasPermission("staff.use") || player.hasPermission("vip.use") || player.hasPermission("*")) {
+            Team Admin = sb.getTeam("aadmin");
+            if(Admin == null) {
+                Admin = sb.registerNewTeam("aadmin");
+            }
+            Team Developer = sb.getTeam("bdeveloper");
+            if(Developer == null) {
+                Developer = sb.registerNewTeam("bdeveloper");
+            }
+            Team RespMod = sb.getTeam("cresp_mod");
+            if(RespMod == null) {
+                RespMod = sb.registerNewTeam("cresp_mod");
+            }
+            Team Moderator = sb.getTeam("dmoderator");
+            if(Moderator == null) {
+                Moderator = sb.registerNewTeam("dmoderator");
+            }
+            Team Helper = sb.getTeam("ehelper");
+            if(Helper == null) {
+                Helper = sb.registerNewTeam("ehelper");
+            }
+            Team Builder = sb.getTeam("fbuilder");
+            if(Builder == null) {
+                Builder = sb.registerNewTeam("fbuilder");
+            }
+            Team Partner = sb.getTeam("gpartner");
+            if(Partner == null) {
+                Partner = sb.registerNewTeam("gpartner");
+            }
+            Team Friend = sb.getTeam("hfriend");
+            if(Friend == null) {
+                Friend = sb.registerNewTeam("hfriend");
+            }
+            Team Youtuber = sb.getTeam("iyoutuber");
+            if(Youtuber == null) {
+                Youtuber = sb.registerNewTeam("iyoutuber");
+            }
+            Team VipPlus = sb.getTeam("jvip+");
+            if(VipPlus == null) {
+                VipPlus = sb.registerNewTeam("jvip+");
+            }
+            Team Vip = sb.getTeam("kvip");
+            if(Vip == null) {
+                Vip = sb.registerNewTeam("kvip");
+            }
+            Team Player = sb.getTeam("lplayer");
+            if(Player == null) {
+                Player = sb.registerNewTeam("lplayer");
+            }
+
+            Admin.setPrefix(ChatColor.RED+"Admin ");
+            Developer.setPrefix(ChatColor.BLUE+"Developer ");
+            RespMod.setPrefix(ChatColor.RED+"R. Mod ");
+            Moderator.setPrefix(ChatColor.DARK_AQUA+"Moderator ");
+            Helper.setPrefix(ChatColor.AQUA+"Helper ");
+            Builder.setPrefix(ChatColor.DARK_GREEN+"Builder ");
+            Partner.setPrefix(ChatColor.GOLD+"Partner ");
+            Friend.setPrefix(ChatColor.WHITE+"Friend ");
+            Youtuber.setPrefix(ChatColor.GOLD+"YouTuber ");
+            VipPlus.setPrefix(ChatColor.GOLD+"VIP+ ");
+            Vip.setPrefix(ChatColor.YELLOW+"VIP ");
+            Player.setPrefix(ChatColor.GRAY+"");
+
+            for(Player p : Bukkit.getOnlinePlayers()) {
+                if(player.hasPermission("staff.use")) {
+                    if(main.getAPI().get().getRankID(p.getUniqueId()).equalsIgnoreCase("admin") && player.isOp()) {
+                        Admin.addPlayer(p);
+                    } else if(main.getAPI().get().getRankID(p.getUniqueId()).equalsIgnoreCase("developer")) {
+                        Developer.addPlayer(p);
+                    } else if(main.getAPI().get().getRankID(p.getUniqueId()).equalsIgnoreCase("resp_mod")) {
+                        RespMod.addPlayer(p);
+                    } else if(main.getAPI().get().getRankID(p.getUniqueId()).equalsIgnoreCase("moderator")) {
+                        Moderator.addPlayer(p);
+                    } else if(main.getAPI().get().getRankID(p.getUniqueId()).equalsIgnoreCase("helper")) {
+                        Helper.addPlayer(p);
+                    } else if(main.getAPI().get().getRankID(p.getUniqueId()).equalsIgnoreCase("builder")) {
+                        Builder.addPlayer(p);
+                    } else if(main.getAPI().get().getRankID(p.getUniqueId()).equalsIgnoreCase("partner")) {
+                        Partner.addPlayer(p);
+                    } else if(main.getAPI().get().getRankID(p.getUniqueId()).equalsIgnoreCase("friend")) {
+                        Friend.addPlayer(p);
+                    } else if(main.getAPI().get().getRankID(p.getUniqueId()).equalsIgnoreCase("youtuber")) {
+                        Youtuber.addPlayer(p);
+                    }
+                } else if(player.hasPermission("vipplus.use")){
+                    VipPlus.addPlayer(p);
+                } else if(player.hasPermission("vip.use")){
+                    Vip.addPlayer(p);
+                } else {
+                    Player.addPlayer(p);
+                }
+            }
+
+            if(player.hasPermission("staff.use")) {
                 Bukkit.broadcastMessage(user.getRankToStringWithColor() + ChatColor.DARK_GRAY + " \u2758 " + main.getAPI().get().getRankColor(player.getUniqueId()) + player.getName() + " §6a rejoint le hub !");
+
+            } else if(player.hasPermission("vipplus.use")){
+                Bukkit.broadcastMessage(ChatColor.GOLD+"VIP+"+ChatColor.DARK_GRAY+" \u2758 " + ChatColor.GOLD + player.getName() + " §6a rejoint le hub !");
+            } else if(player.hasPermission("vip.use")){
+                Bukkit.broadcastMessage(ChatColor.YELLOW+"VIP"+ChatColor.DARK_GRAY+" \u2758 " + ChatColor.YELLOW + player.getName() + " §6a rejoint le hub !");
             }
 
             if(player.hasPermission("fly.hub") || player.hasPermission("*")) player.setAllowFlight(true);
@@ -102,6 +202,12 @@ public class JoinTask extends BukkitRunnable {
                     "§eClé de vote",
                     "§8§m--------------");
             hologram2.show(player, new Location(player.getWorld(),103.5,16,765.5));
+
+            if(!player.hasPermission("staff.use") || player.hasPermission("*")) {
+                AntiAFK antiAFK = new AntiAFK(player, player.getLocation().getBlock());
+                main.getAntiAFK().put(player, antiAFK);
+                antiAFK.runTaskTimer(main, 0L, 20L);
+            }
 
             this.cancel();
         }

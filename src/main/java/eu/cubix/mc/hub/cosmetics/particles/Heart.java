@@ -21,6 +21,7 @@ public class Heart {
     public void startHeart() {
         taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
             final ParticleData particle = new ParticleData(player.getUniqueId());
+            ParticleEffect particleEffect = new ParticleEffect(player);
 
             @Override
             public void run() {
@@ -28,10 +29,10 @@ public class Heart {
                     particle.setID(taskID);
                 }
 
-                ParticleEffect packet1 = new ParticleEffect(EnumParticle.HEART, player.getPlayer().getLocation().add(0, 2.3d, 0),
+                particleEffect.drawParticle(EnumParticle.HEART, player.getPlayer().getLocation().add(0, 2.3d, 0),
                         0.1f, 0.1f, 0.1f, 1.0f, (int)1.0);
                 for(Player p : Bukkit.getOnlinePlayers())
-                    packet1.sendToPlayer(p);
+                    particleEffect.sendToPlayer(p);
             }
         }, 0, 4);
     }
