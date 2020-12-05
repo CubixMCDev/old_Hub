@@ -23,7 +23,6 @@ public class CosmeticsManager {
             q.setString(2, playerUUID.toString());
             q.executeUpdate();
             q.close();
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -35,16 +34,12 @@ public class CosmeticsManager {
         try {
             PreparedStatement q = (PreparedStatement) main.getAPI().getDatabase().getConnection().prepareStatement("SELECT " + name + " FROM cosmetics WHERE uuid = ?");
             q.setString(1, playerUUID.toString());
-
             int awnser = 0;
             ResultSet rs = q.executeQuery();
-
             while(rs.next()){
                 awnser = rs.getInt(name);
             }
-
             q.close();
-
             if(awnser == 1) {
                 return true;
             } else {

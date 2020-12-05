@@ -3,10 +3,7 @@ package eu.cubix.mc.hub;
 import eu.cubix.mc.hub.commands.Key;
 import eu.cubix.mc.hub.cosmetics.gadgets.SheepExplode;
 import eu.cubix.mc.hub.crates.Vote;
-import eu.cubix.mc.hub.events.InteractEvent;
-import eu.cubix.mc.hub.events.Jump;
-import eu.cubix.mc.hub.events.PlayerEvent;
-import eu.cubix.mc.hub.events.Protect;
+import eu.cubix.mc.hub.events.*;
 import eu.cubix.mc.hub.inventory.*;
 import eu.cubix.mc.hub.inventory.Particles;
 import eu.cubix.mc.hub.manager.CosmeticsManager;
@@ -18,7 +15,6 @@ import eu.cubix.mc.hub.scoreboard.ScoreboardManager;
 import eu.cubix.mc.hub.task.AntiAFK;
 import eu.cubix.mc.hub.tools.*;
 import eu.cubixmc.com.CubixAPI;
-import eu.cubixmc.com.data.User;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -33,7 +29,6 @@ public class Main extends JavaPlugin implements Listener {
 
     public String prefix = ChatColor.YELLOW+"CubixMC "+ChatColor.GOLD+"» ";
     public String prefixError = ChatColor.RED+"CubixMC "+ChatColor.DARK_RED+"» ";
-    public String verticalBarreUnicode = "\u2758";
 
     private GuiManager guiManager;
     private final Map<Class<? extends GadgetBuilder>, GadgetBuilder> registerGadgets = new HashMap<>();
@@ -48,18 +43,16 @@ public class Main extends JavaPlugin implements Listener {
     private final ArrayList<AvantageQueue> avantagequeues = new ArrayList<>();
     private final ArrayList<String> games = new ArrayList<>();
 
-    private CosmeticsManager cosmeticsManager;
-
     private ScoreboardManager scoreboardManager;
 
     private ScheduledExecutorService executorMonoThread;
     private ScheduledExecutorService scheduledExecutorService;
 
+    private CosmeticsManager cosmeticsManager;
+
     public GuiManager getGuiManager() {
         return guiManager;
     }
-
-    //public Bossbar bar;
 
     public Map<Class<? extends GuiBuilder>, GuiBuilder> getRegisteredMenus() {
         return registeredMenus;
@@ -71,6 +64,8 @@ public class Main extends JavaPlugin implements Listener {
         setQueues();
         loadGui();
         loadGadgets();
+        CustomEntityType.registerAllEntities();
+
 
         System.out.println("[CubixHub] Le plugin est ON");
 
@@ -79,8 +74,9 @@ public class Main extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(this, this);
         getServer().getPluginManager().registerEvents(new PlayerEvent(this), this);
         getServer().getPluginManager().registerEvents(new Protect(), this);
+        getServer().getPluginManager().registerEvents(new Mobs(), this);
         getServer().getPluginManager().registerEvents(new InteractEvent(this), this);
-        getServer().getPluginManager().registerEvents(new GadgetsListener(this), this);
+        getServer().getPluginManager().registerEvents(new GadgetsManager(this), this);
         getServer().getPluginManager().registerEvents(new Jump(this), this);
         getServer().getPluginManager().registerEvents(new Vote(this), this);
 
@@ -232,12 +228,12 @@ public class Main extends JavaPlugin implements Listener {
         g.give(player, 6);
     }
 
-    public Collection<GadgetBuilder> getGadgets(){
-        return this.registerGadgets.values();
-    }
-
     public CosmeticsManager getCosmeticsManager() {
         return cosmeticsManager;
+    }
+
+    public Collection<GadgetBuilder> getGadgets(){
+        return this.registerGadgets.values();
     }
 
     public Map<Player, AntiAFK> getAntiAFK() {

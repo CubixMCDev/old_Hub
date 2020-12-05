@@ -120,6 +120,7 @@ public class Cosmetics implements GuiBuilder {
                 }
                 for (PotionEffect effect : player.getActivePotionEffects())
                     player.removePotionEffect(effect.getType());
+                player.setSneaking(true);
                 player.closeInventory();
                 break;
 

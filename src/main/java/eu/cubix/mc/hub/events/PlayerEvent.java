@@ -17,6 +17,7 @@ import org.bukkit.inventory.Inventory;
 public class PlayerEvent implements Listener {
 
     private final Main main;
+    private ActionBar actionBar;
 
     public PlayerEvent(Main main) {
         this.main = main;
@@ -26,7 +27,6 @@ public class PlayerEvent implements Listener {
     public void onJoin(PlayerJoinEvent e) {
         Title titlePrison = new Title("§4Vous êtes banni","§cQuel dommage!");
         Title title = new Title("§6Bienvenue","§eBon jeu!");
-        ActionBar actionBar = new ActionBar("§cLe serveur est en phase de développement.");
         Player player = e.getPlayer();
         Inventory inv = player.getInventory();
         Location spawn = new Location(Bukkit.getServer().getWorld("Hub"), 110.5, 16, 772.5, 180, 0);
@@ -86,7 +86,7 @@ public class PlayerEvent implements Listener {
             task.runTaskTimer(main, 0, 1);
 
             title.send(player,1,7,1);
-            actionBar.send(player);
+            actionBar.sendActionBarMessage(player, ChatColor.GOLD+"Bon jeu sur notre serveur !", 5, main);
         }
     }
 
@@ -113,11 +113,12 @@ public class PlayerEvent implements Listener {
         User user = main.getAPI().getUserManager().getUser(player.getUniqueId());
         String message = e.getMessage();
 
+        if(!player.hasPermission("staff.use") || !player.hasPermission("*")) {
+            AntiAFK antiAFK = new AntiAFK(player, player.getLocation().getBlock());
+            main.getAntiAFK().put(player, antiAFK);
+        }
+
         if(player.hasPermission("staff.use")) {
-            if(!player.hasPermission("staff.use") || player.hasPermission("*")) {
-                AntiAFK antiAFK = new AntiAFK(player, player.getLocation().getBlock());
-                main.getAntiAFK().put(player, antiAFK);
-            }
             e.setFormat(user.getRankToStringWithColor()+ChatColor.DARK_GRAY+" \u2758 "+ChatColor.RESET+ main.getAPI().get().getRankColor(player.getUniqueId()) + player.getName() + ChatColor.DARK_GRAY+" » "+ChatColor.RESET+ message);
 
         } else if(player.hasPermission("vipplus.use")){

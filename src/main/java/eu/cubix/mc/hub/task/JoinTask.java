@@ -203,7 +203,7 @@ public class JoinTask extends BukkitRunnable {
                     "§8§m--------------");
             hologram2.show(player, new Location(player.getWorld(),103.5,16,765.5));
 
-            if(!player.hasPermission("staff.use") || player.hasPermission("*")) {
+            if(!player.hasPermission("staff.use") || !player.hasPermission("*")) {
                 AntiAFK antiAFK = new AntiAFK(player, player.getLocation().getBlock());
                 main.getAntiAFK().put(player, antiAFK);
                 antiAFK.runTaskTimer(main, 0L, 20L);

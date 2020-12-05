@@ -21,43 +21,43 @@ public class Protect implements Listener {
     }
 
     @EventHandler
-    public void onFallDamage(EntityDamageEvent event) {
-        event.setCancelled(true);
+    public void onFallDamage(EntityDamageEvent e) {
+        e.setCancelled(true);
     }
 
     @EventHandler
-    public void onWeather(WeatherChangeEvent event) {
-        event.setCancelled(true);
+    public void onWeather(WeatherChangeEvent e) {
+        e.setCancelled(true);
     }
 
     @EventHandler
-    public void onUse(PlayerInteractEvent event) {
-        event.setCancelled(true);
+    public void onUse(PlayerInteractEvent e) {
+        e.setCancelled(true);
     }
 
     @EventHandler
-    public void onBreak(BlockBreakEvent event) {
-        event.setCancelled(true);
+    public void onBreak(BlockBreakEvent e) {
+        e.setCancelled(true);
     }
 
     @EventHandler
-    public void onDropItem(PlayerDropItemEvent event) {
-        event.setCancelled(true);
+    public void onDropItem(PlayerDropItemEvent e) {
+        e.setCancelled(true);
     }
 
     @EventHandler
-    public void onMoveItem(InventoryClickEvent event) {
-        event.setCancelled(true);
+    public void onMoveItem(InventoryClickEvent e) {
+        e.setCancelled(true);
     }
 
     @EventHandler
-    public void onInteract(EntityInteractEvent event) {
-        event.setCancelled(true);
+    public void onInteract(EntityInteractEvent e) {
+        e.setCancelled(true);
     }
 
     @EventHandler
-    public void onPlayerMove(PlayerMoveEvent event) {
-        Player player = event.getPlayer();
+    public void onPlayerMove(PlayerMoveEvent e) {
+        Player player = e.getPlayer();
         Location location = player.getLocation();
         Location spawn = new Location(Bukkit.getServer().getWorld("Hub"), 110.5, 16, 772.5, 180, 0);
 
@@ -65,33 +65,6 @@ public class Protect implements Listener {
             player.teleport(spawn);
             player.sendMessage("§7Hopopop, vous allez où comme ça ?");
         }
-    }
-
-    @EventHandler(priority = EventPriority.HIGHEST)
-    public void NoTarget(EntityTargetEvent event) {
-        if (event.getEntityType().equals(EntityType.BLAZE)
-                || (event.getEntityType().equals(EntityType.CAVE_SPIDER)
-                || (event.getEntityType().equals(EntityType.CREEPER)
-                || (event.getEntityType().equals(EntityType.ENDERMAN)
-                || (event.getEntityType().equals(EntityType.GHAST)
-                || (event.getEntityType().equals(EntityType.WITHER)
-                || (event.getEntityType().equals(EntityType.ENDER_DRAGON)
-                || (event.getEntityType().equals(EntityType.MAGMA_CUBE)
-                || (event.getEntityType().equals(EntityType.PIG_ZOMBIE)
-                || (event.getEntityType().equals(EntityType.SILVERFISH)
-                || (event.getEntityType().equals(EntityType.SKELETON)
-                || (event.getEntityType().equals(EntityType.SLIME)
-                || (event.getEntityType().equals(EntityType.SPIDER)
-                || (event.getEntityType().equals(EntityType.ZOMBIE))))))))))))))) {
-            if (event.getTarget() instanceof Player) {
-                Player player = (Player) event.getTarget();
-                String playername = player.getName();
-                if (playername.equals("SomeName")) event.setTarget(null);
-
-            }
-        }
-        event.setCancelled(true);
-        event.getEntity().setFireTicks(0);
     }
 
     @EventHandler
@@ -110,7 +83,7 @@ public class Protect implements Listener {
     }
 
     @EventHandler
-    public void noInteractEntity(PlayerInteractEntityEvent event) {
-        event.setCancelled(true);
+    public void noInteractEntity(PlayerInteractEntityEvent e) {
+        e.setCancelled(true);
     }
 }

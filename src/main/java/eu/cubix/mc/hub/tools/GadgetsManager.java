@@ -9,12 +9,12 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.HashMap;
 
-public class GadgetsListener implements Listener {
+public class GadgetsManager implements Listener {
 
     private final Main main;
     private final HashMap<String, Long> cooldowns = new HashMap<>();
 
-    public GadgetsListener(Main main) {
+    public GadgetsManager(Main main) {
         this.main = main;
     }
 

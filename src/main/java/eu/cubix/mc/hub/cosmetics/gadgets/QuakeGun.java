@@ -14,11 +14,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public class PaintBallGun extends GadgetBuilder implements Listener {
+public class QuakeGun extends GadgetBuilder implements Listener {
 
     private final Main main;
 
-    public PaintBallGun(Main main) {
+    public QuakeGun(Main main) {
         this.main = main;
     }
 
