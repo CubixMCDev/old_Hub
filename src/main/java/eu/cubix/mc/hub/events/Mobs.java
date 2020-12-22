@@ -1,10 +1,7 @@
 package eu.cubix.mc.hub.events;
 
 import org.bukkit.Material;
-import org.bukkit.entity.EntityType;
-import org.bukkit.entity.Horse;
-import org.bukkit.entity.Pig;
-import org.bukkit.entity.Player;
+import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -26,6 +23,14 @@ public class Mobs implements Listener {
             Pig pig = (Pig) e.getEntity();
             pig.setSaddle(true);
         }
+
+        /*
+        if(e.getEntity().getType() == EntityType.SHEEP) {
+            Sheep sheep = (Sheep) e.getEntity();
+            sheep.setCustomName("jeb_");
+            sheep.setCustomNameVisible(false);
+        }
+         */
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)

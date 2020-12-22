@@ -10,16 +10,16 @@ import org.bukkit.inventory.ItemStack;
 
 import static eu.cubix.mc.hub.tools.ItemsBuilder.setSkullID;
 
-public class Pets implements GuiBuilder {
+public class Familiars implements GuiBuilder {
     private final Main main;
 
-    public Pets(Main main) {
+    public Familiars(Main main) {
         this.main = main;
     }
 
     @Override
     public String name() {
-        return "§0Cosmétiques » Compagnons";
+        return "§0Cosmétiques » Familiers";
     }
 
     @Override
@@ -177,7 +177,7 @@ public class Pets implements GuiBuilder {
         }
 
         ItemsBuilder Retired = new ItemsBuilder(Material.BARRIER)
-                .setName("§6§nRetirer votre compagnon");
+                .setName("§6§nRetirer votre familier");
         inv.setItem(49,Retired.toItemStack());
 
         ItemsBuilder Return = new ItemsBuilder(Material.DARK_OAK_DOOR_ITEM)

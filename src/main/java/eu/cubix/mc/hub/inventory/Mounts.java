@@ -4,7 +4,6 @@ import eu.cubix.mc.hub.Main;
 import eu.cubix.mc.hub.tools.GuiBuilder;
 import eu.cubix.mc.hub.tools.ItemsBuilder;
 import eu.cubix.mc.hub.tools.MountManager;
-import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -100,7 +99,7 @@ public class Mounts implements GuiBuilder {
 
         if(!main.getCosmeticsManager().hasCosmetic("petPig",player.getUniqueId())) {
             ItemsBuilder Pig = new ItemsBuilder(setSkullID("621668ef7cb79dd9c22ce3d1f3f4cb6e2559893b6df4a469514e667c16aa4"))
-                    .setName("§6§nCochon §c(Early access)");
+                    .setName("§6§nCochon§r §c(Early access)");
             inv.setItem(14,Pig.toItemStack());
         } else {
             ItemsBuilder Pig = new ItemsBuilder(Material.INK_SACK, 1, (byte) 8)

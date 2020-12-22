@@ -59,7 +59,7 @@ public class Cosmetics implements GuiBuilder {
         inv.setItem(52,Separateur.toItemStack());
 
         ItemsBuilder Pets = new ItemsBuilder(Material.BONE)
-                .setName("§6§nCompagnons");
+                .setName("§6§nFamiliers");
         inv.setItem(20,Pets.toItemStack());
 
         ItemsBuilder Gadgets = new ItemsBuilder(Material.PISTON_BASE)
@@ -75,7 +75,7 @@ public class Cosmetics implements GuiBuilder {
         inv.setItem(30,Mounts.toItemStack());
 
         ItemsBuilder Effects = new ItemsBuilder(Material.REDSTONE_BLOCK)
-                .setName("§6§nEffets");
+                .setName("§6§nEffets de kill");
         inv.setItem(32,Effects.toItemStack());
 
         ItemsBuilder Retired = new ItemsBuilder(Material.BARRIER)
@@ -91,7 +91,7 @@ public class Cosmetics implements GuiBuilder {
     public void onClick(Player player, Inventory inv, ItemStack current, int slot) {
         switch (current.getType()) {
             case BONE:
-                main.getGuiManager().open(player, Pets.class);
+                main.getGuiManager().open(player, Familiars.class);
                 break;
 
             case PISTON_BASE:

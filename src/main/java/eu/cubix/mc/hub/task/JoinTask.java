@@ -6,6 +6,7 @@ import eu.cubixmc.com.data.User;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scoreboard.Scoreboard;
@@ -91,37 +92,35 @@ public class JoinTask extends BukkitRunnable {
             Vip.setPrefix(ChatColor.YELLOW+"VIP ");
             Player.setPrefix(ChatColor.GRAY+"");
 
-            for(Player p : Bukkit.getOnlinePlayers()) {
-                if(player.hasPermission("staff.use")) {
-                    if(main.getAPI().get().getRankID(p.getUniqueId()).equalsIgnoreCase("admin") && player.isOp()) {
-                        Admin.addPlayer(p);
-                    } else if(main.getAPI().get().getRankID(p.getUniqueId()).equalsIgnoreCase("developer")) {
-                        Developer.addPlayer(p);
-                    } else if(main.getAPI().get().getRankID(p.getUniqueId()).equalsIgnoreCase("resp_mod")) {
-                        RespMod.addPlayer(p);
-                    } else if(main.getAPI().get().getRankID(p.getUniqueId()).equalsIgnoreCase("moderator")) {
-                        Moderator.addPlayer(p);
-                    } else if(main.getAPI().get().getRankID(p.getUniqueId()).equalsIgnoreCase("helper")) {
-                        Helper.addPlayer(p);
-                    } else if(main.getAPI().get().getRankID(p.getUniqueId()).equalsIgnoreCase("builder")) {
-                        Builder.addPlayer(p);
-                    } else if(main.getAPI().get().getRankID(p.getUniqueId()).equalsIgnoreCase("partner")) {
-                        Partner.addPlayer(p);
-                    } else if(main.getAPI().get().getRankID(p.getUniqueId()).equalsIgnoreCase("friend")) {
-                        Friend.addPlayer(p);
-                    } else if(main.getAPI().get().getRankID(p.getUniqueId()).equalsIgnoreCase("youtuber")) {
-                        Youtuber.addPlayer(p);
-                    }
-                } else if(player.hasPermission("vipplus.use")){
-                    VipPlus.addPlayer(p);
-                } else if(player.hasPermission("vip.use")){
-                    Vip.addPlayer(p);
-                } else {
-                    Player.addPlayer(p);
+            if(player.hasPermission("staff.use") || player.hasPermission("*") || player.hasPermission("friend.use") || player.hasPermission("partner.use") || player.hasPermission("youtuber.use")) {
+                if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("admin") && player.isOp()) {
+                    Admin.addPlayer(player);
+                } else if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("developer")) {
+                    Developer.addPlayer(player);
+                } else if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("resp_mod")) {
+                    RespMod.addPlayer(player);
+                } else if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("moderator")) {
+                    Moderator.addPlayer(player);
+                } else if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("helper")) {
+                    Helper.addPlayer(player);
+                } else if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("builder")) {
+                    Builder.addPlayer(player);
+                } else if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("partner")) {
+                    Partner.addPlayer(player);
+                } else if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("friend")) {
+                    Friend.addPlayer(player);
+                } else if(main.getAPI().get().getRankID(player.getUniqueId()).equalsIgnoreCase("youtuber")) {
+                    Youtuber.addPlayer(player);
                 }
+            } else if(player.hasPermission("vipplus.use")){
+                VipPlus.addPlayer(player);
+            } else if(player.hasPermission("vip.use")){
+                Vip.addPlayer(player);
+            } else {
+                Player.addPlayer(player);
             }
 
-            if(player.hasPermission("staff.use")) {
+            if(player.hasPermission("staff.use") || player.hasPermission("friend.use") || player.hasPermission("partner.use") || player.hasPermission("youtuber.use")) {
                 Bukkit.broadcastMessage(user.getRankToStringWithColor() + ChatColor.DARK_GRAY + " \u2758 " + main.getAPI().get().getRankColor(player.getUniqueId()) + player.getName() + " §6a rejoint le hub !");
 
             } else if(player.hasPermission("vipplus.use")){
@@ -132,7 +131,7 @@ public class JoinTask extends BukkitRunnable {
 
             if(player.hasPermission("fly.hub") || player.hasPermission("*")) player.setAllowFlight(true);
 
-            if(player.hasPermission("staff.use") && player.hasPermission("vipplus.use")) {
+            if(player.hasPermission("staff.use") && player.hasPermission("vipplus.use") || player.hasPermission("friend.use") && player.hasPermission("vipplus.use") || player.hasPermission("partner.use") && player.hasPermission("vipplus.use") || player.hasPermission("youtuber.use") && player.hasPermission("vipplus.use")) {
                 Hologram hologram11 = new Hologram("§6§lVotre profil",
                         "§8§m---------------------------",
                         "§6Pseudo : §e"+player.getName(),
@@ -145,7 +144,7 @@ public class JoinTask extends BukkitRunnable {
                         "§8§m---------------------------");
                 hologram11.show(player, new Location(player.getWorld(),110.5,15.5,765.5));
 
-            } else if(player.hasPermission("staff.use") && player.hasPermission("vip.use")) {
+            } else if(player.hasPermission("staff.use") && player.hasPermission("vip.use") || player.hasPermission("friend.use") && player.hasPermission("vip.use") || player.hasPermission("partner.use") && player.hasPermission("vip.use") || player.hasPermission("youtuber.use") && player.hasPermission("vip.use")) {
                 Hologram hologram22 = new Hologram("§6§lVotre profil",
                         "§8§m---------------------------",
                         "§6Pseudo : §e"+player.getName(),

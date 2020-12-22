@@ -78,11 +78,6 @@ public class Protect implements Listener {
     }
 
     @EventHandler
-    public void noSpawnItem(ItemSpawnEvent e) {
-        e.setCancelled(true);
-    }
-
-    @EventHandler
     public void noInteractEntity(PlayerInteractEntityEvent e) {
         e.setCancelled(true);
     }

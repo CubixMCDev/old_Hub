@@ -13,6 +13,8 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.scoreboard.Scoreboard;
+import org.bukkit.scoreboard.Team;
 
 public class PlayerEvent implements Listener {
 
@@ -31,6 +33,7 @@ public class PlayerEvent implements Listener {
         Inventory inv = player.getInventory();
         Location spawn = new Location(Bukkit.getServer().getWorld("Hub"), 110.5, 16, 772.5, 180, 0);
         Location prison = new Location(Bukkit.getServer().getWorld("Hub"), 145, 3, 756, 0, 0);
+
 
         e.setJoinMessage("");
 
@@ -86,7 +89,7 @@ public class PlayerEvent implements Listener {
             task.runTaskTimer(main, 0, 1);
 
             title.send(player,1,7,1);
-            actionBar.sendActionBarMessage(player, ChatColor.GOLD+"Bon jeu sur notre serveur !", 5, main);
+            actionBar.sendActionBarMessage(player, ChatColor.GOLD+"Bon jeu sur notre serveur !", 7, main);
         }
     }
 
@@ -118,7 +121,7 @@ public class PlayerEvent implements Listener {
             main.getAntiAFK().put(player, antiAFK);
         }
 
-        if(player.hasPermission("staff.use")) {
+        if(player.hasPermission("staff.use") || player.hasPermission("friend.use") || player.hasPermission("partner.use") || player.hasPermission("youtuber.use")) {
             e.setFormat(user.getRankToStringWithColor()+ChatColor.DARK_GRAY+" \u2758 "+ChatColor.RESET+ main.getAPI().get().getRankColor(player.getUniqueId()) + player.getName() + ChatColor.DARK_GRAY+" » "+ChatColor.RESET+ message);
 
         } else if(player.hasPermission("vipplus.use")){

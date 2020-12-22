@@ -33,11 +33,11 @@ public class PersonalScoreboard {
         objectiveSign.setLine(0, "§1");
         objectiveSign.setLine(1, "§8» §6§n" + player.getName()+"§r §7("+((CraftPlayer) player).getHandle().ping+" ms)");
         objectiveSign.setLine(2, "§2");
-        if(player.hasPermission("staff.use") && player.hasPermission("vipplus.use")) {
+        if(player.hasPermission("staff.use") && player.hasPermission("vipplus.use") || player.hasPermission("friend.use") && player.hasPermission("vipplus.use") || player.hasPermission("partner.use") && player.hasPermission("vipplus.use") || player.hasPermission("youtuber.use") && player.hasPermission("vipplus.use")) {
             objectiveSign.setLine(3, "§8» §6Grade: "+
                     main.getAPI().get().getRankWithColors(player.getUniqueId())+ChatColor.GRAY+"/"+ChatColor.GOLD+"VIP+");
 
-        } else if(player.hasPermission("staff.use") && player.hasPermission("vip.use")) {
+        } else if(player.hasPermission("staff.use") && player.hasPermission("vip.use") || player.hasPermission("friend.use") && player.hasPermission("vip.use") || player.hasPermission("partner.use") && player.hasPermission("vip.use") || player.hasPermission("youtuber.use") && player.hasPermission("vip.use")) {
             objectiveSign.setLine(3, "§8» §6Grade: "+
                     main.getAPI().get().getRankWithColors(player.getUniqueId())+ChatColor.GRAY+"/"+ChatColor.YELLOW+"VIP");
 

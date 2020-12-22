@@ -116,12 +116,6 @@ public class MountManager {
         make(main, new RideableEndermite(nmsWorld), player);
     }
 
-    public static void rideGuardian(Main main, Player player) {
-        Location loc = player.getLocation();
-        World nmsWorld = ((CraftWorld) loc.getWorld()).getHandle();
-        make(main, new RideableGuardian(nmsWorld), player);
-    }
-
     public static void rideMagmaCube(Main main, Player player) {
         Location loc = player.getLocation();
         World nmsWorld = ((CraftWorld) loc.getWorld()).getHandle();
@@ -158,12 +152,6 @@ public class MountManager {
         make(main, new RideableSlime(nmsWorld), player);
     }
 
-    public static void rideSquid(Main main, Player player) {
-        Location loc = player.getLocation();
-        World nmsWorld = ((CraftWorld) loc.getWorld()).getHandle();
-        make(main, new RideableSquid(nmsWorld), player);
-    }
-
     public static void rideWitch(Main main, Player player) {
         Location loc = player.getLocation();
         World nmsWorld = ((CraftWorld) loc.getWorld()).getHandle();
@@ -178,7 +166,7 @@ public class MountManager {
 
     public static void make(Main main, EntityLiving nmsEntity, Player player) {
         if(!canSummonMount(player.getLocation())) {
-            player.sendMessage(main.prefixError+ ChatColor.RED+"Il n'y a pas assez de place pour invoquer la monture !");
+            player.sendMessage(main.prefixError+ ChatColor.RED+"Erreur: il n'y a pas assez de place pour invoquer la monture !");
             return;
         }
 

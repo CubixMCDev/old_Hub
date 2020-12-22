@@ -64,14 +64,14 @@ public class Profile implements GuiBuilder {
         ItemsBuilder profil = new ItemsBuilder(Material.SKULL_ITEM, 1, (byte) 3)
                 .setName("§6§n"+player.getName())
                 .setSkullOwner(player.getName());
-        if(player.hasPermission("staff.use") && player.hasPermission("vipplus.use")) {
+        if(player.hasPermission("staff.use") && player.hasPermission("vipplus.use") || player.hasPermission("friend.use") && player.hasPermission("vipplus.use") || player.hasPermission("partner.use") && player.hasPermission("vipplus.use") || player.hasPermission("youtuber.use") && player.hasPermission("vipplus.use")) {
                     profil.setLore(Arrays.asList("§eGrade: "+ main.getAPI().get().getRankWithColors(player.getUniqueId())+ ChatColor.GRAY+"/"+ChatColor.GOLD+"VIP+",
                             "§eCrédits: §6" + main.getAPI().get().getCredits(player.getUniqueId()) + " \u24D2",
                             "§eCoins: §6"+ main.getAPI().get().getCoins(player.getUniqueId()) + " \u26C3",
                             "§eNiveau: §6" + main.getAPI().get().getLevel(player.getUniqueId()),
                             "§eExp: §6"+ main.getAPI().get().getExp(player.getUniqueId())+" / "+ main.getAPI().get().getXPfromLevel(main.getAPI().get().getLevel(player.getUniqueId()))));
 
-        } else if(player.hasPermission("staff.use") && player.hasPermission("vip.use")) {
+        } else if(player.hasPermission("staff.use") && player.hasPermission("vip.use") || player.hasPermission("friend.use") && player.hasPermission("vip.use") || player.hasPermission("partner.use") && player.hasPermission("vip.use") || player.hasPermission("youtuber.use") && player.hasPermission("vip.use")) {
             profil.setLore(Arrays.asList("§eGrade: "+ main.getAPI().get().getRankWithColors(player.getUniqueId())+ ChatColor.GRAY+"/"+ChatColor.YELLOW+"VIP",
                     "§eCrédits: §6" + main.getAPI().get().getCredits(player.getUniqueId()) + " \u24D2",
                     "§eCoins: §6"+ main.getAPI().get().getCoins(player.getUniqueId()) + " \u26C3",

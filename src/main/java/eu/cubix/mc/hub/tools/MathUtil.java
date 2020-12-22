@@ -3,6 +3,7 @@ package eu.cubix.mc.hub.tools;
 import eu.cubix.mc.hub.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
 import java.util.Random;
@@ -67,6 +68,23 @@ public class MathUtil {
     public static void applyVelocity(Main main, final Entity ent, Vector v, boolean ignoreGadgetsEnabled) {
         ent.setVelocity(v);
         Bukkit.getScheduler().runTaskLaterAsynchronously(main, () -> FallDamageManager.addNoFall(ent), 4);
+    }
+
+    public static void applyVector(final Entity ent, Vector v) {
+        if (ent instanceof Player) {
+            final Player p = (Player) ent;
+            if (p.hasPermission("player.use") && p.isSneaking()) {
+                return;
+            }
+        }
+        ent.setVelocity(v);
+    }
+
+    public static void applyVelocity(final Entity ent, Vector v, Main main) {
+        if (ent.hasMetadata("NPC"))
+            return;
+        ent.setVelocity(v);
+        Bukkit.getScheduler().runTaskLaterAsynchronously(main, () -> FallDamageManager.addNoFall(ent), 5);
     }
 
     public static final Vector rotateAroundAxisZ(Vector v, double angle) {

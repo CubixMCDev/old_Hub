@@ -1,7 +1,7 @@
 package eu.cubix.mc.hub;
 
 import eu.cubix.mc.hub.commands.Key;
-import eu.cubix.mc.hub.cosmetics.gadgets.SheepExplode;
+import eu.cubix.mc.hub.cosmetics.gadgets.*;
 import eu.cubix.mc.hub.crates.Vote;
 import eu.cubix.mc.hub.events.*;
 import eu.cubix.mc.hub.inventory.*;
@@ -29,6 +29,8 @@ public class Main extends JavaPlugin implements Listener {
 
     public String prefix = ChatColor.YELLOW+"CubixMC "+ChatColor.GOLD+"» ";
     public String prefixError = ChatColor.RED+"CubixMC "+ChatColor.DARK_RED+"» ";
+
+    private Player player;
 
     private GuiManager guiManager;
     private final Map<Class<? extends GadgetBuilder>, GadgetBuilder> registerGadgets = new HashMap<>();
@@ -123,7 +125,7 @@ public class Main extends JavaPlugin implements Listener {
         guiManager.addMenu(new Menu(this));
         guiManager.addMenu(new UHCs(this));
         guiManager.addMenu(new Cosmetics(this));
-        guiManager.addMenu(new Pets(this));
+        guiManager.addMenu(new Familiars(this));
         guiManager.addMenu(new Gadgets(this));
         guiManager.addMenu(new Particles(this));
         guiManager.addMenu(new Mounts(this));
@@ -164,8 +166,20 @@ public class Main extends JavaPlugin implements Listener {
         }
     }
 
+    public Player getPlayer()
+    {
+        return this.player;
+    }
+
     private void loadGadgets() {
         addGadget(new SheepExplode(this));
+        addGadget(new RainbowWalk(this, getPlayer()));
+        addGadget(new Tsunami(this));
+        addGadget(new AntiGravity(this));
+        addGadget(new MelonThrower(this));
+        addGadget(new Chickenator(this));
+        addGadget(new EtherealPearl(this));
+        addGadget(new Firework(this));
     }
 
     public Queue getQueueByName(String name){
