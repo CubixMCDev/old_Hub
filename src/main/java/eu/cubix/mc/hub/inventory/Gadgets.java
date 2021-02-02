@@ -198,11 +198,6 @@ public class Gadgets implements GuiBuilder {
             player.closeInventory();
         }
 
-        if (current.getType() == Material.SAPLING && current.getItemMeta().getDisplayName().equalsIgnoreCase("§6§nArbre de Noël")) {
-            main.give(ChristmasTree.class, player);
-            player.closeInventory();
-        }
-
         switch (current.getType()) {
             case DARK_OAK_DOOR_ITEM:
                 main.getGuiManager().open(player, Cosmetics.class);
