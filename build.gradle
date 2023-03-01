@@ -1,5 +1,5 @@
 plugins {
-    id 'com.github.johnrengelman.shadow' version '8.1.0'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
     id 'java'
 }
 
@@ -45,8 +45,8 @@ repositories {
 }
 
 dependencies {
-    compile (name: 'spigot', ext: 'jar')
-    compile (name: 'cubixapi', ext: 'jar')
+    compileOnly (name: 'spigot', ext: 'jar')
+    compileOnly (name: 'cubixapi', ext: 'jar')
 }
 
 shadowJar {
